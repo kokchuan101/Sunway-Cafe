@@ -95,6 +95,7 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderedItem.cs" />
     <Compile Include="Model\Stock.cs" />
     <Compile Include="ProfilePage.cs">
       <SubType>Form</SubType>

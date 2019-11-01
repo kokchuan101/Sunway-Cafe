@@ -13,13 +13,12 @@ namespace Sunway_Cafe.Model
     {
     
         public int Id { get; set; }
-
-        public string Items { get; set; }
-
         public decimal NetPrice { get; set; }
-
         public decimal TotalPrice { get; set; }
         public string Status { get; set; }
-        public string DateTime { get; set; }
+        public string DateTimeCreated { get; set; }
+        public string DateTimeClosed { get; set; }
+        public virtual ICollection<OrderedItem> OrderedItems { get; set; }
+
     }
 }

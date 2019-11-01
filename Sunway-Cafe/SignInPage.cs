@@ -19,15 +19,7 @@ namespace Sunway_Cafe
             InitializeComponent();
             password.UseSystemPasswordChar = true;
 
-            //using(var db = new SunwayCafeContext())
-            //{
-            //    db.Items.Add(new Item() { Name = "Shit pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
-            //    db.SaveChanges();
 
-            //    var query = db.Items.ToList();
-            //    Console.WriteLine("done");
-
-            //}
 
         }
 

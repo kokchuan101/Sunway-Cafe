@@ -23,6 +23,8 @@ namespace Sunway_Cafe.Model
 
         public string Img { get; set; }
 
+        public virtual ICollection<OrderedItem> OrderedItems { get; set; }
+
         
     }
 }

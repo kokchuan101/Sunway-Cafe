@@ -20,12 +20,13 @@ namespace Sunway_Cafe
         }
         public DbSet<Item> Items { get; set; }
         public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Model.Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderedItem> OrderedItems { get; set; }
 
     }
 
-    public class SunwayCafeContextInitializer : SqliteDropCreateDatabaseAlways<SunwayCafeContext>
+    public class SunwayCafeContextInitializer : SqliteCreateDatabaseIfNotExists<SunwayCafeContext>
     {
         public SunwayCafeContextInitializer(DbModelBuilder modelBuilder)
             : base(modelBuilder) { }
@@ -37,4 +38,36 @@ namespace Sunway_Cafe
             //context.Set<Stock>().Add(new Stock() { Name = "Apple Pie"});
         }
     }
+
+    //using (var db = new SunwayCafeContext())
+    //{
+    //    var query = db.Items.ToList();
+    //    var order = new Order()
+    //    {
+    //        NetPrice = 10.00M,
+    //        TotalPrice = 12.00M,
+    //        Status = "Open",
+    //        DateTimeCreated = "Now",
+
+    //    };
+
+    //    var lst = new List<OrderedItem>();
+
+    //    foreach (var item in query)
+    //    {
+    //        lst.Add(new OrderedItem()
+    //        {
+    //            Order = order,
+    //            Item = item,
+    //            Qty = 20
+    //        });
+    //    }
+
+    //    order.OrderedItems = lst;
+    //    db.Orders.Add(order);
+    //    db.SaveChanges();
+
+    //    var query2 = db.OrderedItems.Where(it => it.OrderId == 1).Select(it => new { it.Qty, it.Item }).ToList();
+
+    //}
 }
