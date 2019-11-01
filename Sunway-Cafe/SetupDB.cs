@@ -18,11 +18,11 @@ namespace Sunway_Cafe
             Database.SetInitializer(sqliteConnectionInitializer);
 
         }
-        public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Account> Accounts { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<Model.Account> Accounts { get; set; }
         public DbSet<Order> Orders { get; set; }
-        
+
     }
 
     public class SunwayCafeContextInitializer : SqliteDropCreateDatabaseAlways<SunwayCafeContext>
@@ -32,7 +32,9 @@ namespace Sunway_Cafe
 
         protected override void Seed(SunwayCafeContext context)
         {
-            //context.Set<Item>().Add(new Item() { Name="Apple Pie", Type="Food", CostPrice=5.00M, SellingPrice=2.00M});
+            context.Set<Item>().Add(new Item() { Name = "apple pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
+            context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
+            //context.Set<Stock>().Add(new Stock() { Name = "Apple Pie"});
         }
     }
 }

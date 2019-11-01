@@ -1,6 +1,6 @@
 ﻿namespace Sunway_Cafe
 {
-    partial class Profile
+    partial class ProfilePage
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace Sunway_Cafe
 {
-    partial class Stock
+    partial class StockPage
     {
         /// <summary>
         /// Required designer variable.
