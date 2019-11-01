@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class Account : Form
+    public partial class AccountPage : Form
     {
-        public Account()
+        public AccountPage()
         {
             InitializeComponent();
-            Profile profile = new Profile();
+            ProfilePage profile = new ProfilePage();
             nav(profile, content);
         }
 
@@ -24,7 +24,7 @@ namespace Sunway_Cafe
             sidePanel.Height = profileBtn.Height;
             sidePanel.Top = profileBtn.Top;
             sidePanel.BringToFront();
-            Profile profile = new Profile();
+            ProfilePage profile = new ProfilePage();
             nav(profile, content);
         }
 
@@ -33,7 +33,7 @@ namespace Sunway_Cafe
             sidePanel.Height = stockBtn.Height;
             sidePanel.Top = stockBtn.Top;
             sidePanel.BringToFront();
-            Stock stock = new Stock();
+            StockPage stock = new StockPage();
             nav(stock, content);
         }
 
