@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class Profile : Form
+    public partial class ProfilePage : Form
     {
-        public Profile()
+        public ProfilePage()
         {
             InitializeComponent();
             position.Text = "Eat, Play, Sleep, Repeat";
@@ -25,7 +25,7 @@ namespace Sunway_Cafe
 
         private void editProfile_Click(object sender, EventArgs e)
         {
-            EditProfile editProfile = new EditProfile();
+            EditProfilePage editProfile = new EditProfilePage();
             editProfile.Show();
         }
 

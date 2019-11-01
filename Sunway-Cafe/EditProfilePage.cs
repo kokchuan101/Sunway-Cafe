@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class EditProfile : Form
+    public partial class EditProfilePage : Form
     {
-        public EditProfile()
+        public EditProfilePage()
         {
             InitializeComponent();
         }
