@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class Stock : Form
+    public partial class StockPage : Form
     {
-        public Stock()
+        public StockPage()
         {
             InitializeComponent();
         }

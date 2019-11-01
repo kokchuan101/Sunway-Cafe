@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
@@ -79,8 +80,10 @@ namespace Sunway_Cafe
         public Form1()
         {
             InitializeComponent();
-            
-
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.Items.ToList();
+            }
         }
 
         public void button1_Click(object sender, EventArgs e)
