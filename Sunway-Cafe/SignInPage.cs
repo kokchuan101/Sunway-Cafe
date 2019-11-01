@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunway_Cafe.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,16 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class SignIn : Form
+    public partial class SignInPage : Form
     {
-        public SignIn()
+        
+        public SignInPage()
         {
             InitializeComponent();
             password.UseSystemPasswordChar = true;
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace Sunway_Cafe
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            Account account = new Account();
+            AccountPage account = new AccountPage();
             account.Show();
             Hide();
         }
