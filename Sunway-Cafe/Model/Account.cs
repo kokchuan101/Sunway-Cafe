@@ -5,10 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe.Model
 {
     
+   
     public class Account
     {
         
@@ -18,18 +20,17 @@ namespace Sunway_Cafe.Model
 
         public string Password { get; set; }
 
-        public string FirstName { get; set; }
+        public string GivenName { get; set; }
 
-        public string LastName { get; set; }
+        public string FamilyName { get; set; }
 
         public string Gender { get; set; }
 
-        public string Contact { get; set; }
+        public int Contact { get; set; }
 
         public string Email { get; set; }
 
         public string Role { get; set; }
-
 
     }
 }
