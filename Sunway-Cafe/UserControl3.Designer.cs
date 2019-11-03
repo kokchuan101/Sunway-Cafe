@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl3));
             this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Large_img = new System.Windows.Forms.ImageList(this.components);
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -42,10 +48,44 @@
             this.label1.Text = "Order";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView1.HideSelection = false;
+            this.listView1.LargeImageList = this.Large_img;
+            this.listView1.Location = new System.Drawing.Point(27, 103);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(782, 395);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // Large_img
+            // 
+            this.Large_img.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Large_img.ImageStream")));
+            this.Large_img.TransparentColor = System.Drawing.Color.Transparent;
+            this.Large_img.Images.SetKeyName(0, "choices (2).png");
+            this.Large_img.Images.SetKeyName(1, "house (1).png");
+            this.Large_img.Images.SetKeyName(2, "team (2).png");
+            this.Large_img.Images.SetKeyName(3, "choices (2).png");
+            this.Large_img.Images.SetKeyName(4, "house (1).png");
+            this.Large_img.Images.SetKeyName(5, "team (2).png");
+            this.Large_img.Images.SetKeyName(6, "home.png");
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            // 
             // UserControl3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Name = "UserControl3";
             this.Size = new System.Drawing.Size(873, 531);
@@ -57,5 +97,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ImageList Large_img;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
