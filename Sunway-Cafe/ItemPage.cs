@@ -7,63 +7,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace Sunway_Cafe
 {
-    public partial class UserControl3 : UserControl
+    public partial class ItemPage : UserControl
     {
-       
-        private static UserControl3 _instance;
+        private static ItemPage _instance;
+        public ItemPage()
+        {
+            InitializeComponent();
+        }
 
-        public static UserControl3 Instance
+        public static ItemPage Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControl3();
+                    _instance = new ItemPage();
                 return _instance;
             }
         }
-        public UserControl3()
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            listView1.FullRowSelect = true;
+            CreateItem create = new CreateItem();
+            create.Show();
+        }
+
+        private void load_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
             using (var db = new SunwayCafeContext())
             {
                 var query = db.ItemTestss.ToList();
 
                 foreach (var itemList in query)
                 {
-
+                 
                     ListViewItem item = new ListViewItem(itemList.ID.ToString());
                     item.SubItems.Add(itemList.Name);
 
                     listView1.Items.Add(item);
-                  
+                   
                 }
 
             }
-
-
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private void AddOrder_Click(object sender, EventArgs e)
+        private void delete_Click(object sender, EventArgs e)
         {
-            MoveToOrder(listView1, listView2);
-        }
 
-        private static void MoveToOrder(ListView listView1, ListView listView2)
-        {
-            foreach (ListViewItem item in listView1.SelectedItems)
-            {
-                listView2.Items.Add((ListViewItem)item.Clone());
-            }
         }
     }
 }

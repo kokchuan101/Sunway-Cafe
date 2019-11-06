@@ -40,8 +40,9 @@ namespace Sunway_Cafe
                 }
                 else
                 {
-                    Form pd = new PromptDialog();
-                    pd.ShowDialog();
+                    //Form pd = new PromptDialog();
+                    //pd.ShowDialog();
+                    MessageBox.Show("Wrong");
                     
                 }
             }

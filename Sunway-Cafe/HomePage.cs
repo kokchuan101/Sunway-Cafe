@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
-    public partial class UserControl1 : UserControl
+    public partial class HomePage : UserControl
     {
-        private static UserControl1 _instance;
+        private static HomePage _instance;
 
         
-        public static UserControl1 Instance
+        public static HomePage Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControl1();
+                    _instance = new HomePage();
                 return _instance;
             }
         }
-        public UserControl1()
+        public HomePage()
         {
             InitializeComponent();
             
@@ -34,7 +34,7 @@ namespace Sunway_Cafe
         private void button1_Click(object sender, EventArgs e)
         {
             
-            UserControl3 uc3 = new UserControl3();
+            OrderPage uc3 = new OrderPage();
             Form1.Instance.MainPanel.Controls.Clear();
             Form1.Instance.MainPanel.Controls.Add(uc3);
             Form1.Instance.SidePanel.Height = Form1.Instance.Order.Height;
