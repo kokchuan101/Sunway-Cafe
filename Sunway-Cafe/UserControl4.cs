@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
@@ -56,7 +57,14 @@ namespace Sunway_Cafe
 
         private void delete_Click(object sender, EventArgs e)
         {
+            using (var db = new SunwayCafeContext())
+            {
 
+                ItemTests itemDelete = new ItemTests { ID = 1 };
+                db.ItemTestss.Attach(itemDelete);
+                db.ItemTestss.Remove(itemDelete);
+                db.SaveChanges();
+            }
         }
     }
 }
