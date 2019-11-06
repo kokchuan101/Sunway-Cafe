@@ -16,7 +16,7 @@ namespace Sunway_Cafe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignInPage());
+            Application.Run(new Form1());
         }
     }
 }

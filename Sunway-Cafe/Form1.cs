@@ -109,6 +109,11 @@ namespace Sunway_Cafe
             manage_Page();
         }
 
+        private void item_Click(object sender, EventArgs e)
+        {
+            item_Page();
+        }
+
         public void order_Page()
         {
             if (!MainPanel.Controls.Contains(UserControl3.Instance))
@@ -157,12 +162,30 @@ namespace Sunway_Cafe
                 UserControl1.Instance.BringToFront();
         }
 
+        public void item_Page()
+        {
+            if (!MainPanel.Controls.Contains(UserControl4.Instance))
+            {
+                MainPanel.Controls.Clear();
+                SidePanel.Height = home.Height;
+                SidePanel.Top = home.Top;
+                MainPanel.Controls.Add(UserControl4.Instance);
+                UserControl4.Instance.BringToFront();
+            }
+            else
+                SidePanel.Height = home.Height;
+                SidePanel.Top = home.Top;
+                UserControl4.Instance.BringToFront();
+        }
+
         public void nav(Form form, Panel MainPanel)
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(form);
             form.Show();
         }
+
+        
     }
 
    

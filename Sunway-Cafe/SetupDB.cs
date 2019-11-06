@@ -23,6 +23,7 @@ namespace Sunway_Cafe
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderedItem> OrderedItems { get; set; }
+        public DbSet<ItemTests> ItemTestss { get; set; }
 
     }
 
