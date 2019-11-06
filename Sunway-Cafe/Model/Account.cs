@@ -9,12 +9,13 @@ using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe.Model
 {
-    
-   
+
+
     public class Account
     {
-        
-        public int Id{ get; set; }
+
+
+        public int Id { get; set; }
 
         public string Username { get; set; }
 
@@ -32,5 +33,9 @@ namespace Sunway_Cafe.Model
 
         public string Role { get; set; }
 
+        //public void EditProfile<T>(T value)
+        //{
+
+        //}
     }
 }
