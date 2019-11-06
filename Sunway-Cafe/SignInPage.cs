@@ -18,16 +18,6 @@ namespace Sunway_Cafe
             password.UseSystemPasswordChar = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroSetTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -35,9 +25,27 @@ namespace Sunway_Cafe
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            AccountPage account = new AccountPage();
-            account.Show();
-            Hide();
+            var Username = username.Text;
+            var Password = password.Text;
+
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.Accounts.Where(acc => acc.Username == Username && acc.Password == Password).Select(acc => acc.Role);
+                //var Role = query.Role;
+                if(query.Count() == 1)
+                {
+                    AccountPage account = new AccountPage();
+                    account.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Form pd = new PromptDialog();
+                    pd.ShowDialog();
+                    
+                }
+            }
+            
         }
     }
 }

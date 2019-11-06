@@ -65,7 +65,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -166,6 +165,7 @@
             this.password.Style = MetroSet_UI.Design.Style.Light;
             this.password.StyleManager = null;
             this.password.TabIndex = 4;
+            this.password.Text = "test1";
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.password.ThemeAuthor = "Narwin";
             this.password.ThemeName = "MetroLite";
@@ -205,12 +205,12 @@
             this.username.Style = MetroSet_UI.Design.Style.Light;
             this.username.StyleManager = null;
             this.username.TabIndex = 2;
+            this.username.Text = "test1";
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.username.ThemeAuthor = "Narwin";
             this.username.ThemeName = "MetroLite";
             this.username.UseSystemPasswordChar = false;
             this.username.WatermarkText = "";
-            this.username.Click += new System.EventHandler(this.metroSetTextBox1_Click);
             // 
             // label3
             // 
@@ -234,13 +234,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Sign In";
             // 
-            // SignIn
+            // SignInPage
             // 
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SignIn";
+            this.Name = "SignInPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

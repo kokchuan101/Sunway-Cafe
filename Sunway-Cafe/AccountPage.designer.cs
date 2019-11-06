@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.manageBtn = new System.Windows.Forms.Button();
             this.stockBtn = new System.Windows.Forms.Button();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.profileBtn = new System.Windows.Forms.Button();
@@ -36,7 +37,7 @@
             this.content = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.exitBtn = new MetroSet_UI.Controls.MetroSetButton();
+            this.logOutBtn = new MetroSet_UI.Controls.MetroSetButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.manageBtn);
             this.panel1.Controls.Add(this.stockBtn);
             this.panel1.Controls.Add(this.sidePanel);
             this.panel1.Controls.Add(this.profileBtn);
@@ -53,6 +55,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // manageBtn
+            // 
+            this.manageBtn.BackColor = System.Drawing.Color.Transparent;
+            this.manageBtn.FlatAppearance.BorderSize = 0;
+            this.manageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageBtn.ForeColor = System.Drawing.Color.White;
+            this.manageBtn.Location = new System.Drawing.Point(2, 166);
+            this.manageBtn.Name = "manageBtn";
+            this.manageBtn.Size = new System.Drawing.Size(195, 52);
+            this.manageBtn.TabIndex = 12;
+            this.manageBtn.Text = "Management";
+            this.manageBtn.UseVisualStyleBackColor = false;
+            this.manageBtn.Click += new System.EventHandler(this.manageBtn_Click);
             // 
             // stockBtn
             // 
@@ -116,7 +133,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.exitBtn);
+            this.panel4.Controls.Add(this.logOutBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(197, 0);
             this.panel4.Name = "panel4";
@@ -135,33 +152,34 @@
             this.label2.Text = "Welcome Back, Onee Chan";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // exitBtn
+            // logOutBtn
             // 
-            this.exitBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.DisabledForeColor = System.Drawing.Color.Gray;
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.exitBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.exitBtn.HoverTextColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(544, 6);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.NormalTextColor = System.Drawing.Color.White;
-            this.exitBtn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.exitBtn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.exitBtn.PressTextColor = System.Drawing.Color.White;
-            this.exitBtn.Size = new System.Drawing.Size(47, 42);
-            this.exitBtn.Style = MetroSet_UI.Design.Style.Light;
-            this.exitBtn.StyleManager = null;
-            this.exitBtn.TabIndex = 10;
-            this.exitBtn.Text = "X";
-            this.exitBtn.ThemeAuthor = "Narwin";
-            this.exitBtn.ThemeName = "MetroLite";
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.logOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOutBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.logOutBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.logOutBtn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.logOutBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.logOutBtn.HoverTextColor = System.Drawing.Color.White;
+            this.logOutBtn.Location = new System.Drawing.Point(496, 12);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.logOutBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.logOutBtn.NormalTextColor = System.Drawing.Color.White;
+            this.logOutBtn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.logOutBtn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.logOutBtn.PressTextColor = System.Drawing.Color.White;
+            this.logOutBtn.Size = new System.Drawing.Size(95, 40);
+            this.logOutBtn.Style = MetroSet_UI.Design.Style.Light;
+            this.logOutBtn.StyleManager = null;
+            this.logOutBtn.TabIndex = 10;
+            this.logOutBtn.Text = "Logout";
+            this.logOutBtn.ThemeAuthor = "Narwin";
+            this.logOutBtn.ThemeName = "MetroLite";
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
-            // Account
+            // AccountPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +188,7 @@
             this.Controls.Add(this.content);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Account";
+            this.Name = "AccountPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
@@ -191,6 +209,7 @@
         private System.Windows.Forms.Panel content;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private MetroSet_UI.Controls.MetroSetButton exitBtn;
+        private MetroSet_UI.Controls.MetroSetButton logOutBtn;
+        private System.Windows.Forms.Button manageBtn;
     }
 }
