@@ -11,20 +11,20 @@ using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
-    public partial class UserControl4 : UserControl
+    public partial class ItemPage : UserControl
     {
-        private static UserControl4 _instance;
-        public UserControl4()
+        private static ItemPage _instance;
+        public ItemPage()
         {
             InitializeComponent();
         }
 
-        public static UserControl4 Instance
+        public static ItemPage Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControl4();
+                    _instance = new ItemPage();
                 return _instance;
             }
         }

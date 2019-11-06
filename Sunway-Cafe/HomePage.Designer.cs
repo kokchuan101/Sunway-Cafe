@@ -1,6 +1,6 @@
 ﻿namespace Sunway_Cafe
 {
-    partial class UserControl1
+    partial class HomePage
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.Order = new System.Windows.Forms.Button();
             this.Manage = new System.Windows.Forms.Button();
             this.labelHome = new System.Windows.Forms.Label();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
@@ -16,7 +17,10 @@ namespace Sunway_Cafe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            Application.Run(new SignInPage());
+
+
         }
     }
 }

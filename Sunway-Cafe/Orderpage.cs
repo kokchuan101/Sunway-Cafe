@@ -11,21 +11,21 @@ using System.Data.SQLite;
 
 namespace Sunway_Cafe
 {
-    public partial class UserControl3 : UserControl
+    public partial class OrderPage : UserControl
     {
        
-        private static UserControl3 _instance;
+        private static OrderPage _instance;
 
-        public static UserControl3 Instance
+        public static OrderPage Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControl3();
+                    _instance = new OrderPage();
                 return _instance;
             }
         }
-        public UserControl3()
+        public OrderPage()
         {
             InitializeComponent();
             listView1.FullRowSelect = true;

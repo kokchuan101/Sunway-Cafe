@@ -88,94 +88,110 @@ namespace Sunway_Cafe
 
         public void button1_Click(object sender, EventArgs e)
         {
-            home_Page(); 
+            //home_Page(); 
+            NavPage(HomePage.Instance, home);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             _obj = this;
 
-            UserControl1 uc1 = new UserControl1();
+            HomePage uc1 = new HomePage();
             MainPanel.Controls.Add(uc1);
         }
 
         public void order_Click(object sender, EventArgs e)
         {
-            order_Page();
+            //order_Page();
+            NavPage(OrderPage.Instance, order);
+
         }
 
         public void manage_Click(object sender, EventArgs e)
         {
-            manage_Page();
+            //manage_Page();
+            NavPage(UserControl2.Instance, manage);
+
         }
 
         private void item_Click(object sender, EventArgs e)
         {
-            item_Page();
+            //item_Page();
+            NavPage(ItemPage.Instance, item);
+
         }
 
-        public void order_Page()
-        {
-            if (!MainPanel.Controls.Contains(UserControl3.Instance))
-            {
-                MainPanel.Controls.Clear();
-                SidePanel.Height = order.Height;
-                SidePanel.Top = order.Top;
-                MainPanel.Controls.Add(UserControl3.Instance);
-                UserControl3.Instance.BringToFront();
-            }
-            else
-                SidePanel.Height = order.Height;
-                SidePanel.Top = order.Top;
-                UserControl3.Instance.BringToFront();
-        }
+        //public void order_Page()
+        //{
+        //    if (!MainPanel.Controls.Contains(UserControl3.Instance))
+        //    {
+        //        MainPanel.Controls.Clear();
+        //        SidePanel.Height = order.Height;
+        //        SidePanel.Top = order.Top;
+        //        MainPanel.Controls.Add(UserControl3.Instance);
+        //        UserControl3.Instance.BringToFront();
+        //    }
+        //    else
+        //        SidePanel.Height = order.Height;
+        //        SidePanel.Top = order.Top;
+        //        UserControl3.Instance.BringToFront();
+        //}
 
-        public void manage_Page()
-        {
-            if (!MainPanel.Controls.Contains(UserControl2.Instance))
-            {
-                MainPanel.Controls.Clear();
-                SidePanel.Height = manage.Height;
-                SidePanel.Top = manage.Top;
-                MainPanel.Controls.Add(UserControl2.Instance);
-                UserControl2.Instance.BringToFront();
-            }
-            else
-                SidePanel.Height = manage.Height;
-                SidePanel.Top = manage.Top;
-                UserControl2.Instance.BringToFront();
-        }
+        //public void manage_Page()
+        //{
+        //    if (!MainPanel.Controls.Contains(UserControl2.Instance))
+        //    {
+        //        MainPanel.Controls.Clear();
+        //        SidePanel.Height = manage.Height;
+        //        SidePanel.Top = manage.Top;
+        //        MainPanel.Controls.Add(UserControl2.Instance);
+        //        UserControl2.Instance.BringToFront();
+        //    }
+        //    else
+        //        SidePanel.Height = manage.Height;
+        //        SidePanel.Top = manage.Top;
+        //        UserControl2.Instance.BringToFront();
+        //}
 
-        public void home_Page()
-        {
-            if (!MainPanel.Controls.Contains(UserControl1.Instance))
-            {
-                MainPanel.Controls.Clear();
-                SidePanel.Height = home.Height;
-                SidePanel.Top = home.Top;
-                MainPanel.Controls.Add(UserControl1.Instance);
-                UserControl1.Instance.BringToFront();
-            }
-            else
-                SidePanel.Height = home.Height;
-                SidePanel.Top = home.Top;
-                UserControl1.Instance.BringToFront();
-        }
+        //public void home_Page()
+        //{
+        //    if (!MainPanel.Controls.Contains(UserControl1.Instance))
+        //    {
+        //        MainPanel.Controls.Clear();
+        //        SidePanel.Height = home.Height;
+        //        SidePanel.Top = home.Top;
+        //        MainPanel.Controls.Add(UserControl1.Instance);
+        //        UserControl1.Instance.BringToFront();
+        //    }
+        //    else
+        //        SidePanel.Height = home.Height;
+        //        SidePanel.Top = home.Top;
+        //        UserControl1.Instance.BringToFront();
+        //}
 
-        public void item_Page()
+        //public void item_Page()
+        //{
+        //    if (!MainPanel.Controls.Contains(UserControl4.Instance))
+        //    {
+        //        MainPanel.Controls.Clear();
+        //        SidePanel.Height = home.Height;
+        //        SidePanel.Top = home.Top;
+        //        MainPanel.Controls.Add(UserControl4.Instance);
+        //        UserControl4.Instance.BringToFront();
+        //    }
+        //    else
+        //        SidePanel.Height = home.Height;
+        //        SidePanel.Top = home.Top;
+        //        UserControl4.Instance.BringToFront();
+        //}
+
+        public void NavPage(UserControl navPage, Button navButton)
         {
-            if (!MainPanel.Controls.Contains(UserControl4.Instance))
-            {
-                MainPanel.Controls.Clear();
-                SidePanel.Height = home.Height;
-                SidePanel.Top = home.Top;
-                MainPanel.Controls.Add(UserControl4.Instance);
-                UserControl4.Instance.BringToFront();
-            }
-            else
-                SidePanel.Height = home.Height;
-                SidePanel.Top = home.Top;
-                UserControl4.Instance.BringToFront();
+            MainPanel.Controls.Clear();
+            SidePanel.Height = navButton.Height;
+            SidePanel.Top = navButton.Top;
+            MainPanel.Controls.Add(navPage);
+            navPage.Show();
         }
 
         public void nav(Form form, Panel MainPanel)

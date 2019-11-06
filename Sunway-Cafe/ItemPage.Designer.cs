@@ -1,6 +1,6 @@
 ﻿namespace Sunway_Cafe
 {
-    partial class UserControl4
+    partial class ItemPage
     {
         /// <summary> 
         /// Required designer variable.

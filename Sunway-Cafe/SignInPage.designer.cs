@@ -169,7 +169,7 @@
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.password.ThemeAuthor = "Narwin";
             this.password.ThemeName = "MetroLite";
-            this.password.UseSystemPasswordChar = false;
+            this.password.UseSystemPasswordChar = true;
             this.password.WatermarkText = "";
             // 
             // label4
