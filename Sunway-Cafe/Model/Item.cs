@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Sunway_Cafe.Model
 {
     
-    public class Item
+    public partial class Item
     {
         
         public int Id { get; set; }

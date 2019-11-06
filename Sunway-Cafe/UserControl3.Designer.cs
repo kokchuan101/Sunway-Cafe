@@ -32,9 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl3));
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Large_img = new System.Windows.Forms.ImageList(this.components);
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Large_img = new System.Windows.Forms.ImageList(this.components);
+            this.AddOrder = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.Pay = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -57,9 +63,18 @@
             this.listView1.LargeImageList = this.Large_img;
             this.listView1.Location = new System.Drawing.Point(27, 103);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(782, 395);
+            this.listView1.Size = new System.Drawing.Size(607, 339);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
             // 
             // Large_img
             // 
@@ -73,18 +88,63 @@
             this.Large_img.Images.SetKeyName(5, "team (2).png");
             this.Large_img.Images.SetKeyName(6, "home.png");
             // 
-            // columnHeader1
+            // AddOrder
             // 
-            this.columnHeader1.Text = "ID";
+            this.AddOrder.Location = new System.Drawing.Point(48, 461);
+            this.AddOrder.Name = "AddOrder";
+            this.AddOrder.Size = new System.Drawing.Size(109, 23);
+            this.AddOrder.TabIndex = 2;
+            this.AddOrder.Text = "PlaceOrder";
+            this.AddOrder.UseVisualStyleBackColor = true;
+            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
-            // columnHeader2
+            // listView2
             // 
-            this.columnHeader2.Text = "Name";
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Name_col});
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(665, 103);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(175, 290);
+            this.listView2.TabIndex = 3;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // Pay
+            // 
+            this.Pay.Location = new System.Drawing.Point(665, 448);
+            this.Pay.Name = "Pay";
+            this.Pay.Size = new System.Drawing.Size(175, 50);
+            this.Pay.TabIndex = 4;
+            this.Pay.Text = "Pay";
+            this.Pay.UseVisualStyleBackColor = true;
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(507, 461);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(109, 23);
+            this.Delete.TabIndex = 5;
+            this.Delete.Text = "Delete Item";
+            this.Delete.UseVisualStyleBackColor = true;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Name_col
+            // 
+            this.Name_col.Text = "Name";
             // 
             // UserControl3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Pay);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.AddOrder);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Name = "UserControl3";
@@ -101,5 +161,11 @@
         private System.Windows.Forms.ImageList Large_img;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button AddOrder;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button Pay;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Name_col;
     }
 }
