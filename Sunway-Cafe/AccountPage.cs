@@ -19,6 +19,8 @@ namespace Sunway_Cafe
             nav(profile, content);
         }
 
+        public string Role { get; set; }
+
         private void profileBtn_Click(object sender, EventArgs e)
         {
             sidePanel.Height = profileBtn.Height;
@@ -45,9 +47,20 @@ namespace Sunway_Cafe
             form.Show();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
+        private void logOutBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form signIn = new SignInPage();
+            this.Close();
+            signIn.Show();
+        }
+
+        private void manageBtn_Click(object sender, EventArgs e)
+        {
+            sidePanel.Height = manageBtn.Height;
+            sidePanel.Top = manageBtn.Top;
+            sidePanel.BringToFront();
+            ManagementPage manage = new ManagementPage();
+            nav(manage, content);
         }
     }
 }
