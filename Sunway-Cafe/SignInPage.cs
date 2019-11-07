@@ -31,8 +31,7 @@ namespace Sunway_Cafe
                 var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
                 if(query != null)
                 {
-                    AccountPage account = new AccountPage();
-                    account.Show();
+                    
 
                     if(query.Role == "Admin")
                     {
@@ -43,8 +42,11 @@ namespace Sunway_Cafe
                         Global.user = new SalesStaff(query);
                     }
 
+                    Global.test = "123";
                     MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
 
+                    AccountPage account = new AccountPage();
+                    account.Show();
                     this.Hide();
                 }
                 else

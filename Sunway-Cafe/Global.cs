@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Sunway_Cafe
 {
     public static class Global
     {
         public static User user = new User();
+
+        public static string test = "1";
     }
 }
