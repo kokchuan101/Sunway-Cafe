@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
@@ -25,17 +26,25 @@ namespace Sunway_Cafe
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            var Username = username.Text;
-            var Password = password.Text;
-
             using (var db = new SunwayCafeContext())
             {
-                var query = db.Accounts.Where(acc => acc.Username == Username && acc.Password == Password).Select(acc => acc.Role);
-                //var Role = query.Role;
-                if(query.Count() == 1)
+                var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
+                if(query != null)
                 {
                     AccountPage account = new AccountPage();
                     account.Show();
+
+                    if(query.Role == "Admin")
+                    {
+                        Global.user = new Admin(query);
+                    }
+                    else
+                    {
+                        Global.user = new SalesStaff(query);
+                    }
+
+                    MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
+
                     this.Hide();
                 }
                 else
