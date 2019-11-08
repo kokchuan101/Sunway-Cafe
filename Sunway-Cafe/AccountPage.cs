@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunway_Cafe.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Sunway_Cafe
             InitializeComponent();
             ProfilePage profile = new ProfilePage();
             nav(profile, content);
+            Global.user.ModifyDisplay(this);
         }
 
         public string Role { get; set; }
@@ -52,6 +54,7 @@ namespace Sunway_Cafe
             Form signIn = new SignInPage();
             this.Close();
             signIn.Show();
+            Global.user = new User();
         }
 
         private void manageBtn_Click(object sender, EventArgs e)

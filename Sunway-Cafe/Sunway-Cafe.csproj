@@ -98,6 +98,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="ManagementPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +111,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderedItem.cs" />
     <Compile Include="Model\Stock.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="OrderOptions.cs">
       <SubType>UserControl</SubType>
     </Compile>
