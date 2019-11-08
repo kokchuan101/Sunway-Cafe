@@ -204,12 +204,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel sidePanel;
-        private System.Windows.Forms.Button stockBtn;
-        private System.Windows.Forms.Button profileBtn;
+        public System.Windows.Forms.Button stockBtn;
+        public System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Panel content;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private MetroSet_UI.Controls.MetroSetButton logOutBtn;
-        private System.Windows.Forms.Button manageBtn;
+        public System.Windows.Forms.Button manageBtn;
     }
 }

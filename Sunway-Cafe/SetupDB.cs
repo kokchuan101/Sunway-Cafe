@@ -36,8 +36,9 @@ namespace Sunway_Cafe
         {
             context.Set<Item>().Add(new Item() { Name = "apple pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
             context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
-            context.Set<Account>().Add(new Account() { Id = 1, Username = "test1", Password = "test1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
-            //context.Set<Stock>().Add(new Stock() { Name = "Apple Pie"}); 
+            context.Set<Account>().Add(new Account() { Username = "test1", Password = "test1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
+            context.Set<Account>().Add(new Account() { Username = "adminuser1", Password = "adminuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
+            context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "SalesStaff" });
 
         }
 
