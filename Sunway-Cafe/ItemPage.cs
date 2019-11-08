@@ -37,10 +37,11 @@ namespace Sunway_Cafe
 
         private void load_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+ //         listView1.Items.Clear();
             using (var db = new SunwayCafeContext())
             {
                 var query = db.ItemTestss.ToList();
+                OrderOptions[] orderOptions = new OrderOptions[query.Count()];
 
                 foreach (var itemList in query)
                 {
@@ -48,7 +49,7 @@ namespace Sunway_Cafe
                     ListViewItem item = new ListViewItem(itemList.ID.ToString());
                     item.SubItems.Add(itemList.Name);
 
-                    listView1.Items.Add(item);
+ //                   listView1.Items.Add(item);
                    
                 }
 

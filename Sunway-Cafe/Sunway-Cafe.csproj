@@ -110,6 +110,12 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderedItem.cs" />
     <Compile Include="Model\Stock.cs" />
+    <Compile Include="OrderOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderOptions.Designer.cs">
+      <DependentUpon>OrderOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementPage.resx">
       <DependentUpon>ManagementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderOptions.resx">
+      <DependentUpon>OrderOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfilePage.resx">
       <DependentUpon>ProfilePage.cs</DependentUpon>

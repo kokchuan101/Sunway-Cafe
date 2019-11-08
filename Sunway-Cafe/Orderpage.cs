@@ -28,7 +28,7 @@ namespace Sunway_Cafe
         public OrderPage()
         {
             InitializeComponent();
-            listView1.FullRowSelect = true;
+ //           listView1.FullRowSelect = true;
             using (var db = new SunwayCafeContext())
             {
                 var query = db.ItemTestss.ToList();
@@ -39,7 +39,7 @@ namespace Sunway_Cafe
                     ListViewItem item = new ListViewItem(itemList.ID.ToString());
                     item.SubItems.Add(itemList.Name);
 
-                    listView1.Items.Add(item);
+ //                   listView1.Items.Add(item);
                   
                 }
 
@@ -55,7 +55,7 @@ namespace Sunway_Cafe
 
         private void AddOrder_Click(object sender, EventArgs e)
         {
-            MoveToOrder(listView1, listView2);
+ //           MoveToOrder(listView1, listView2);
         }
 
         private static void MoveToOrder(ListView listView1, ListView listView2)
