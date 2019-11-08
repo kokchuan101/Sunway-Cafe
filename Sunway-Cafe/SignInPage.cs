@@ -17,6 +17,11 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             password.UseSystemPasswordChar = true;
+            using (var db = new SunwayCafeContext())
+            {
+                db.Accounts.ToList();
+            }
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -31,9 +36,6 @@ namespace Sunway_Cafe
                 var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
                 if(query != null)
                 {
-                    AccountPage account = new AccountPage();
-                    account.Show();
-
                     if(query.Role == "Admin")
                     {
                         Global.user = new Admin(query);
@@ -42,10 +44,13 @@ namespace Sunway_Cafe
                     {
                         Global.user = new SalesStaff(query);
                     }
-
-                    MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
+                    AccountPage account = new AccountPage();
+                    account.Show();
 
                     this.Hide();
+                    //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
+
+
                 }
                 else
                 {
