@@ -21,8 +21,6 @@ namespace Sunway_Cafe
             Global.user.ModifyDisplay(this);
         }
 
-        public string Role { get; set; }
-
         private void profileBtn_Click(object sender, EventArgs e)
         {
             sidePanel.Height = profileBtn.Height;

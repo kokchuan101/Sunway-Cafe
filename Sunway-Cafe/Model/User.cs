@@ -22,6 +22,11 @@ namespace Sunway_Cafe.Model
         { 
             
         }
+
+        public virtual void ModifyEditDisplay(EditProfilePage form)
+        {
+
+        }
     }
 
     public class Admin: User
@@ -37,6 +42,12 @@ namespace Sunway_Cafe.Model
             form.profileBtn.Show();
             form.stockBtn.Show();
         }
+
+        public override void ModifyEditDisplay(EditProfilePage form)
+        {
+            form.label6.Show();
+            form.role.Show();
+        }
     }
 
     public class SalesStaff: User
@@ -51,6 +62,12 @@ namespace Sunway_Cafe.Model
             form.manageBtn.Hide();
             form.profileBtn.Show();
             form.stockBtn.Show();
+        }
+
+        public override void ModifyEditDisplay(EditProfilePage form)
+        {
+            form.label6.Hide();
+            form.role.Hide();
         }
     }
 
