@@ -40,7 +40,7 @@ namespace Sunway_Cafe
             //EditProfilePage editProfile = new EditProfilePage();
             //editProfile.ShowDialog();
             //this.Refresh();
-            EditProfilePage editProfile = new EditProfilePage(); //create new isntance of form
+            EditProfilePage editProfile = new EditProfilePage(Global.user.Details.Id); //create new isntance of form
             editProfile.FormClosed += new FormClosedEventHandler(EditProfilePage_FormClosed); //add handler to catch when child form is closed
             editProfile.Show(); //show child
         }

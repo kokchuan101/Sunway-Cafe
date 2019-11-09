@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.content = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.logOutBtn = new MetroSet_UI.Controls.MetroSetButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -132,7 +132,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.welcomeLabel);
             this.panel4.Controls.Add(this.logOutBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(197, 0);
@@ -140,17 +140,17 @@
             this.panel4.Size = new System.Drawing.Size(603, 61);
             this.panel4.TabIndex = 14;
             // 
-            // label2
+            // welcomeLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(458, 39);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Welcome Back, Onee Chan";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.ForeColor = System.Drawing.Color.White;
+            this.welcomeLabel.Location = new System.Drawing.Point(18, 11);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(458, 39);
+            this.welcomeLabel.TabIndex = 8;
+            this.welcomeLabel.Text = "Welcome Back, Onee Chan";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logOutBtn
             // 
@@ -208,7 +208,7 @@
         public System.Windows.Forms.Button profileBtn;
         private System.Windows.Forms.Panel content;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label welcomeLabel;
         private MetroSet_UI.Controls.MetroSetButton logOutBtn;
         public System.Windows.Forms.Button manageBtn;
     }
