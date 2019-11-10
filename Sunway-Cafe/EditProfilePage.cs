@@ -25,20 +25,30 @@ namespace Sunway_Cafe
             } 
             else
             {
-                using (var db = new SunwayCafeContext())
+                try
                 {
-                    var query = db.Accounts.Where(acc => acc.Id == id).ToList();
+                    using (var db = new SunwayCafeContext())
+                    {
+                        var query = db.Accounts.Where(acc => acc.Id == id).ToList();
 
-                    username.Text = query[0].Username;
-                    password.Text = query[0].Password;
-                    role.Text = query[0].Role;
-                    familyName.Text = query[0].FamilyName;
-                    givenName.Text = query[0].GivenName;
-                    gender.Text = query[0].Gender;
-                    contact.Text = query[0].Contact.ToString();
-                    email.Text = query[0].Email;
-                    ID = id;
+                        username.Text = query[0].Username;
+                        password.Text = query[0].Password;
+                        role.Text = query[0].Role;
+                        familyName.Text = query[0].FamilyName;
+                        givenName.Text = query[0].GivenName;
+                        gender.Text = query[0].Gender;
+                        contact.Text = query[0].Contact.ToString();
+                        email.Text = query[0].Email;
+                        ID = id;
 
+                    }
+                }
+                catch (InvalidCastException ice)
+                {
+                    if (ice == null)
+                    {
+                        MessageBox.Show("Null Value Detected");
+                    }
                 }
                 Global.user.ModifyEditDisplay(this);
             }
@@ -62,47 +72,82 @@ namespace Sunway_Cafe
                 editProfile.Enabled = true;
                 if (editProfile.Text == "Add Staff")
                 {
-                    using (var db = new SunwayCafeContext())
+                    try
                     {
-                        var lst = db.Accounts.ToList();
-
-                        var newStaff = new Account()
+                        using (var db = new SunwayCafeContext())
                         {
-                            Username = username.Text,
-                            Password = password.Text,
-                            Role = role.Text,
-                            FamilyName = familyName.Text,
-                            GivenName = givenName.Text,
-                            Gender = gender.Text,
-                            Contact = int.Parse(contact.Text),
-                            Email = email.Text,
-                        };
+                            var lst = db.Accounts.ToList();
 
-                        db.Accounts.Add(newStaff);
-                        db.SaveChanges();
+                            var newStaff = new Account()
+                            {
+                                Username = username.Text,
+                                Password = password.Text,
+                                Role = role.Text,
+                                FamilyName = familyName.Text,
+                                GivenName = givenName.Text,
+                                Gender = gender.Text,
+                                Contact = int.Parse(contact.Text),
+                                Email = email.Text,
+                            };
+
+                            db.Accounts.Add(newStaff);
+                            db.SaveChanges();
+                        }
+                    }
+                    catch (InvalidCastException ice)
+                    {
+                        if (ice == null)
+                        {
+                            MessageBox.Show("Null Value Detected");
+                        }
                     }
                 }
                 else
                 {
-                    using (var db = new SunwayCafeContext())
+                    try
                     {
-                        var query = db.Accounts.Where(acc => acc.Id == ID).FirstOrDefault();
+                        using (var db = new SunwayCafeContext())
+                        {
+                            var query = db.Accounts.Where(acc => acc.Id == ID).FirstOrDefault();
 
-                        query.Username = username.Text;
-                        query.Password = password.Text;
-                        query.Role = role.Text;
-                        query.FamilyName = familyName.Text;
-                        query.GivenName = givenName.Text;
-                        query.Gender = gender.Text;
-                        query.Contact = int.Parse(contact.Text);
-                        query.Email = email.Text;
-                        db.SaveChanges();
+                            query.Username = username.Text;
+                            query.Password = password.Text;
+                            query.Role = role.Text;
+                            query.FamilyName = familyName.Text;
+                            query.GivenName = givenName.Text;
+                            query.Gender = gender.Text;
+                            query.Contact = int.Parse(contact.Text);
+                            query.Email = email.Text;
+                            db.SaveChanges();
+                        }
+                    }
+                    catch (InvalidCastException ice)
+                    {
+                        if (ice == null)
+                        {
+                            MessageBox.Show("Null Value Detected");
+                        }
                     }
                 }
             }
             Form profilePage = new ProfilePage();
             profilePage.Refresh();
             this.Close();
+        }
+
+        private void contact_Validating(object sender, CancelEventArgs e)
+        {
+            if (int.TryParse(contact.Text, out int value) == false)
+            {
+                editProfile.Enabled = false;
+                contact.Focus();
+                errorProvider1.SetError(contact, "Please enter a username");
+            }
+            else
+            {
+                editProfile.Enabled = true;
+                errorProvider1.SetError(contact, null);
+            }
         }
 
         //private void username_Validating(object sender, CancelEventArgs e)
@@ -119,75 +164,6 @@ namespace Sunway_Cafe
         //    }
         //}
 
-        //private void password_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(password.Text))
-        //    {
-        //        editProfile.Enabled = false;
-        //        password.Focus();
-        //        errorProvider2.SetError(password, "Please enter a password");
-        //    }
-        //    else
-        //    {
-        //        errorProvider2.SetError(password, null);
-        //    }
-        //}
-
-        //private void familyName_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(familyName.Text))
-        //    {
-        //        editProfile.Enabled = false;
-        //        familyName.Focus();
-        //        errorProvider3.SetError(familyName, "Please enter a Family Name");
-        //    }
-        //    else
-        //    {
-        //        errorProvider3.SetError(familyName, null);
-        //    }
-        //}
-
-        //private void givenName_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(givenName.Text))
-        //    {
-        //        editProfile.Enabled = false;
-        //        givenName.Focus();
-        //        errorProvider4.SetError(givenName, "Please enter a Given Name");
-        //    }
-        //    else
-        //    {
-        //        errorProvider4.SetError(givenName, null);
-        //    }
-        //}
-
-        //private void contact_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(contact.Text))
-        //    {
-        //        editProfile.Enabled = false;
-        //        contact.Focus();
-        //        errorProvider5.SetError(contact, "Please enter a contact");
-        //    }
-        //    else
-        //    {
-        //        errorProvider5.SetError(contact, null);
-        //    }
-        //}
-
-        //private void email_Validating(object sender, CancelEventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(email.Text))
-        //    {
-        //        editProfile.Enabled = false;
-        //        email.Focus();
-        //        errorProvider6.SetError(email, "Please enter a Email");
-        //    }
-        //    else
-        //    {
-        //        errorProvider6.SetError(email, null);
-        //    }
-        //}
 
     }
 }

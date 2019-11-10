@@ -176,7 +176,6 @@
             this.username.ThemeName = "MetroLite";
             this.username.UseSystemPasswordChar = false;
             this.username.WatermarkText = "";
-            //this.username.Validating += new System.ComponentModel.CancelEventHandler(this.username_Validating);
             // 
             // label7
             // 
@@ -216,7 +215,6 @@
             this.password.ThemeName = "MetroLite";
             this.password.UseSystemPasswordChar = true;
             this.password.WatermarkText = "";
-            //this.password.Validating += new System.ComponentModel.CancelEventHandler(this.password_Validating);
             // 
             // label8
             // 
@@ -319,7 +317,6 @@
             this.email.ThemeName = "MetroLite";
             this.email.UseSystemPasswordChar = false;
             this.email.WatermarkText = "";
-            //this.email.Validating += new System.ComponentModel.CancelEventHandler(this.email_Validating);
             // 
             // label5
             // 
@@ -359,7 +356,7 @@
             this.contact.ThemeName = "MetroLite";
             this.contact.UseSystemPasswordChar = false;
             this.contact.WatermarkText = "";
-            //this.contact.Validating += new System.ComponentModel.CancelEventHandler(this.contact_Validating);
+            this.contact.Validating += new System.ComponentModel.CancelEventHandler(this.contact_Validating);
             // 
             // label4
             // 
@@ -410,7 +407,6 @@
             this.givenName.ThemeName = "MetroLite";
             this.givenName.UseSystemPasswordChar = false;
             this.givenName.WatermarkText = "";
-            //this.givenName.Validating += new System.ComponentModel.CancelEventHandler(this.givenName_Validating);
             // 
             // label1
             // 
@@ -450,7 +446,6 @@
             this.familyName.ThemeName = "MetroLite";
             this.familyName.UseSystemPasswordChar = false;
             this.familyName.WatermarkText = "";
-            //this.familyName.Validating += new System.ComponentModel.CancelEventHandler(this.familyName_Validating);
             // 
             // label3
             // 
