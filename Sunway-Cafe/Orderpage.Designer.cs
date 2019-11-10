@@ -33,12 +33,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Large_img = new System.Windows.Forms.ImageList(this.components);
             this.AddOrder = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pay = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +54,6 @@
             this.label1.Size = new System.Drawing.Size(99, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Large_img
             // 
@@ -66,7 +69,7 @@
             // 
             // AddOrder
             // 
-            this.AddOrder.Location = new System.Drawing.Point(48, 461);
+            this.AddOrder.Location = new System.Drawing.Point(33, 533);
             this.AddOrder.Name = "AddOrder";
             this.AddOrder.Size = new System.Drawing.Size(109, 23);
             this.AddOrder.TabIndex = 2;
@@ -74,30 +77,9 @@
             this.AddOrder.UseVisualStyleBackColor = true;
             this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.Name_col});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(665, 97);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(175, 290);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // ID
-            // 
-            this.ID.Text = "ID";
-            // 
-            // Name_col
-            // 
-            this.Name_col.Text = "Name";
-            // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(665, 448);
+            this.Pay.Location = new System.Drawing.Point(959, 506);
             this.Pay.Name = "Pay";
             this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
@@ -106,7 +88,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(507, 461);
+            this.Delete.Location = new System.Drawing.Point(599, 533);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(109, 23);
             this.Delete.TabIndex = 5;
@@ -115,23 +97,64 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(48, 97);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 336);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 415);
             this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Product,
+            this.Column2,
+            this.Quantity,
+            this.Column4,
+            this.Price});
+            this.dataGridView1.Location = new System.Drawing.Point(765, 97);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(543, 390);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Name";
+            this.Product.Name = "Product";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
             // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Pay);
-            this.Controls.Add(this.listView2);
             this.Controls.Add(this.AddOrder);
             this.Controls.Add(this.label1);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(873, 531);
+            this.Size = new System.Drawing.Size(1414, 606);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,11 +165,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList Large_img;
         private System.Windows.Forms.Button AddOrder;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button Pay;
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader Name_col;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

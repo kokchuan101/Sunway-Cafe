@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.IO;
+
 
 namespace Sunway_Cafe
 {
     public partial class OrderPage : UserControl
     {
-       
+
+        DataTable dataTable = new DataTable();
         private static OrderPage _instance;
+        int i = 0;
 
         public static OrderPage Instance
         {
@@ -27,43 +31,60 @@ namespace Sunway_Cafe
         }
         public OrderPage()
         {
-            InitializeComponent();
- //           listView1.FullRowSelect = true;
+            InitializeComponent();          
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                flowLayoutPanel1.Controls.Remove(control);
+                control.Dispose();
+            }
+            flowLayoutPanel1.Controls.Clear();
+
             using (var db = new SunwayCafeContext())
             {
                 var query = db.ItemTestss.ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
 
                 foreach (var itemList in query)
                 {
-
-                    ListViewItem item = new ListViewItem(itemList.ID.ToString());
-                    item.SubItems.Add(itemList.Name);
-
- //                   listView1.Items.Add(item);
-                  
+                    order[i] = new OrderOptions();
+                    order[i].Name_details = itemList.Name;
+                    order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    order[i].WasClicked += OrderGrid_WasClicked;
+                    order[i].Price = itemList.Price;
+                    order[i].QTY = itemList.Quantity;
+                    flowLayoutPanel1.Controls.Add(order[i]);
+                    i++;
                 }
-
+                i = 0;
             }
 
-
-
         }
-        private void label1_Click(object sender, EventArgs e)
+
+        private void OrderGrid_WasClicked(object sender, EventArgs e)
         {
-
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                if (c is OrderOptions)
+                {
+                    ((OrderOptions)c).IsSelected = false;
+                }
+            }
         }
+
+        Image ConvertBinaryToImage(byte[] image)
+        {
+            using (MemoryStream ms = new MemoryStream(image))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+   
 
         private void AddOrder_Click(object sender, EventArgs e)
         {
- //           MoveToOrder(listView1, listView2);
+            dataGridView1.Rows.Add(OrderOptions.selectItemName,"Add",1,"Deduct",OrderOptions.selectedItemPrice);
         }
-
-        private static void MoveToOrder(ListView listView1, ListView listView2)
-        {
-            foreach (ListViewItem item in listView1.SelectedItems)
-            {
-                listView2.Items.Add((ListViewItem)item.Clone());
-            }
-        }
+      
     }
 }

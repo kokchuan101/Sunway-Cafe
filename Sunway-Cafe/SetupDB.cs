@@ -25,6 +25,8 @@ namespace Sunway_Cafe
         public DbSet<OrderedItem> OrderedItems { get; set; }
         public DbSet<ItemTests> ItemTestss { get; set; }
 
+ //       public DbSet<OrderTests> OrderTests { get; set; }
+
     }
 
     public class SunwayCafeContextInitializer : SqliteCreateDatabaseIfNotExists<SunwayCafeContext>

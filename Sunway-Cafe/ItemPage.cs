@@ -45,6 +45,7 @@ namespace Sunway_Cafe
       
         private void load_Click(object sender, EventArgs e)
         {
+            OrderOptions.selectItemName = null;
             foreach (Control control in flowLayoutPanel1.Controls)
             {
                 flowLayoutPanel1.Controls.Remove(control);
@@ -62,6 +63,8 @@ namespace Sunway_Cafe
                     order[i] = new OrderOptions();
                     order[i].Name_details = itemList.Name;                
                     order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    order[i].Price = itemList.Price;
+                    order[i].QTY = itemList.Quantity;
                     order[i].WasClicked += OrderGrid_WasClicked;
                     flowLayoutPanel1.Controls.Add(order[i]);     
                     i++;

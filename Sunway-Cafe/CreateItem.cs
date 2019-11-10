@@ -18,8 +18,7 @@ namespace Sunway_Cafe
 
         public CreateItem()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
 
         byte[] ConvertImageToBinary(Image img)
@@ -35,7 +34,9 @@ namespace Sunway_Cafe
         {                     
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
-                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = ConvertImageToBinary(pictureBox.Image) };
+                int priceVal = int.Parse(priceBox.Text.Trim());
+                int quantityVal = int.Parse(quantityBox.Text.Trim());
+                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
                 db.ItemTestss.Add(item);
                 await db.SaveChangesAsync();
                 MessageBox.Show("Item Created");

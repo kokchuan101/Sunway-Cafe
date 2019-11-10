@@ -23,6 +23,8 @@ namespace Sunway_Cafe
 
         public static string selectItemName;
         public static Image selectedItemImage;
+        public static int selectedItemPrice;
+        public static int selectedItemQuantity;
 
         private string nameDetails;
         
@@ -45,6 +47,22 @@ namespace Sunway_Cafe
         {
             get { return _image; }
             set { _image = value; pictureBox.Image = value; pictureBox.SizeMode = PictureBoxSizeMode.Zoom; }
+        }
+
+        private int _qty;
+
+        public int QTY
+        {
+            get { return _qty; }
+            set { _qty = value; quantity.Text = value.ToString(); }
+        }
+
+        private int _price;
+
+        public int Price
+        {
+            get { return _price; }
+            set { _price = value; price.Text = value.ToString(); }
         }
 
         byte [] ConvertImageToBinary(Image img)
@@ -85,6 +103,8 @@ namespace Sunway_Cafe
             IsSelected = true;
             selectItemName = this.Name_details;
             selectedItemImage = this.displayImage;
+            selectedItemPrice = this.Price;
+            selectedItemQuantity = this.QTY;
            
         }
 

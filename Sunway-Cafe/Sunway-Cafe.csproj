@@ -110,6 +110,7 @@
     <Compile Include="Model\ItemTests.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderedItem.cs" />
+    <Compile Include="Model\OrderTests.cs" />
     <Compile Include="Model\Stock.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="OrderOptions.cs">
