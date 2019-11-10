@@ -36,7 +36,7 @@
             // nameDet
             // 
             this.nameDet.AutoSize = true;
-            this.nameDet.Location = new System.Drawing.Point(70, 163);
+            this.nameDet.Location = new System.Drawing.Point(67, 172);
             this.nameDet.Name = "nameDet";
             this.nameDet.Size = new System.Drawing.Size(35, 13);
             this.nameDet.TabIndex = 1;

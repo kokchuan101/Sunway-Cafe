@@ -94,49 +94,63 @@ namespace Sunway_Cafe
 
         private void delete_Click(object sender, EventArgs e)
         {
-            using (var db = new SunwayCafeContext())
+            if (OrderOptions.selectItemName !=null)
             {
-                var query = db.ItemTestss.ToList();
-                OrderOptions[] order = new OrderOptions[query.Count];
-                ItemTests delItem;
-
-
-
-                foreach (Control c in flowLayoutPanel1.Controls)
+                using (var db = new SunwayCafeContext())
                 {
-                    if (((OrderOptions)c).IsSelected == true)
+                    var query = db.ItemTestss.ToList();
+                    OrderOptions[] order = new OrderOptions[query.Count];
+                    ItemTests delItem;
+
+
+
+                    foreach (Control c in flowLayoutPanel1.Controls)
+                    {
+                        if (((OrderOptions)c).IsSelected == true)
+                        {
+                            foreach (var itemList in query)
+                            {
+                                foundControl = c;
+                                break;
+                            }
+                        }
+                    }
+
+
+                    if (foundControl != null)
                     {
                         foreach (var itemList in query)
                         {
-                            foundControl = c;
-                            break;
-                        }
-                    }
-                }
-
-
-                if (foundControl != null)
-                {
-                    foreach (var itemList in query)
-                    {
-                        if (OrderOptions.selectItemName == itemList.Name)
-                        {
-                            MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
-                            delItem = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
-                            db.ItemTestss.Remove(delItem);
-                            db.SaveChanges();                           
+                            if (OrderOptions.selectItemName == itemList.Name)
+                            {
+                                MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
+                                delItem = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
+                                db.ItemTestss.Remove(delItem);
+                                db.SaveChanges();
+                            }
                         }
                     }
                 }
        
+            }
+            else
+            {
+                MessageBox.Show("Please select an item");
             }
         }
 
 
         private void update_Click(object sender, EventArgs e)
         {
-            UpdateItem update = new UpdateItem();
-            update.Show();
+            if (OrderOptions.selectItemName != null)
+            {
+                UpdateItem update = new UpdateItem();
+                update.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select an item");
+            }
         }
     
     }
