@@ -18,19 +18,28 @@ namespace Sunway_Cafe
         public ProfilePage()
         {
             InitializeComponent();
-            using (var db = new SunwayCafeContext())
+            try
             {
-                var query = db.Accounts.Where(acc => acc.Id == 1).Select(acc => new { acc.GivenName, acc.FamilyName, acc.Gender, acc.Contact, acc.Email, acc.Role }).ToList();
-             
-                position.Text = query[0].Role;
-                familyName.Text = query[0].FamilyName;
-                givenName.Text = query[0].GivenName;
-                gender.Text = query[0].Gender;
-                contact.Text = query[0].Contact.ToString();
-                email.Text = query[0].Email;   
-           
-            }
+                using (var db = new SunwayCafeContext())
+                {
+                    var query = db.Accounts.Where(acc => acc.Id == 1).Select(acc => new { acc.GivenName, acc.FamilyName, acc.Gender, acc.Contact, acc.Email, acc.Role }).ToList();
 
+                    position.Text = query[0].Role;
+                    familyName.Text = query[0].FamilyName;
+                    givenName.Text = query[0].GivenName;
+                    gender.Text = query[0].Gender;
+                    contact.Text = query[0].Contact.ToString();
+                    email.Text = query[0].Email;
+
+                }
+            }
+            catch (InvalidCastException ice)
+            {
+                if (ice == null)
+                {
+                    MessageBox.Show("Null Value Detected");
+                }
+            }
         }
 
        

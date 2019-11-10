@@ -17,11 +17,20 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             password.UseSystemPasswordChar = true;
-            using (var db = new SunwayCafeContext())
+            try
             {
-                db.Accounts.ToList();
+                using (var db = new SunwayCafeContext())
+                {
+                    db.Accounts.ToList();
+                }
             }
-
+            catch (InvalidCastException ice)
+            {
+                if (ice == null)
+                {
+                    MessageBox.Show("Null Value Detected");
+                }
+            }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -31,35 +40,46 @@ namespace Sunway_Cafe
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            using (var db = new SunwayCafeContext())
+            try
             {
-                var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
-                if(query != null)
+                using (var db = new SunwayCafeContext())
                 {
-                    if(query.Role == "Admin")
+                    var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
+                    if (query != null)
                     {
-                        Global.user = new Admin(query);
+                        if (query.Role == "Admin")
+                        {
+                            Global.user = new Admin(query);
+                        }
+                        else
+                        {
+                            Global.user = new SalesStaff(query);
+                        }
+                        AccountPage account = new AccountPage();
+                        account.Show();
+
+                        this.Hide();
+                        //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
+
+
                     }
                     else
                     {
-                        Global.user = new SalesStaff(query);
+                        //Form pd = new PromptDialog();
+                        //pd.ShowDialog();
+                        MessageBox.Show("Wrong");
+
                     }
-                    AccountPage account = new AccountPage();
-                    account.Show();
-
-                    this.Hide();
-                    //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
-
-
-                }
-                else
-                {
-                    //Form pd = new PromptDialog();
-                    //pd.ShowDialog();
-                    MessageBox.Show("Wrong");
-                    
                 }
             }
+            catch (InvalidCastException ice)
+            {
+                if (ice == null)
+                {
+                    MessageBox.Show("Null Value Detected");
+                }
+            }
+            
             
         }
     }
