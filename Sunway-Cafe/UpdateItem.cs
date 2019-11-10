@@ -14,6 +14,15 @@ namespace Sunway_Cafe
 {
     public partial class UpdateItem : Form
     {
+
+        private Image _image;
+        public Image displayImage
+        {
+            get { return _image; }
+            set { _image = value; pictureBox.Image = value; pictureBox.SizeMode = PictureBoxSizeMode.Zoom; }
+        }
+
+
         public UpdateItem()
         {
             InitializeComponent();
@@ -26,8 +35,8 @@ namespace Sunway_Cafe
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();              
             }
         }
 
@@ -39,7 +48,10 @@ namespace Sunway_Cafe
                 {
                     var item = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
                     item.Name = textBox1.Text.Trim();
-                    item.ImageURL = ConvertImageToBinary(pictureBox.Image);
+                    if (pictureBox.Image != OrderOptions.selectedItemImage)
+                    {
+                        item.ImageURL = ConvertImageToBinary(pictureBox.Image);
+                    }
                     await db.SaveChangesAsync();
                     MessageBox.Show("Item Updated");
                 }
