@@ -18,6 +18,9 @@ namespace Sunway_Cafe
        
 
         int i = 0;
+        public static string selectedName;
+        
+
         public ItemPage()
         {
             InitializeComponent();
@@ -87,21 +90,54 @@ namespace Sunway_Cafe
             }
         }
 
+        Control foundControl = null;
+
         private void delete_Click(object sender, EventArgs e)
         {
             using (var db = new SunwayCafeContext())
             {
+                var query = db.ItemTestss.ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
+                ItemTests delItem;
 
-                ItemTests itemDelete = new ItemTests();
-                db.ItemTestss.Attach(itemDelete);
-                db.ItemTestss.Remove(itemDelete);
-                db.SaveChanges();
+
+
+                foreach (Control c in flowLayoutPanel1.Controls)
+                {
+                    if (((OrderOptions)c).IsSelected == true)
+                    {
+                        foreach (var itemList in query)
+                        {
+                            foundControl = c;
+                            break;
+                        }
+                    }
+                }
+
+
+                if (foundControl != null)
+                {
+                    foreach (var itemList in query)
+                    {
+                        if (OrderOptions.selectItemName == itemList.Name)
+                        {
+                            MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
+                            delItem = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
+                            db.ItemTestss.Remove(delItem);
+                            db.SaveChanges();                           
+                        }
+                    }
+                }
+       
             }
         }
 
+
         private void update_Click(object sender, EventArgs e)
         {
-
+            UpdateItem update = new UpdateItem();
+            update.Show();
         }
+    
     }
 }

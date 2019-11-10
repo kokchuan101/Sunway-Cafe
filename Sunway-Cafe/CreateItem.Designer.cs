@@ -51,14 +51,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(151, 20);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 20);
+            this.textBox2.Size = new System.Drawing.Size(223, 20);
             this.textBox2.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(154, 452);
+            this.button1.Location = new System.Drawing.Point(151, 440);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.Size = new System.Drawing.Size(132, 39);
             this.button1.TabIndex = 6;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,7 +75,7 @@
             // 
             // open
             // 
-            this.open.Location = new System.Drawing.Point(154, 388);
+            this.open.Location = new System.Drawing.Point(151, 361);
             this.open.Name = "open";
             this.open.Size = new System.Drawing.Size(75, 23);
             this.open.TabIndex = 8;
@@ -97,7 +97,7 @@
             this.pictureBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pictureBox.Location = new System.Drawing.Point(151, 92);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(309, 272);
+            this.pictureBox.Size = new System.Drawing.Size(354, 251);
             this.pictureBox.TabIndex = 10;
             this.pictureBox.TabStop = false;
             // 

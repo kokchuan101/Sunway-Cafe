@@ -14,16 +14,18 @@ namespace Sunway_Cafe
 {
     public partial class OrderOptions : UserControl
     {
-        
+        public event EventHandler<EventArgs> WasClicked;
+
         public OrderOptions()
         {
             InitializeComponent();
         }
 
-        private string nameDetails;
-        public event EventHandler<EventArgs> WasClicked;
+        public static string selectItemName;
+        public static Image selectedItemImage;
 
-     
+        private string nameDetails;
+        
         public string Name_details
         {
             get { return nameDetails; }
@@ -81,6 +83,9 @@ namespace Sunway_Cafe
                 WasClicked(this, EventArgs.Empty);
             }
             IsSelected = true;
+            selectItemName = this.Name_details;
+            selectedItemImage = this.displayImage;
+           
         }
 
         private bool _isSelected;

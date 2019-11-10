@@ -12,14 +12,14 @@ using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
-    public partial class CreateItem : Form
+    public partial class UpdateItem : Form
     {
-
-
-        public CreateItem()
+        public UpdateItem()
         {
             InitializeComponent();
-            
+            textBox1.Text = OrderOptions.selectItemName;
+            pictureBox.Image = OrderOptions.selectedItemImage;
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         byte[] ConvertImageToBinary(Image img)
@@ -31,18 +31,22 @@ namespace Sunway_Cafe
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
-        {                     
+        private async void update_Click(object sender, EventArgs e)
+        {
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
-                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = ConvertImageToBinary(pictureBox.Image) };
-                db.ItemTestss.Add(item);
-                await db.SaveChangesAsync();
-                MessageBox.Show("Item Created");
-            }
+                if (OrderOptions.selectItemName != null)
+                {
+                    var item = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
+                    item.Name = textBox1.Text.Trim();
+                    item.ImageURL = ConvertImageToBinary(pictureBox.Image);
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Item Updated");
+                }
+            }     
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void open_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
             {
