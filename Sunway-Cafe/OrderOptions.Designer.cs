@@ -28,56 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.nameDet = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // nameDet
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 204);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.nameDet.AutoSize = true;
+            this.nameDet.Location = new System.Drawing.Point(70, 163);
+            this.nameDet.Name = "nameDet";
+            this.nameDet.Size = new System.Drawing.Size(35, 13);
+            this.nameDet.TabIndex = 1;
+            this.nameDet.Text = "label1";
             // 
-            // label_name
+            // pictureBox
             // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(70, 182);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(35, 13);
-            this.label_name.TabIndex = 1;
-            this.label_name.Text = "label1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(46, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 102);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(143, 146);
+            this.pictureBox.TabIndex = 2;
+            this.pictureBox.TabStop = false;
             // 
             // OrderOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label_name);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.Peru;
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.nameDet);
             this.Name = "OrderOptions";
             this.Size = new System.Drawing.Size(184, 204);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.OrderOptions_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label_name;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label nameDet;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

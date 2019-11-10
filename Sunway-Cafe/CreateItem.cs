@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,23 +15,45 @@ namespace Sunway_Cafe
     public partial class CreateItem : Form
     {
 
-        ItemTests test = new ItemTests();
+
         public CreateItem()
         {
             InitializeComponent();
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {           
-            test.Name = textBox2.Text.Trim();
-            using (var db = new SunwayCafeContext())
+        byte[] ConvertImageToBinary(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
             {
-                db.ItemTestss.Add(test);
-                db.SaveChanges();
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
             }
-            MessageBox.Show("Item Created");
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {           
            
+            using (SunwayCafeContext db = new SunwayCafeContext())
+            {
+                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = ConvertImageToBinary(pictureBox.Image) };
+                db.ItemTestss.Add(item);
+                await db.SaveChangesAsync();
+                MessageBox.Show("Item Created");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    filename.Text = ofd.FileName;
+                    pictureBox.Image = Image.FromFile(ofd.FileName);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
         }
     }
 }

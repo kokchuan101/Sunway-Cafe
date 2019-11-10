@@ -38,7 +38,7 @@
             // 
             // create
             // 
-            this.create.Location = new System.Drawing.Point(133, 150);
+            this.create.Location = new System.Drawing.Point(127, 103);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(75, 23);
             this.create.TabIndex = 1;
@@ -48,7 +48,7 @@
             // 
             // load
             // 
-            this.load.Location = new System.Drawing.Point(133, 192);
+            this.load.Location = new System.Drawing.Point(127, 145);
             this.load.Name = "load";
             this.load.Size = new System.Drawing.Size(75, 23);
             this.load.TabIndex = 2;
@@ -58,16 +58,17 @@
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(133, 235);
+            this.update.Location = new System.Drawing.Point(127, 188);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(75, 23);
             this.update.TabIndex = 3;
             this.update.Text = "Update";
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(133, 279);
+            this.delete.Location = new System.Drawing.Point(127, 232);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(75, 23);
             this.delete.TabIndex = 4;
@@ -87,9 +88,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(244, 150);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 103);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(618, 371);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(785, 459);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // ItemPage
@@ -103,7 +105,7 @@
             this.Controls.Add(this.load);
             this.Controls.Add(this.create);
             this.Name = "ItemPage";
-            this.Size = new System.Drawing.Size(929, 575);
+            this.Size = new System.Drawing.Size(1168, 601);
             this.ResumeLayout(false);
             this.PerformLayout();
 

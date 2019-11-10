@@ -39,8 +39,6 @@
             this.Pay = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.orderOptions1 = new Sunway_Cafe.OrderOptions();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -117,18 +115,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.orderOptions1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(48, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 336);
             this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // orderOptions1
-            // 
-            this.orderOptions1.Location = new System.Drawing.Point(3, 3);
-            this.orderOptions1.Name = "orderOptions1";
-            this.orderOptions1.Size = new System.Drawing.Size(184, 157);
-            this.orderOptions1.TabIndex = 0;
             // 
             // OrderPage
             // 
@@ -142,7 +132,6 @@
             this.Controls.Add(this.label1);
             this.Name = "OrderPage";
             this.Size = new System.Drawing.Size(873, 531);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +148,5 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Name_col;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private OrderOptions orderOptions1;
     }
 }

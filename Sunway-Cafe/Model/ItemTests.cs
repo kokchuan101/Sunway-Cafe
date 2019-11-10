@@ -15,7 +15,7 @@ namespace Sunway_Cafe.Model
 
         public string Name { get; set; }
 
-
+        public byte[] ImageURL { get; set; }
 
     }
 }
