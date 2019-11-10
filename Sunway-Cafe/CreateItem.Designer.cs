@@ -94,7 +94,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox.Location = new System.Drawing.Point(151, 92);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(354, 251);
