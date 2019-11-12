@@ -32,6 +32,7 @@
             this.Order = new System.Windows.Forms.Button();
             this.Manage = new System.Windows.Forms.Button();
             this.labelHome = new System.Windows.Forms.Label();
+            this.Item = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Order
@@ -68,14 +69,27 @@
             this.labelHome.TabIndex = 3;
             this.labelHome.Text = "Home";
             // 
-            // UserControl1
+            // Item
+            // 
+            this.Item.Image = ((System.Drawing.Image)(resources.GetObject("Item.Image")));
+            this.Item.Location = new System.Drawing.Point(430, 116);
+            this.Item.Name = "Item";
+            this.Item.Size = new System.Drawing.Size(134, 122);
+            this.Item.TabIndex = 4;
+            this.Item.Text = "Item";
+            this.Item.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Item.UseVisualStyleBackColor = true;
+            this.Item.Click += new System.EventHandler(this.Item_Click);
+            // 
+            // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Item);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.Manage);
             this.Controls.Add(this.Order);
-            this.Name = "UserControl1";
+            this.Name = "HomePage";
             this.Size = new System.Drawing.Size(920, 568);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +101,6 @@
         private System.Windows.Forms.Button Order;
         private System.Windows.Forms.Button Manage;
         private System.Windows.Forms.Label labelHome;
+        private System.Windows.Forms.Button Item;
     }
 }

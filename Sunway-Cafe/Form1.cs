@@ -75,6 +75,18 @@ namespace Sunway_Cafe
             }
         }
 
+        public Button Item
+        {
+            get
+            {
+                return item;
+            }
+            set
+            {
+                item = value;
+            }
+        }
+
 
 
         public Form1()
@@ -117,7 +129,7 @@ namespace Sunway_Cafe
         private void item_Click(object sender, EventArgs e)
         {
             //item_Page();
-            NavPage(ItemPage.Instance, item);
+            NavPage(ItemPage.Instance, Item);
 
         }
 
@@ -193,15 +205,7 @@ namespace Sunway_Cafe
             MainPanel.Controls.Add(navPage);
             navPage.Show();
         }
-
-        public void nav(Form form, Panel MainPanel)
-        {
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(form);
-            form.Show();
-        }
-
-        
+       
     }
 
    

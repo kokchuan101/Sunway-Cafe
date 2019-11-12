@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPage));
             this.label1 = new System.Windows.Forms.Label();
-            this.Large_img = new System.Windows.Forms.ImageList(this.components);
             this.AddOrder = new System.Windows.Forms.Button();
             this.Pay = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,23 +53,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order";
             // 
-            // Large_img
-            // 
-            this.Large_img.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Large_img.ImageStream")));
-            this.Large_img.TransparentColor = System.Drawing.Color.Transparent;
-            this.Large_img.Images.SetKeyName(0, "choices (2).png");
-            this.Large_img.Images.SetKeyName(1, "house (1).png");
-            this.Large_img.Images.SetKeyName(2, "team (2).png");
-            this.Large_img.Images.SetKeyName(3, "choices (2).png");
-            this.Large_img.Images.SetKeyName(4, "house (1).png");
-            this.Large_img.Images.SetKeyName(5, "team (2).png");
-            this.Large_img.Images.SetKeyName(6, "home.png");
-            // 
             // AddOrder
             // 
             this.AddOrder.Location = new System.Drawing.Point(33, 533);
             this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(109, 23);
+            this.AddOrder.Size = new System.Drawing.Size(174, 50);
             this.AddOrder.TabIndex = 2;
             this.AddOrder.Text = "PlaceOrder";
             this.AddOrder.UseVisualStyleBackColor = true;
@@ -79,21 +65,12 @@
             // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(959, 506);
+            this.Pay.Location = new System.Drawing.Point(959, 533);
             this.Pay.Name = "Pay";
             this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
             this.Pay.Text = "Pay";
             this.Pay.UseVisualStyleBackColor = true;
-            // 
-            // Delete
-            // 
-            this.Delete.Location = new System.Drawing.Point(599, 533);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(109, 23);
-            this.Delete.TabIndex = 5;
-            this.Delete.Text = "Delete Item";
-            this.Delete.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -108,47 +85,68 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
-            this.Column2,
+            this.Add,
             this.Quantity,
-            this.Column4,
+            this.Deduct,
             this.Price});
             this.dataGridView1.Location = new System.Drawing.Point(765, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 390);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Product
             // 
             this.Product.HeaderText = "Name";
             this.Product.Name = "Product";
             // 
-            // Column2
+            // Add
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
+            this.Add.HeaderText = "";
+            this.Add.Name = "Add";
             // 
             // Quantity
             // 
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             // 
-            // Column4
+            // Deduct
             // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
+            this.Deduct.HeaderText = "";
+            this.Deduct.Name = "Deduct";
             // 
             // Price
             // 
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(817, 499);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 24);
+            this.lbltotal.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(755, 499);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Total:";
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.Delete);
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.AddOrder);
             this.Controls.Add(this.label1);
@@ -163,16 +161,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ImageList Large_img;
         private System.Windows.Forms.Button AddOrder;
         private System.Windows.Forms.Button Pay;
-        private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn Deduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Label label2;
     }
 }

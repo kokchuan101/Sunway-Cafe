@@ -31,7 +31,7 @@ namespace Sunway_Cafe
         }
         public OrderPage()
         {
-            InitializeComponent();          
+            InitializeComponent();
             foreach (Control control in flowLayoutPanel1.Controls)
             {
                 flowLayoutPanel1.Controls.Remove(control);
@@ -79,12 +79,55 @@ namespace Sunway_Cafe
             }
         }
 
-   
+        private void Total()
+        {
+            var total = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {              
+                total += Convert.ToInt32(row.Cells["Price"].Value) * Convert.ToInt32(row.Cells["Quantity"].Value);              
+            }
+            lbltotal.Text = total.ToString();
+        }
+
+
+
+
 
         private void AddOrder_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add(OrderOptions.selectItemName,"Add",1,"Deduct",OrderOptions.selectedItemPrice);
+            dataGridView1.Rows.Add(OrderOptions.selectItemName, "Add", 1, "Deduct", OrderOptions.selectedItemPrice);
+            Total();
         }
-      
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = dataGridView1.CurrentRow;
+            var selectedname = row.Cells[dataGridView1.Columns["Product"].Index];
+            var quantity = (Convert.ToInt32(row.Cells[dataGridView1.Columns["Quantity"].Index].Value));
+
+            if (row.Cells["Product"].Value != null)
+            {
+                if (e.ColumnIndex == dataGridView1.Columns["Add"].Index)
+                {
+                   
+                    quantity++;
+                    row.Cells["Quantity"].Value = quantity;
+                    Total();
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Deduct"].Index)
+                {                   
+                    if (quantity > 0)
+                    {
+                        quantity--;
+                        row.Cells["Quantity"].Value = quantity;
+                        Total();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quantity is already at 0");
+                    }
+                }
+            }
+        }
     }
 }
