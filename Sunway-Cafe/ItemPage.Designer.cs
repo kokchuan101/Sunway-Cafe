@@ -88,6 +88,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 103);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";

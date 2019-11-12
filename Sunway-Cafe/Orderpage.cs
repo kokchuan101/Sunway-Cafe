@@ -89,10 +89,6 @@ namespace Sunway_Cafe
             lbltotal.Text = total.ToString();
         }
 
-
-
-
-
         private void AddOrder_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Add(OrderOptions.selectItemName, "Add", 1, "Deduct", OrderOptions.selectedItemPrice);
@@ -102,14 +98,14 @@ namespace Sunway_Cafe
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = dataGridView1.CurrentRow;
-            var selectedname = row.Cells[dataGridView1.Columns["Product"].Index];
             var quantity = (Convert.ToInt32(row.Cells[dataGridView1.Columns["Quantity"].Index].Value));
+            var limit = 0;
+           
 
             if (row.Cells["Product"].Value != null)
             {
                 if (e.ColumnIndex == dataGridView1.Columns["Add"].Index)
-                {
-                   
+                {                
                     quantity++;
                     row.Cells["Quantity"].Value = quantity;
                     Total();

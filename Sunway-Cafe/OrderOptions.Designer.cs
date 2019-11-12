@@ -28,23 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nameDet = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.price = new System.Windows.Forms.Label();
             this.quantity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.nameDet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nameDet
-            // 
-            this.nameDet.AutoSize = true;
-            this.nameDet.Location = new System.Drawing.Point(71, 174);
-            this.nameDet.Name = "nameDet";
-            this.nameDet.Size = new System.Drawing.Size(35, 13);
-            this.nameDet.TabIndex = 1;
-            this.nameDet.Text = "label1";
             // 
             // pictureBox
             // 
@@ -90,17 +81,27 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Quantity:";
             // 
+            // nameDet
+            // 
+            this.nameDet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameDet.Location = new System.Drawing.Point(6, 174);
+            this.nameDet.Name = "nameDet";
+            this.nameDet.Size = new System.Drawing.Size(166, 18);
+            this.nameDet.TabIndex = 8;
+            this.nameDet.Text = "label3";
+            this.nameDet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // OrderOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
+            this.Controls.Add(this.nameDet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quantity);
             this.Controls.Add(this.price);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.nameDet);
             this.Name = "OrderOptions";
             this.Size = new System.Drawing.Size(180, 241);
             this.Load += new System.EventHandler(this.OrderOptions_Load);
@@ -111,11 +112,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label nameDet;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label price;
         private System.Windows.Forms.Label quantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nameDet;
     }
 }
