@@ -40,6 +40,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ReloadOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,10 +141,21 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Total:";
             // 
+            // ReloadOrder
+            // 
+            this.ReloadOrder.Location = new System.Drawing.Point(270, 533);
+            this.ReloadOrder.Name = "ReloadOrder";
+            this.ReloadOrder.Size = new System.Drawing.Size(174, 50);
+            this.ReloadOrder.TabIndex = 10;
+            this.ReloadOrder.Text = "Reload";
+            this.ReloadOrder.UseVisualStyleBackColor = true;
+            this.ReloadOrder.Click += new System.EventHandler(this.ReloadOrder_Click);
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ReloadOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dataGridView1);
@@ -173,5 +185,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ReloadOrder;
     }
 }

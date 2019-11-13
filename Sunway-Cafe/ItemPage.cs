@@ -61,8 +61,11 @@ namespace Sunway_Cafe
                 foreach (var itemList in query)
                 {
                     order[i] = new OrderOptions();
-                    order[i].Name_details = itemList.Name;                
-                    order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    order[i].Name_details = itemList.Name;
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
                     order[i].Price = itemList.Price;
                     order[i].QTY = itemList.Quantity;
                     order[i].WasClicked += OrderGrid_WasClicked;
@@ -89,7 +92,7 @@ namespace Sunway_Cafe
         {
             using (MemoryStream ms = new MemoryStream(image))
             {
-                return Image.FromStream(ms);
+               return Image.FromStream(ms);                
             }
         }
 
