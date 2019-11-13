@@ -65,11 +65,13 @@ namespace Sunway_Cafe
                     }
                     else
                     {
-                        //Form pd = new PromptDialog();
-                        //pd.ShowDialog();
-                        MessageBox.Show("Wrong");
-
+                        Global.user = new SalesStaff(query);
                     }
+
+                    AccountPage account = new AccountPage();
+                    account.Show();
+                    this.Hide();
+                    //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
                 }
             }
             catch (InvalidCastException ice)

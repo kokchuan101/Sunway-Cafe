@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MetroSet_UI.Controls;
+using Sunway_Cafe.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,10 +16,21 @@ namespace Sunway_Cafe
 {
     public partial class EditProfilePage : Form
     {
+
+        private Dictionary<string, MetroSetTextBox> textBoxs;
         public static int ID;
+        
         public EditProfilePage(int id)
         {
             InitializeComponent();
+            //textBoxs = new Dictionary<string, MetroSetTextBox>()
+            //{
+            //    { "FamilyName", familyName},
+            //    { "GivenName", givenName},
+            //    { "Gender", gender},
+            //    { "Contact", contact},
+            //    { "Email", email},
+            //};
             if(id == 0)
             {
                 editProfile.Text = "Add Staff";
@@ -53,6 +67,7 @@ namespace Sunway_Cafe
                 Global.user.ModifyEditDisplay(this);
             }
 
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -62,6 +77,30 @@ namespace Sunway_Cafe
 
         private void editProfile_Click(object sender, EventArgs e)
         {
+            
+            //var acc = new Account()
+            //{
+            //    FamilyName = familyName.Text,
+            //    GivenName = givenName.Text,
+            //    Gender = gender.Text,
+            //    Contact = int.Parse(contact.Text),
+            //    Email = email.Text
+            //};
+
+            //List<List<string>> err;
+            //if (Global.IsValid<Account>(acc, out err))
+            //{
+            //    MessageBox.Show("No Prob");
+            //}
+            //else
+            //{
+            //    foreach (var er in err)
+            //    {
+            //        errorProvider1.SetError(textBoxs[er[0]], er[1]);
+            //        textBoxs[er[0]].BorderColor = Color.Red;
+            //    }
+            //}
+
             if(string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(password.Text) ||  string.IsNullOrEmpty(familyName.Text) || string.IsNullOrEmpty(givenName.Text) || string.IsNullOrEmpty(contact.Text) || string.IsNullOrEmpty(email.Text))
             {
                 MessageBox.Show("Please enter all the fields");
