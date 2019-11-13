@@ -37,7 +37,7 @@ namespace Sunway_Cafe.Model
         
         public string Gender { get; set; }
 
-        public int Contact { get; set; }
+        public string Contact { get; set; }
         [Display(Name = "Mail")]
         [Required]
         public string Email { get; set; }

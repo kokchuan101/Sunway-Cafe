@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +28,22 @@ namespace Sunway_Cafe
             {
                 err = results.Select(x => new List<string> { x.MemberNames.First(), x.ErrorMessage }).ToList<List<string>>();
                 return false;
+            }
+        }
+
+        public static byte[] ConvertImageToBinary(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                if (img != null)
+                {
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
+                else
+                {
+                    return ms.ToArray();
+                }
             }
         }
     }

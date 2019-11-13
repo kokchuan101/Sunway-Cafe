@@ -46,7 +46,7 @@ namespace Sunway_Cafe
                 familyName.Text = editAccount.FamilyName;
                 givenName.Text = editAccount.GivenName;
                 gender.Text = editAccount.Gender;
-                contact.Text = editAccount.Contact.ToString();
+                contact.Text = editAccount.Contact;
                 email.Text = editAccount.Email;
 
    
@@ -72,7 +72,7 @@ namespace Sunway_Cafe
                 FamilyName = familyName.Text,
                 GivenName = givenName.Text,
                 Gender = gender.Text,
-                Contact = int.Parse(contact.Text),
+                Contact = contact.Text,
                 Email = email.Text,
             };
 
@@ -88,7 +88,7 @@ namespace Sunway_Cafe
                     }
                     else
                     {
-                        var query = db.Accounts.Where(acc => acc.Id == 1).FirstOrDefault();
+                        var query = db.Accounts.Where(acc => acc.Id == Id).FirstOrDefault();
 
                         query.Username = account.Username;
                         query.Password = account.Password;

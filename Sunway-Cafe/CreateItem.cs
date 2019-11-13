@@ -21,19 +21,7 @@ namespace Sunway_Cafe
             InitializeComponent();           
         }
 
-        byte[] ConvertImageToBinary(Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                if (img != null)
-                {
-                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    return ms.ToArray();
-                }
-                else
-                    return ms.ToArray();
-            }
-        }
+
 
         private async void button1_Click(object sender, EventArgs e)
         {                     
@@ -41,7 +29,7 @@ namespace Sunway_Cafe
             {
                 int priceVal = int.Parse(priceBox.Text.Trim());
                 int quantityVal = int.Parse(quantityBox.Text.Trim());
-                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
+                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
                 db.ItemTestss.Add(item);
                 await db.SaveChangesAsync();
                 MessageBox.Show("Item Created");
