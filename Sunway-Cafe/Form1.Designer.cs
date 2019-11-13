@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.item = new System.Windows.Forms.Button();
             this.manage = new System.Windows.Forms.Button();
             this.order = new System.Windows.Forms.Button();
             this.sidepanel = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.item = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,8 +56,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(119, 688);
+            this.panel1.Size = new System.Drawing.Size(119, 779);
             this.panel1.TabIndex = 0;
+            // 
+            // item
+            // 
+            this.item.FlatAppearance.BorderSize = 0;
+            this.item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.item.ForeColor = System.Drawing.Color.SeaShell;
+            this.item.Image = ((System.Drawing.Image)(resources.GetObject("item.Image")));
+            this.item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.item.Location = new System.Drawing.Point(15, 272);
+            this.item.Name = "item";
+            this.item.Size = new System.Drawing.Size(104, 36);
+            this.item.TabIndex = 6;
+            this.item.Text = "Item";
+            this.item.UseVisualStyleBackColor = true;
+            this.item.Click += new System.EventHandler(this.item_Click);
             // 
             // manage
             // 
@@ -118,7 +133,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(119, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1126, 23);
+            this.panel2.Size = new System.Drawing.Size(1333, 23);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -156,29 +171,14 @@
             // 
             this.mainpanel.Location = new System.Drawing.Point(119, 166);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1126, 522);
+            this.mainpanel.Size = new System.Drawing.Size(1307, 606);
             this.mainpanel.TabIndex = 4;
-            // 
-            // item
-            // 
-            this.item.FlatAppearance.BorderSize = 0;
-            this.item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.item.ForeColor = System.Drawing.Color.SeaShell;
-            this.item.Image = ((System.Drawing.Image)(resources.GetObject("item.Image")));
-            this.item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.item.Location = new System.Drawing.Point(15, 272);
-            this.item.Name = "item";
-            this.item.Size = new System.Drawing.Size(104, 36);
-            this.item.TabIndex = 6;
-            this.item.Text = "Item";
-            this.item.UseVisualStyleBackColor = true;
-            this.item.Click += new System.EventHandler(this.item_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 688);
+            this.ClientSize = new System.Drawing.Size(1452, 779);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
