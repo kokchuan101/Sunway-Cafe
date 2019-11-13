@@ -42,7 +42,7 @@ namespace Sunway_Cafe
                         Global.user = new SalesStaff(query);
                     }
 
-                    Global.test = "123";
+                    
                     MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
 
                     AccountPage account = new AccountPage();

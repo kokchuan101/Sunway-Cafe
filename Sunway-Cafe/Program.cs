@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,9 @@ namespace Sunway_Cafe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new SignInPage());
+            //Application.Run(new SignInPage());
+            Application.Run(new ReportTest());
+            //Application.Run(new EditProfilePage());
 
 
         }

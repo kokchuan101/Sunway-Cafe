@@ -20,14 +20,19 @@ namespace Sunway_Cafe.Model
 
         public string Password { get; set; }
 
+        [Required]
         public string GivenName { get; set; }
+
+        [Required]
 
         public string FamilyName { get; set; }
 
+        
         public string Gender { get; set; }
 
         public int Contact { get; set; }
-
+        [Display(Name = "Mail")]
+        [Required]
         public string Email { get; set; }
 
         public string Role { get; set; }

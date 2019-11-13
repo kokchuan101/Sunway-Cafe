@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exitBtn = new MetroSet_UI.Controls.MetroSetButton();
             this.metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
             this.email = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,8 +42,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.familyName = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.exitBtn = new MetroSet_UI.Controls.MetroSetButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 485);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.exitBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.exitBtn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.exitBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.exitBtn.HoverTextColor = System.Drawing.Color.White;
+            this.exitBtn.Location = new System.Drawing.Point(287, 12);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.exitBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.exitBtn.NormalTextColor = System.Drawing.Color.White;
+            this.exitBtn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.exitBtn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.exitBtn.PressTextColor = System.Drawing.Color.White;
+            this.exitBtn.Size = new System.Drawing.Size(47, 42);
+            this.exitBtn.Style = MetroSet_UI.Design.Style.Light;
+            this.exitBtn.StyleManager = null;
+            this.exitBtn.TabIndex = 19;
+            this.exitBtn.Text = "X";
+            this.exitBtn.ThemeAuthor = "Narwin";
+            this.exitBtn.ThemeName = "MetroLite";
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // metroSetButton1
             // 
@@ -284,44 +314,23 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Family Name ";
             // 
-            // exitBtn
+            // errorProvider1
             // 
-            this.exitBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.DisabledForeColor = System.Drawing.Color.Gray;
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.exitBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.exitBtn.HoverTextColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(287, 12);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.exitBtn.NormalTextColor = System.Drawing.Color.White;
-            this.exitBtn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.exitBtn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.exitBtn.PressTextColor = System.Drawing.Color.White;
-            this.exitBtn.Size = new System.Drawing.Size(47, 42);
-            this.exitBtn.Style = MetroSet_UI.Design.Style.Light;
-            this.exitBtn.StyleManager = null;
-            this.exitBtn.TabIndex = 19;
-            this.exitBtn.Text = "X";
-            this.exitBtn.ThemeAuthor = "Narwin";
-            this.exitBtn.ThemeName = "MetroLite";
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
-            // EditProfile
+            // EditProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 484);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditProfile";
+            this.Name = "EditProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProfile";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +350,6 @@
         private System.Windows.Forms.Label label3;
         private MetroSet_UI.Controls.MetroSetButton metroSetButton1;
         private MetroSet_UI.Controls.MetroSetButton exitBtn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
