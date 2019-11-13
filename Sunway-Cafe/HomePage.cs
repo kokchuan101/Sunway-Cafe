@@ -38,19 +38,25 @@ namespace Sunway_Cafe
             Form1.Instance.MainPanel.Controls.Clear();
             Form1.Instance.MainPanel.Controls.Add(uc3);
             Form1.Instance.SidePanel.Height = Form1.Instance.Order.Height;
-            Form1.Instance.SidePanel.Top = Form1.Instance.Order.Top;
-          
-            
+            Form1.Instance.SidePanel.Top = Form1.Instance.Order.Top;             
         }
 
         private void Manage_Click(object sender, EventArgs e)
-        {
-          
+        {         
             UserControl2 uc2 = new UserControl2();
             Form1.Instance.MainPanel.Controls.Clear();
             Form1.Instance.MainPanel.Controls.Add(uc2);
             Form1.Instance.SidePanel.Height = Form1.Instance.Manage.Height;
             Form1.Instance.SidePanel.Top = Form1.Instance.Manage.Top;
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            ItemPage uc4 = new ItemPage();
+            Form1.Instance.MainPanel.Controls.Clear();
+            Form1.Instance.MainPanel.Controls.Add(uc4);
+            Form1.Instance.SidePanel.Height = Form1.Instance.Item.Height;
+            Form1.Instance.SidePanel.Top = Form1.Instance.Item.Top;
         }
     }
 }

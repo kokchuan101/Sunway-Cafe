@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPage));
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Large_img = new System.Windows.Forms.ImageList(this.components);
             this.AddOrder = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.Pay = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Name_col = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,103 +52,108 @@
             this.label1.Size = new System.Drawing.Size(99, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView1.HideSelection = false;
-            this.listView1.LargeImageList = this.Large_img;
-            this.listView1.Location = new System.Drawing.Point(27, 103);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(607, 339);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Name";
-            // 
-            // Large_img
-            // 
-            this.Large_img.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("Large_img.ImageStream")));
-            this.Large_img.TransparentColor = System.Drawing.Color.Transparent;
-            this.Large_img.Images.SetKeyName(0, "choices (2).png");
-            this.Large_img.Images.SetKeyName(1, "house (1).png");
-            this.Large_img.Images.SetKeyName(2, "team (2).png");
-            this.Large_img.Images.SetKeyName(3, "choices (2).png");
-            this.Large_img.Images.SetKeyName(4, "house (1).png");
-            this.Large_img.Images.SetKeyName(5, "team (2).png");
-            this.Large_img.Images.SetKeyName(6, "home.png");
             // 
             // AddOrder
             // 
-            this.AddOrder.Location = new System.Drawing.Point(48, 461);
+            this.AddOrder.Location = new System.Drawing.Point(33, 533);
             this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(109, 23);
+            this.AddOrder.Size = new System.Drawing.Size(174, 50);
             this.AddOrder.TabIndex = 2;
             this.AddOrder.Text = "PlaceOrder";
             this.AddOrder.UseVisualStyleBackColor = true;
             this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
             // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.Name_col});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(665, 103);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(175, 290);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(665, 448);
+            this.Pay.Location = new System.Drawing.Point(959, 533);
             this.Pay.Name = "Pay";
             this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
             this.Pay.Text = "Pay";
             this.Pay.UseVisualStyleBackColor = true;
             // 
-            // Delete
+            // flowLayoutPanel1
             // 
-            this.Delete.Location = new System.Drawing.Point(507, 461);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(109, 23);
-            this.Delete.TabIndex = 5;
-            this.Delete.Text = "Delete Item";
-            this.Delete.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 97);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 415);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
-            // ID
+            // dataGridView1
             // 
-            this.ID.Text = "ID";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Product,
+            this.Add,
+            this.Quantity,
+            this.Deduct,
+            this.Price});
+            this.dataGridView1.Location = new System.Drawing.Point(765, 97);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(543, 390);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Name_col
+            // Product
             // 
-            this.Name_col.Text = "Name";
+            this.Product.HeaderText = "Name";
+            this.Product.Name = "Product";
             // 
-            // UserControl3
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.Name = "Add";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
+            // Deduct
+            // 
+            this.Deduct.HeaderText = "";
+            this.Deduct.Name = "Deduct";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(817, 499);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 24);
+            this.lbltotal.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(755, 499);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Total:";
+            // 
+            // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbltotal);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Pay);
-            this.Controls.Add(this.listView2);
             this.Controls.Add(this.AddOrder);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
-            this.Name = "UserControl3";
-            this.Size = new System.Drawing.Size(873, 531);
+            this.Name = "OrderPage";
+            this.Size = new System.Drawing.Size(1414, 606);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,15 +162,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ImageList Large_img;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button AddOrder;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Button Pay;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader Name_col;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewButtonColumn Add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewButtonColumn Deduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Label label2;
     }
 }

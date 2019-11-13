@@ -15,11 +15,85 @@ namespace Sunway_Cafe
         public ManagementPage()
         {
             InitializeComponent();
+            listView1.Items.Clear();
+
+            //listView1.HideSelection = false;
+            try
+            {
+                using (var db = new SunwayCafeContext())
+                {
+
+                    var query = db.Accounts.Where(acc => acc.Role == "SalesStaff").ToList();
+
+                    foreach (var staffList in query)
+                    {
+                        ListViewItem staff = new ListViewItem(staffList.Id.ToString());
+                        staff.SubItems.Add(staffList.GivenName);
+                        staff.SubItems.Add(staffList.FamilyName);
+                        staff.SubItems.Add(staffList.Role);
+                        staff.SubItems.Add(staffList.Gender);
+                        staff.SubItems.Add(staffList.Contact.ToString());
+                        staff.SubItems.Add(staffList.Email);
+
+                        listView1.Items.Add(staff);
+                    }
+
+                }
+                listView1.Items[0].Selected = true;
+                listView1.Select();
+            }
+            catch (InvalidCastException ice)
+            {
+                if (ice == null)
+                {
+                    MessageBox.Show("Null Value Detected");
+                }
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void AddStaff_Click(object sender, EventArgs e)
         {
-
+            EditProfilePage editProfile = new EditProfilePage(0);
+            editProfile.Show();
         }
+
+        private void Edit_Click_1(object sender, EventArgs e)
+        {
+            ListViewItem item = listView1.SelectedItems[0];
+            var id = int.Parse(item.Text);
+            EditProfilePage editProfile = new EditProfilePage(id);
+            editProfile.Show();
+        }
+
+        private void Delete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    using (var db = new SunwayCafeContext())
+                    {
+                        ListViewItem item = listView1.SelectedItems[0];
+                        var id = int.Parse(item.Text);
+                        var selected = db.Accounts.Where(acc => acc.Id == id).FirstOrDefault();
+                        db.Accounts.Remove(selected);
+                        db.SaveChanges();
+                    }
+                } catch (InvalidCastException ice)
+                {
+                    if(ice == null)
+                    {
+                        MessageBox.Show("Null Value Detected");
+                    }
+                }
+                
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
+
     }
 }

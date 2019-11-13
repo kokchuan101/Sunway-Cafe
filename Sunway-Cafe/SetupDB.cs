@@ -25,6 +25,8 @@ namespace Sunway_Cafe
         public DbSet<OrderedItem> OrderedItems { get; set; }
         public DbSet<ItemTests> ItemTestss { get; set; }
 
+ //       public DbSet<OrderTests> OrderTests { get; set; }
+
     }
 
     public class SunwayCafeContextInitializer : SqliteCreateDatabaseIfNotExists<SunwayCafeContext>
@@ -39,7 +41,7 @@ namespace Sunway_Cafe
             context.Set<Account>().Add(new Account() { Username = "test1", Password = "test1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "adminuser1", Password = "adminuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "SalesStaff" });
-
+            context.Set<Account>().Add(new Account() { Username = "saleuser2", Password = "saleuser2", GivenName = "Mu", FamilyName = "Cheng 2.0", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "SalesStaff" });
         }
 
     }
