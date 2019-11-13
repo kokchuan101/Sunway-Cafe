@@ -65,13 +65,9 @@ namespace Sunway_Cafe
                     }
                     else
                     {
-                        Global.user = new SalesStaff(query);
+                        
                     }
 
-                    AccountPage account = new AccountPage();
-                    account.Show();
-                    this.Hide();
-                    //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
                 }
             }
             catch (InvalidCastException ice)

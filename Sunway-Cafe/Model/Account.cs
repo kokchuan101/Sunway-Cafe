@@ -14,6 +14,13 @@ namespace Sunway_Cafe.Model
 
     public class Account
     {
+
+        public Account() { }
+
+        public Account(User user)
+        {
+            
+        }
         public int Id { get; set; }
 
         public string Username { get; set; }
