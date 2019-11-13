@@ -48,7 +48,10 @@ namespace Sunway_Cafe
                 {
                     order[i] = new OrderOptions();
                     order[i].Name_details = itemList.Name;
-                    order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
                     order[i].WasClicked += OrderGrid_WasClicked;
                     order[i].Price = itemList.Price;
                     order[i].QTY = itemList.Quantity;
@@ -74,8 +77,8 @@ namespace Sunway_Cafe
         Image ConvertBinaryToImage(byte[] image)
         {
             using (MemoryStream ms = new MemoryStream(image))
-            {
-                return Image.FromStream(ms);
+            {              
+                return Image.FromStream(ms); 
             }
         }
 
@@ -123,6 +126,40 @@ namespace Sunway_Cafe
                         MessageBox.Show("Quantity is already at 0");
                     }
                 }
+                
+            }
+        }
+
+        private void ReloadOrder_Click(object sender, EventArgs e)
+        {
+            OrderOptions.selectItemName = null;
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                flowLayoutPanel1.Controls.Remove(control);
+                control.Dispose();
+            }
+            flowLayoutPanel1.Controls.Clear();
+
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.ItemTestss.ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
+
+                foreach (var itemList in query)
+                {
+                    order[i] = new OrderOptions();
+                    order[i].Name_details = itemList.Name;
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
+                    order[i].Price = itemList.Price;
+                    order[i].QTY = itemList.Quantity;
+                    order[i].WasClicked += OrderGrid_WasClicked;
+                    flowLayoutPanel1.Controls.Add(order[i]);
+                    i++;
+                }
+                i = 0;
             }
         }
     }

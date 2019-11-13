@@ -25,8 +25,13 @@ namespace Sunway_Cafe
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+                if (img != null)
+                {
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
+                else
+                    return ms.ToArray();
             }
         }
 

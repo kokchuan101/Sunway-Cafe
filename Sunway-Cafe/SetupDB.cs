@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sunway_Cafe.Model;
+using System.IO;
+using System.Drawing;
 
 namespace Sunway_Cafe
 {
@@ -25,8 +27,16 @@ namespace Sunway_Cafe
         public DbSet<OrderedItem> OrderedItems { get; set; }
         public DbSet<ItemTests> ItemTestss { get; set; }
 
- //       public DbSet<OrderTests> OrderTests { get; set; }
+        //       public DbSet<OrderTests> OrderTests { get; set; }
 
+        byte[] ConvertImageToBinary(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
     }
 
     public class SunwayCafeContextInitializer : SqliteCreateDatabaseIfNotExists<SunwayCafeContext>
@@ -38,13 +48,18 @@ namespace Sunway_Cafe
         {
             context.Set<Item>().Add(new Item() { Name = "apple pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
             context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
+            context.Set<Item>().Add(new Item() { Name = "Pineapple Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
             context.Set<Account>().Add(new Account() { Username = "test1", Password = "test1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "adminuser1", Password = "adminuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "SalesStaff" });
             context.Set<Account>().Add(new Account() { Username = "saleuser2", Password = "saleuser2", GivenName = "Mu", FamilyName = "Cheng 2.0", Gender = "Female", Contact = 130401404, Email = "mucheng@yourheart.com", Role = "SalesStaff" });
+            context.Set<ItemTests>().Add(new ItemTests() { Name = "Iced Lemon Tea", ImageURL = null, Quantity = 10, Price = 7 });
+            context.Set<ItemTests>().Add(new ItemTests() { Name = "Burger", ImageURL = null, Quantity = 30, Price = 15 });
         }
 
     }
+
+    
 
     //using (var db = new SunwayCafeContext())
     //{
@@ -63,7 +78,7 @@ namespace Sunway_Cafe
     //    };
 
     //}
-   
+
 
     //using (var db = new SunwayCafeContext())
     //{
