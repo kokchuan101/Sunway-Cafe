@@ -35,12 +35,7 @@ namespace Sunway_Cafe
             {
                 var query = db.Accounts.Where(acc => acc.Username == username.Text && acc.Password == password.Text).FirstOrDefault();
                 if(query != null)
-                {
-<<<<<<< HEAD
-                    
-
-=======
->>>>>>> 846b590680dace2363efdb05ac6048e0affebb0e
+                { 
                     if(query.Role == "Admin")
                     {
                         Global.user = new Admin(query);
@@ -49,20 +44,11 @@ namespace Sunway_Cafe
                     {
                         Global.user = new SalesStaff(query);
                     }
-<<<<<<< HEAD
-
-                    
-                    MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
-=======
-                    AccountPage account = new AccountPage();
-                    account.Show();
->>>>>>> 846b590680dace2363efdb05ac6048e0affebb0e
 
                     AccountPage account = new AccountPage();
                     account.Show();
                     this.Hide();
                     //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
-
 
                 }
                 else

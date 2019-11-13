@@ -19,25 +19,14 @@ namespace Sunway_Cafe
         public EditProfilePage()
         {
             InitializeComponent();
-            //using (var db = new SunwayCafeContext())
+            //textBoxs = new Dictionary<string, MetroSetTextBox>()
             //{
-            //    var query = db.Accounts.Where(acc => acc.Id == 1).Select(acc => new { acc.GivenName, acc.FamilyName, acc.Gender, acc.Contact, acc.Email, acc.Role }).ToList();
-
-            //    familyName.Text = query[0].FamilyName;
-            //    givenName.Text = query[0].GivenName;
-            //    gender.Text = query[0].Gender;
-            //    contact.Text = query[0].Contact.ToString();
-            //    email.Text = query[0].Email;
-
-            //}
-            textBoxs = new Dictionary<string, MetroSetTextBox>()
-            {
-                { "FamilyName", familyName},
-                { "GivenName", givenName},
-                { "Gender", gender},
-                { "Contact", contact},
-                { "Email", email},
-            };
+            //    { "FamilyName", familyName},
+            //    { "GivenName", givenName},
+            //    { "Gender", gender},
+            //    { "Contact", contact},
+            //    { "Email", email},
+            //};
 
 
         }
@@ -50,47 +39,29 @@ namespace Sunway_Cafe
         private void metroSetButton1_Click(object sender, EventArgs e)
         {
             
-            var acc = new Account()
-            {
-                FamilyName = familyName.Text,
-                GivenName = givenName.Text,
-                Gender = gender.Text,
-                Contact = int.Parse(contact.Text),
-                Email = email.Text
-            };
-
-            List<List<string>> err;
-            if (Global.IsValid<Account>(acc, out err))
-            {
-                MessageBox.Show("No Prob");
-            }
-            else
-            {
-                foreach (var er in err)
-                {
-                    errorProvider1.SetError(textBoxs[er[0]], er[1]);
-                    textBoxs[er[0]].BorderColor = Color.Red;
-                }
-            }
-
-
-
-            // using (var db = new SunwayCafeContext())
+            //var acc = new Account()
             //{
-            //    var query = db.Accounts.Where(acc => acc.Id == 1).FirstOrDefault();
+            //    FamilyName = familyName.Text,
+            //    GivenName = givenName.Text,
+            //    Gender = gender.Text,
+            //    Contact = int.Parse(contact.Text),
+            //    Email = email.Text
+            //};
 
-            //    query.FamilyName = familyName.Text;
-            //    query.GivenName = givenName.Text;
-            //    query.Gender = gender.Text ;
-            //    query.Contact = int.Parse(contact.Text);
-            //    query.Email = email.Text;
-            //    db.SaveChanges();
+            //List<List<string>> err;
+            //if (Global.IsValid<Account>(acc, out err))
+            //{
+            //    MessageBox.Show("No Prob");
+            //}
+            //else
+            //{
+            //    foreach (var er in err)
+            //    {
+            //        errorProvider1.SetError(textBoxs[er[0]], er[1]);
+            //        textBoxs[er[0]].BorderColor = Color.Red;
+            //    }
             //}
 
-            //Form profilePage = new ProfilePage();
-            //profilePage.Refresh();
-            //this.Close();
-            
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
