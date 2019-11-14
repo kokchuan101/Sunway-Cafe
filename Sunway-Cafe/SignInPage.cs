@@ -55,8 +55,10 @@ namespace Sunway_Cafe
                         {
                             Global.user = new SalesStaff(query);
                         }
-                        AccountPage account = new AccountPage();
-                        account.Show();
+                        //AccountPage account = new AccountPage();
+                        //account.Show();
+                        Form1 form1 = new Form1();
+                        form1.Show();
 
                         this.Hide();
                         //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");

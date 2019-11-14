@@ -40,7 +40,6 @@ namespace Sunway_Cafe.Model
         public string Contact { get; set; }
         [Display(Name = "Mail")]
         [Required]
-        [Range(0,10)]
         public string Email { get; set; }
 
         public string Role { get; set; }

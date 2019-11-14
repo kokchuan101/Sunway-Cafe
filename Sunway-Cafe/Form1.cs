@@ -122,8 +122,9 @@ namespace Sunway_Cafe
         public void manage_Click(object sender, EventArgs e)
         {
             //manage_Page();
-            NavPage(UserControl2.Instance, manage);
-
+            ManagementPage mp = new ManagementPage();
+            nav(mp, mainpanel, manage);
+            //NavPage(UserControl2.Instance, manage);
         }
 
         private void item_Click(object sender, EventArgs e)
@@ -197,6 +198,17 @@ namespace Sunway_Cafe
         //        UserControl4.Instance.BringToFront();
         //}
 
+        public void nav(Form form, Panel panel, Button navButton)
+        {
+            MainPanel.Controls.Clear();
+            SidePanel.Height = navButton.Height;
+            SidePanel.Top = navButton.Top;
+            form.TopLevel = false;
+            panel.Controls.Clear();
+            panel.Controls.Add(form);
+            form.Show();
+        }
+
         public void NavPage(UserControl navPage, Button navButton)
         {
             MainPanel.Controls.Clear();
@@ -205,7 +217,20 @@ namespace Sunway_Cafe
             MainPanel.Controls.Add(navPage);
             navPage.Show();
         }
-       
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            Form signIn = new SignInPage();
+            this.Close();
+            signIn.Show();
+            Global.user = new User();
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            ProfilePage pp = new ProfilePage();
+            nav(pp, mainpanel, home);
+        }
     }
 
    
