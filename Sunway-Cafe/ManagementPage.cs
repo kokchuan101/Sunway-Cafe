@@ -18,7 +18,6 @@ namespace Sunway_Cafe
             listView1.Items.Clear();
             RefreshListView();
             //listView1.HideSelection = false;
-
         }
 
         private void AddStaff_Click(object sender, EventArgs e)
@@ -112,5 +111,9 @@ namespace Sunway_Cafe
             }
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

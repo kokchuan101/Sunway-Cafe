@@ -48,6 +48,7 @@ namespace Sunway_Cafe
                 gender.Text = editAccount.Gender;
                 contact.Text = editAccount.Contact;
                 email.Text = editAccount.Email;
+                Id = editAccount.Id;
 
    
                 Global.user.ModifyEditDisplay(this);
