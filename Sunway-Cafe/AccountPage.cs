@@ -1,5 +1,4 @@
-﻿using Sunway_Cafe.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,52 +15,105 @@ namespace Sunway_Cafe
         public AccountPage()
         {
             InitializeComponent();
-            ProfilePage profile = new ProfilePage();
-            nav(profile, content);
-            Global.user.ModifyDisplay(this);
+            listView1.Items.Clear();
+            RefreshListView();
+            //listView1.HideSelection = false;
         }
 
-        private void profileBtn_Click(object sender, EventArgs e)
+        private void AddStaff_Click(object sender, EventArgs e)
         {
-            sidePanel.Height = profileBtn.Height;
-            sidePanel.Top = profileBtn.Top;
-            sidePanel.BringToFront();
-            ProfilePage profile = new ProfilePage();
-            nav(profile, content);
+            EditProfilePage editProfile = new EditProfilePage(null);
+            editProfile.Show();
         }
 
-        private void stockBtn_Click_1(object sender, EventArgs e)
+        private void Edit_Click_1(object sender, EventArgs e)
         {
-            sidePanel.Height = stockBtn.Height;
-            sidePanel.Top = stockBtn.Top;
-            sidePanel.BringToFront();
-            StockPage stock = new StockPage();
-            nav(stock, content);
+            var id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            using(var db = new SunwayCafeContext())
+            {
+                var acc = db.Accounts.Where(x => x.Id == id).FirstOrDefault();
+                if(acc != null)
+                {
+                    EditProfilePage editProfile = new EditProfilePage(acc);
+                    editProfile.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to find account in database. Please contact administrator.");
+                }
+            }
+            RefreshListView();
         }
 
-        public void nav(Form form, Panel panel)
+        private void Delete_Click_1(object sender, EventArgs e)
         {
-            form.TopLevel = false;
-            panel.Controls.Clear();
-            panel.Controls.Add(form);
-            form.Show();
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    using (var db = new SunwayCafeContext())
+                    {
+                        ListViewItem item = listView1.SelectedItems[0];
+                        var id = int.Parse(item.Text);
+                        var selected = db.Accounts.Where(acc => acc.Id == id).FirstOrDefault();
+                        db.Accounts.Remove(selected);
+                        db.SaveChanges();
+                    }
+                } catch (InvalidCastException ice)
+                {
+                    if(ice == null)
+                    {
+                        MessageBox.Show("Null Value Detected");
+                    }
+                }
+                RefreshListView();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
         }
 
-        private void logOutBtn_Click(object sender, EventArgs e)
+        private void RefreshListView()
         {
-            Form signIn = new SignInPage();
-            this.Close();
-            signIn.Show();
-            Global.user = new User();
+            try
+            {
+                using (var db = new SunwayCafeContext())
+                {
+
+                    var query = db.Accounts.ToList();
+
+                    foreach (var staffList in query)
+                    {
+                        ListViewItem staff = new ListViewItem(staffList.Id.ToString());
+                        staff.SubItems.Add(staffList.GivenName);
+                        staff.SubItems.Add(staffList.FamilyName);
+                        staff.SubItems.Add(staffList.Role);
+                        staff.SubItems.Add(staffList.Gender);
+                        staff.SubItems.Add(staffList.Contact.ToString());
+                        staff.SubItems.Add(staffList.Email);
+
+                        listView1.Items.Add(staff);
+                    }
+
+                }
+                listView1.Items[0].Selected = true;
+                listView1.Select();
+            }
+            catch (InvalidCastException ice)
+            {
+                if (ice == null)
+                {
+                    MessageBox.Show("Null Value Detected");
+                }
+            }
         }
 
-        private void manageBtn_Click(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sidePanel.Height = manageBtn.Height;
-            sidePanel.Top = manageBtn.Top;
-            sidePanel.BringToFront();
-            ManagementPage manage = new ManagementPage();
-            nav(manage, content);
+
         }
     }
 }

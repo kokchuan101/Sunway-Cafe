@@ -11,17 +11,17 @@ using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
-    public partial class Form1 : Form
+    public partial class MainPage : Form
     {
-        private static Form1 _obj;
+        private static MainPage _obj;
 
-        public static Form1 Instance
+        public static MainPage Instance
         {
             get
             {
                 if (_obj == null)
                 {
-                    _obj = new Form1();
+                    _obj = new MainPage();
                 }
                 return _obj;
             }
@@ -67,11 +67,11 @@ namespace Sunway_Cafe
         {
             get
             {
-                return manage;
+                return account;
             }
             set
             {
-                manage = value;
+                account = value;
             }
         }
 
@@ -89,7 +89,7 @@ namespace Sunway_Cafe
 
 
 
-        public Form1()
+        public MainPage()
         {
             InitializeComponent();
             using (var db = new SunwayCafeContext())
@@ -122,8 +122,8 @@ namespace Sunway_Cafe
         public void manage_Click(object sender, EventArgs e)
         {
             //manage_Page();
-            ManagementPage mp = new ManagementPage();
-            nav(mp, mainpanel, manage);
+            AccountPage mp = new AccountPage();
+            nav(mp, mainpanel, account);
             //NavPage(UserControl2.Instance, manage);
         }
 
@@ -134,69 +134,6 @@ namespace Sunway_Cafe
 
         }
 
-        //public void order_Page()
-        //{
-        //    if (!MainPanel.Controls.Contains(UserControl3.Instance))
-        //    {
-        //        MainPanel.Controls.Clear();
-        //        SidePanel.Height = order.Height;
-        //        SidePanel.Top = order.Top;
-        //        MainPanel.Controls.Add(UserControl3.Instance);
-        //        UserControl3.Instance.BringToFront();
-        //    }
-        //    else
-        //        SidePanel.Height = order.Height;
-        //        SidePanel.Top = order.Top;
-        //        UserControl3.Instance.BringToFront();
-        //}
-
-        //public void manage_Page()
-        //{
-        //    if (!MainPanel.Controls.Contains(UserControl2.Instance))
-        //    {
-        //        MainPanel.Controls.Clear();
-        //        SidePanel.Height = manage.Height;
-        //        SidePanel.Top = manage.Top;
-        //        MainPanel.Controls.Add(UserControl2.Instance);
-        //        UserControl2.Instance.BringToFront();
-        //    }
-        //    else
-        //        SidePanel.Height = manage.Height;
-        //        SidePanel.Top = manage.Top;
-        //        UserControl2.Instance.BringToFront();
-        //}
-
-        //public void home_Page()
-        //{
-        //    if (!MainPanel.Controls.Contains(UserControl1.Instance))
-        //    {
-        //        MainPanel.Controls.Clear();
-        //        SidePanel.Height = home.Height;
-        //        SidePanel.Top = home.Top;
-        //        MainPanel.Controls.Add(UserControl1.Instance);
-        //        UserControl1.Instance.BringToFront();
-        //    }
-        //    else
-        //        SidePanel.Height = home.Height;
-        //        SidePanel.Top = home.Top;
-        //        UserControl1.Instance.BringToFront();
-        //}
-
-        //public void item_Page()
-        //{
-        //    if (!MainPanel.Controls.Contains(UserControl4.Instance))
-        //    {
-        //        MainPanel.Controls.Clear();
-        //        SidePanel.Height = home.Height;
-        //        SidePanel.Top = home.Top;
-        //        MainPanel.Controls.Add(UserControl4.Instance);
-        //        UserControl4.Instance.BringToFront();
-        //    }
-        //    else
-        //        SidePanel.Height = home.Height;
-        //        SidePanel.Top = home.Top;
-        //        UserControl4.Instance.BringToFront();
-        //}
 
         public void nav(Form form, Panel panel, Button navButton)
         {
@@ -230,6 +167,11 @@ namespace Sunway_Cafe
         {
             ProfilePage pp = new ProfilePage();
             nav(pp, mainpanel, home);
+        }
+
+        private void Mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

@@ -57,7 +57,7 @@ namespace Sunway_Cafe
                         }
                         //AccountPage account = new AccountPage();
                         //account.Show();
-                        Form1 form1 = new Form1();
+                        MainPage form1 = new MainPage();
                         form1.Show();
 
                         this.Hide();

@@ -47,5 +47,10 @@ namespace Sunway_Cafe.Model
         {
             this.reportViewer1.PrintDialog();
         }
+
+        private void ReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

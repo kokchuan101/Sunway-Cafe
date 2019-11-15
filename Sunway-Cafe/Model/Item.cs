@@ -21,7 +21,7 @@ namespace Sunway_Cafe.Model
 
         public decimal SellingPrice { get; set; }
 
-        public string Img { get; set; }
+        public byte[] ImageURL { get; set; }
 
         public virtual ICollection<OrderedItem> OrderedItems { get; set; }
 

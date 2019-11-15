@@ -20,7 +20,8 @@ namespace Sunway_Cafe
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Exit();
             //Application.Run(new Form1());
-            Application.Run(new SignInPage());
+            //Application.Run(new SignInPage());
+            Application.Run(new ReportTest());
 
         }
     }

@@ -20,13 +20,15 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
         }
-
+        public Item item;
         public static string selectItemName;
         public static Image selectedItemImage;
         public static int selectedItemPrice;
         public static int selectedItemQuantity;
 
         private string nameDetails;
+
+
         
         public string Name_details
         {

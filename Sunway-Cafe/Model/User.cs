@@ -18,7 +18,7 @@ namespace Sunway_Cafe.Model
             Details = acc;
         }
 
-        public virtual void ModifyDisplay(AccountPage form)
+        public virtual void ModifyDisplay(AccountPageNotUsed form)
         { 
             
         }
@@ -36,7 +36,7 @@ namespace Sunway_Cafe.Model
 
         }
 
-        public override void ModifyDisplay(AccountPage form)
+        public override void ModifyDisplay(AccountPageNotUsed form)
         {
             form.manageBtn.Show();
             form.profileBtn.Show();
@@ -57,7 +57,7 @@ namespace Sunway_Cafe.Model
 
         }
 
-        public override void ModifyDisplay(AccountPage form)
+        public override void ModifyDisplay(AccountPageNotUsed form)
         {
             form.manageBtn.Hide();
             form.profileBtn.Show();

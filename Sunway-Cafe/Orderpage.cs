@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
-
+using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
 {
@@ -96,6 +96,8 @@ namespace Sunway_Cafe
         {
             dataGridView1.Rows.Add(OrderOptions.selectItemName, "Add", 1, "Deduct", OrderOptions.selectedItemPrice);
             Total();
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

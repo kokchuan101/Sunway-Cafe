@@ -86,11 +86,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountPage.cs">
+    <Compile Include="AccountPageNotUsed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountPage.designer.cs">
-      <DependentUpon>AccountPage.cs</DependentUpon>
+    <Compile Include="AccountPageNotUsed.designer.cs">
+      <DependentUpon>AccountPageNotUsed.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateItem.cs">
       <SubType>Form</SubType>
@@ -112,18 +112,18 @@
     <Compile Include="EditProfilePage.designer.cs">
       <DependentUpon>EditProfilePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="ManagementPage.cs">
+    <Compile Include="AccountPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagementPage.Designer.cs">
-      <DependentUpon>ManagementPage.cs</DependentUpon>
+    <Compile Include="AccountPage.Designer.cs">
+      <DependentUpon>AccountPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="ReportTest.cs">
@@ -196,8 +196,8 @@
     <Compile Include="ItemPage.Designer.cs">
       <DependentUpon>ItemPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountPage.resx">
-      <DependentUpon>AccountPage.cs</DependentUpon>
+    <EmbeddedResource Include="AccountPageNotUsed.resx">
+      <DependentUpon>AccountPageNotUsed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateItem.resx">
       <DependentUpon>CreateItem.cs</DependentUpon>
@@ -205,11 +205,11 @@
     <EmbeddedResource Include="EditProfilePage.resx">
       <DependentUpon>EditProfilePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagementPage.resx">
-      <DependentUpon>ManagementPage.cs</DependentUpon>
+    <EmbeddedResource Include="AccountPage.resx">
+      <DependentUpon>AccountPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderOptions.resx">
       <DependentUpon>OrderOptions.cs</DependentUpon>

@@ -28,15 +28,6 @@ namespace Sunway_Cafe
         public DbSet<ItemTests> ItemTestss { get; set; }
 
         //       public DbSet<OrderTests> OrderTests { get; set; }
-
-        byte[] ConvertImageToBinary(Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
-        }
     }
 
     public class SunwayCafeContextInitializer : SqliteCreateDatabaseIfNotExists<SunwayCafeContext>
@@ -54,7 +45,7 @@ namespace Sunway_Cafe
             context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
             context.Set<Account>().Add(new Account() { Username = "saleuser2", Password = "saleuser2", GivenName = "Mu", FamilyName = "Cheng 2.0", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
 
-            Image img = Image.FromFile(@"C:\Users\User\source\repos\Sunway-Cafe\Sunway-Cafe\banana.jpg");
+            Image img = Image.FromFile(@"C:\Users\Frost\source\repos\Sunway-Cafe\Sunway-Cafe\banana.jpg");
             context.Set<ItemTests>().Add(new ItemTests() { Name = "Iced Lemon Tea", ImageURL = Global.ConvertImageToBinary(img), Quantity = 10, Price = 7 });
             context.Set<ItemTests>().Add(new ItemTests() { Name = "Burger", ImageURL = Global.ConvertImageToBinary(img), Quantity = 30, Price = 15 });
         }

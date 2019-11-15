@@ -55,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.role);
             this.panel1.Controls.Add(this.gender);
             this.panel1.Controls.Add(this.username);
@@ -74,8 +75,9 @@
             this.panel1.Controls.Add(this.familyName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 551);
+            this.panel1.Size = new System.Drawing.Size(473, 678);
             this.panel1.TabIndex = 0;
             // 
             // role
@@ -97,11 +99,12 @@
             this.role.Items.AddRange(new object[] {
             "Admin",
             "SalesStaff"});
-            this.role.Location = new System.Drawing.Point(26, 176);
+            this.role.Location = new System.Drawing.Point(35, 217);
+            this.role.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.role.Name = "role";
             this.role.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.role.SelectedItemForeColor = System.Drawing.Color.White;
-            this.role.Size = new System.Drawing.Size(145, 26);
+            this.role.Size = new System.Drawing.Size(192, 26);
             this.role.Style = MetroSet_UI.Design.Style.Light;
             this.role.StyleManager = null;
             this.role.TabIndex = 31;
@@ -128,11 +131,12 @@
             "Male",
             "Female",
             "Others"});
-            this.gender.Location = new System.Drawing.Point(26, 337);
+            this.gender.Location = new System.Drawing.Point(35, 415);
+            this.gender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gender.Name = "gender";
             this.gender.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.gender.SelectedItemForeColor = System.Drawing.Color.White;
-            this.gender.Size = new System.Drawing.Size(121, 26);
+            this.gender.Size = new System.Drawing.Size(160, 26);
             this.gender.Style = MetroSet_UI.Design.Style.Light;
             this.gender.StyleManager = null;
             this.gender.TabIndex = 30;
@@ -152,12 +156,13 @@
             this.username.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.username.Image = null;
             this.username.Lines = null;
-            this.username.Location = new System.Drawing.Point(26, 67);
+            this.username.Location = new System.Drawing.Point(35, 82);
+            this.username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.username.MaxLength = 32767;
             this.username.Multiline = false;
             this.username.Name = "username";
             this.username.ReadOnly = false;
-            this.username.Size = new System.Drawing.Size(308, 27);
+            this.username.Size = new System.Drawing.Size(411, 33);
             this.username.Style = MetroSet_UI.Design.Style.Light;
             this.username.StyleManager = null;
             this.username.TabIndex = 29;
@@ -172,9 +177,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label7.Location = new System.Drawing.Point(22, 43);
+            this.label7.Location = new System.Drawing.Point(29, 53);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 21);
+            this.label7.Size = new System.Drawing.Size(108, 23);
             this.label7.TabIndex = 28;
             this.label7.Text = "Username";
             // 
@@ -191,12 +197,13 @@
             this.password.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.password.Image = null;
             this.password.Lines = null;
-            this.password.Location = new System.Drawing.Point(26, 121);
+            this.password.Location = new System.Drawing.Point(35, 149);
+            this.password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.password.MaxLength = 32767;
             this.password.Multiline = false;
             this.password.Name = "password";
             this.password.ReadOnly = false;
-            this.password.Size = new System.Drawing.Size(308, 27);
+            this.password.Size = new System.Drawing.Size(411, 33);
             this.password.Style = MetroSet_UI.Design.Style.Light;
             this.password.StyleManager = null;
             this.password.TabIndex = 27;
@@ -211,9 +218,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label8.Location = new System.Drawing.Point(22, 97);
+            this.label8.Location = new System.Drawing.Point(29, 119);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 21);
+            this.label8.Size = new System.Drawing.Size(103, 23);
             this.label8.TabIndex = 26;
             this.label8.Text = "Password";
             // 
@@ -222,9 +230,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(22, 151);
+            this.label6.Location = new System.Drawing.Point(29, 186);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 21);
+            this.label6.Size = new System.Drawing.Size(81, 23);
             this.label6.TabIndex = 20;
             this.label6.Text = "Position";
             // 
@@ -237,7 +246,8 @@
             this.exitBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.exitBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.exitBtn.HoverTextColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(287, 12);
+            this.exitBtn.Location = new System.Drawing.Point(383, 15);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.exitBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -245,7 +255,7 @@
             this.exitBtn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.exitBtn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.exitBtn.PressTextColor = System.Drawing.Color.White;
-            this.exitBtn.Size = new System.Drawing.Size(47, 42);
+            this.exitBtn.Size = new System.Drawing.Size(63, 52);
             this.exitBtn.Style = MetroSet_UI.Design.Style.Light;
             this.exitBtn.StyleManager = null;
             this.exitBtn.TabIndex = 19;
@@ -263,7 +273,8 @@
             this.editProfile.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.editProfile.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.editProfile.HoverTextColor = System.Drawing.Color.White;
-            this.editProfile.Location = new System.Drawing.Point(26, 487);
+            this.editProfile.Location = new System.Drawing.Point(35, 599);
+            this.editProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editProfile.Name = "editProfile";
             this.editProfile.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.editProfile.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -271,7 +282,7 @@
             this.editProfile.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.editProfile.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.editProfile.PressTextColor = System.Drawing.Color.White;
-            this.editProfile.Size = new System.Drawing.Size(308, 42);
+            this.editProfile.Size = new System.Drawing.Size(411, 52);
             this.editProfile.Style = MetroSet_UI.Design.Style.Light;
             this.editProfile.StyleManager = null;
             this.editProfile.TabIndex = 18;
@@ -293,12 +304,13 @@
             this.email.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.email.Image = null;
             this.email.Lines = null;
-            this.email.Location = new System.Drawing.Point(26, 445);
+            this.email.Location = new System.Drawing.Point(35, 548);
+            this.email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.email.MaxLength = 32767;
             this.email.Multiline = false;
             this.email.Name = "email";
             this.email.ReadOnly = false;
-            this.email.Size = new System.Drawing.Size(308, 27);
+            this.email.Size = new System.Drawing.Size(411, 33);
             this.email.Style = MetroSet_UI.Design.Style.Light;
             this.email.StyleManager = null;
             this.email.TabIndex = 16;
@@ -313,9 +325,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(22, 421);
+            this.label5.Location = new System.Drawing.Point(29, 518);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 21);
+            this.label5.Size = new System.Drawing.Size(62, 23);
             this.label5.TabIndex = 15;
             this.label5.Text = "Email";
             // 
@@ -332,12 +345,13 @@
             this.contact.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.contact.Image = null;
             this.contact.Lines = null;
-            this.contact.Location = new System.Drawing.Point(26, 391);
+            this.contact.Location = new System.Drawing.Point(35, 481);
+            this.contact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contact.MaxLength = 32767;
             this.contact.Multiline = false;
             this.contact.Name = "contact";
             this.contact.ReadOnly = false;
-            this.contact.Size = new System.Drawing.Size(308, 27);
+            this.contact.Size = new System.Drawing.Size(411, 33);
             this.contact.Style = MetroSet_UI.Design.Style.Light;
             this.contact.StyleManager = null;
             this.contact.TabIndex = 14;
@@ -353,9 +367,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label4.Location = new System.Drawing.Point(22, 367);
+            this.label4.Location = new System.Drawing.Point(29, 452);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 21);
+            this.label4.Size = new System.Drawing.Size(92, 23);
             this.label4.TabIndex = 13;
             this.label4.Text = "Contact";
             // 
@@ -364,9 +379,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(22, 313);
+            this.label2.Location = new System.Drawing.Point(29, 385);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 21);
+            this.label2.Size = new System.Drawing.Size(85, 23);
             this.label2.TabIndex = 11;
             this.label2.Text = "Gender";
             // 
@@ -383,12 +399,13 @@
             this.givenName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.givenName.Image = null;
             this.givenName.Lines = null;
-            this.givenName.Location = new System.Drawing.Point(26, 283);
+            this.givenName.Location = new System.Drawing.Point(35, 348);
+            this.givenName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.givenName.MaxLength = 32767;
             this.givenName.Multiline = false;
             this.givenName.Name = "givenName";
             this.givenName.ReadOnly = false;
-            this.givenName.Size = new System.Drawing.Size(308, 27);
+            this.givenName.Size = new System.Drawing.Size(411, 33);
             this.givenName.Style = MetroSet_UI.Design.Style.Light;
             this.givenName.StyleManager = null;
             this.givenName.TabIndex = 10;
@@ -403,9 +420,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(22, 259);
+            this.label1.Location = new System.Drawing.Point(29, 319);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 21);
+            this.label1.Size = new System.Drawing.Size(135, 23);
             this.label1.TabIndex = 9;
             this.label1.Text = "Given Name";
             // 
@@ -422,12 +440,13 @@
             this.familyName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.familyName.Image = null;
             this.familyName.Lines = null;
-            this.familyName.Location = new System.Drawing.Point(26, 229);
+            this.familyName.Location = new System.Drawing.Point(35, 282);
+            this.familyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.familyName.MaxLength = 32767;
             this.familyName.Multiline = false;
             this.familyName.Name = "familyName";
             this.familyName.ReadOnly = false;
-            this.familyName.Size = new System.Drawing.Size(308, 27);
+            this.familyName.Size = new System.Drawing.Size(411, 33);
             this.familyName.Style = MetroSet_UI.Design.Style.Light;
             this.familyName.StyleManager = null;
             this.familyName.TabIndex = 8;
@@ -442,9 +461,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(22, 205);
+            this.label3.Location = new System.Drawing.Point(29, 252);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 21);
+            this.label3.Size = new System.Drawing.Size(145, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "Family Name ";
             // 
@@ -454,11 +474,12 @@
             // 
             // EditProfilePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 550);
+            this.ClientSize = new System.Drawing.Size(473, 677);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProfile";
