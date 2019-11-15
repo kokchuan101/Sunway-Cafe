@@ -51,7 +51,7 @@ namespace Sunway_Cafe
 
 
 
-        private void editProfile_Click(object sender, EventArgs e)
+        private void editProfile_Click_1(object sender, EventArgs e)
         {
             //EditProfilePage editProfile = new EditProfilePage();
             //editProfile.ShowDialog();
@@ -65,6 +65,5 @@ namespace Sunway_Cafe
         {
             this.InitializeComponent();
         }
-
     }
 }

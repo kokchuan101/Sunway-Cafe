@@ -124,9 +124,9 @@
             // content
             // 
             this.content.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.content.Location = new System.Drawing.Point(197, 59);
+            this.content.Location = new System.Drawing.Point(197, 0);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(603, 391);
+            this.content.Size = new System.Drawing.Size(603, 450);
             this.content.TabIndex = 1;
             // 
             // panel4
@@ -179,7 +179,7 @@
             this.logOutBtn.ThemeName = "MetroLite";
             this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
-            // AccountPage
+            // AccountPageNotUsed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +188,7 @@
             this.Controls.Add(this.content);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AccountPage";
+            this.Name = "AccountPageNotUsed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);

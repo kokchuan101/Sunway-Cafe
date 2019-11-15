@@ -39,78 +39,71 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(27, 17);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Location = new System.Drawing.Point(9, 4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(191, 180);
+            this.pictureBox.Size = new System.Drawing.Size(143, 110);
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
             // 
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(57, 247);
-            this.price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.price.Location = new System.Drawing.Point(33, 138);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(46, 17);
+            this.price.Size = new System.Drawing.Size(35, 13);
             this.price.TabIndex = 3;
             this.price.Text = "label1";
             // 
             // quantity
             // 
             this.quantity.AutoSize = true;
-            this.quantity.Location = new System.Drawing.Point(183, 247);
-            this.quantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.quantity.Location = new System.Drawing.Point(122, 138);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(46, 17);
+            this.quantity.Size = new System.Drawing.Size(35, 13);
             this.quantity.TabIndex = 4;
             this.quantity.Text = "label2";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 247);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Price:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 247);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(74, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Quantity:";
             // 
             // nameDet
             // 
             this.nameDet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameDet.Location = new System.Drawing.Point(8, 214);
-            this.nameDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameDet.Location = new System.Drawing.Point(6, 117);
             this.nameDet.Name = "nameDet";
-            this.nameDet.Size = new System.Drawing.Size(221, 22);
+            this.nameDet.Size = new System.Drawing.Size(146, 18);
             this.nameDet.TabIndex = 8;
             this.nameDet.Text = "label3";
             this.nameDet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // OrderOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaShell;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.Controls.Add(this.nameDet);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quantity);
             this.Controls.Add(this.price);
             this.Controls.Add(this.pictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OrderOptions";
-            this.Size = new System.Drawing.Size(240, 297);
+            this.Size = new System.Drawing.Size(160, 160);
             this.Load += new System.EventHandler(this.OrderOptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

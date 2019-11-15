@@ -31,7 +31,7 @@ namespace Sunway_Cafe
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Order_Click(object sender, EventArgs e)
         {
             
             OrderPage uc3 = new OrderPage();
@@ -41,7 +41,7 @@ namespace Sunway_Cafe
             MainPage.Instance.SidePanel.Top = MainPage.Instance.Order.Top;             
         }
 
-        private void Manage_Click(object sender, EventArgs e)
+        private void Manage_Click_1(object sender, EventArgs e)
         {         
             UserControl2 uc2 = new UserControl2();
             MainPage.Instance.MainPanel.Controls.Clear();
@@ -50,7 +50,7 @@ namespace Sunway_Cafe
             MainPage.Instance.SidePanel.Top = MainPage.Instance.Manage.Top;
         }
 
-        private void Item_Click(object sender, EventArgs e)
+        private void Item_Click_1(object sender, EventArgs e)
         {
             ItemPage uc4 = new ItemPage();
             MainPage.Instance.MainPanel.Controls.Clear();
