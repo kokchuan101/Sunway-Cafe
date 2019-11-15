@@ -23,7 +23,7 @@ namespace Sunway_Cafe
 
 
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void button1_Click_1(object sender, EventArgs e)
         {                     
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
@@ -34,9 +34,12 @@ namespace Sunway_Cafe
                 await db.SaveChangesAsync();
                 MessageBox.Show("Item Created");
             }
+            ItemPage ip = new ItemPage();
+            ip.loadData();
+            this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void open_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
             {
@@ -48,5 +51,6 @@ namespace Sunway_Cafe
                 }
             }
         }
+
     }
 }

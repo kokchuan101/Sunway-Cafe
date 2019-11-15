@@ -28,96 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.create = new System.Windows.Forms.Button();
-            this.load = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.create = new MetroSet_UI.Controls.MetroSetButton();
+            this.load = new MetroSet_UI.Controls.MetroSetButton();
+            this.update = new MetroSet_UI.Controls.MetroSetButton();
+            this.delete = new MetroSet_UI.Controls.MetroSetButton();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // create
+            // panel1
             // 
-            this.create.Location = new System.Drawing.Point(127, 103);
-            this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(75, 23);
-            this.create.TabIndex = 1;
-            this.create.Text = "Create";
-            this.create.UseVisualStyleBackColor = true;
-            this.create.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // load
-            // 
-            this.load.Location = new System.Drawing.Point(127, 145);
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(75, 23);
-            this.load.TabIndex = 2;
-            this.load.Text = "Load";
-            this.load.UseVisualStyleBackColor = true;
-            this.load.Click += new System.EventHandler(this.load_Click);
-            // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(127, 188);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 3;
-            this.update.Text = "Update";
-            this.update.UseVisualStyleBackColor = true;
-            this.update.Click += new System.EventHandler(this.update_Click);
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(127, 232);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 4;
-            this.delete.Text = "Delete";
-            this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(383, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 37);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Item";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.delete);
+            this.panel1.Controls.Add(this.update);
+            this.panel1.Controls.Add(this.load);
+            this.panel1.Controls.Add(this.create);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(32, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1024, 459);
+            this.panel1.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(236, 103);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Silver;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(23, 20);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(785, 459);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(706, 414);
+            this.flowLayoutPanel1.TabIndex = 13;
+            // 
+            // create
+            // 
+            this.create.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.create.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.create.DisabledForeColor = System.Drawing.Color.Gray;
+            this.create.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.create.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.create.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.create.HoverTextColor = System.Drawing.Color.White;
+            this.create.Location = new System.Drawing.Point(755, 20);
+            this.create.Name = "create";
+            this.create.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.create.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.create.NormalTextColor = System.Drawing.Color.White;
+            this.create.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.create.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.create.PressTextColor = System.Drawing.Color.White;
+            this.create.Size = new System.Drawing.Size(251, 42);
+            this.create.Style = MetroSet_UI.Design.Style.Light;
+            this.create.StyleManager = null;
+            this.create.TabIndex = 28;
+            this.create.Text = "Create ";
+            this.create.ThemeAuthor = "Narwin";
+            this.create.ThemeName = "MetroLite";
+            this.create.Click += new System.EventHandler(this.create_Click);
+            // 
+            // load
+            // 
+            this.load.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.load.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.load.DisabledForeColor = System.Drawing.Color.Gray;
+            this.load.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.load.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.load.HoverTextColor = System.Drawing.Color.White;
+            this.load.Location = new System.Drawing.Point(755, 153);
+            this.load.Name = "load";
+            this.load.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.load.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.load.NormalTextColor = System.Drawing.Color.White;
+            this.load.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.load.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.load.PressTextColor = System.Drawing.Color.White;
+            this.load.Size = new System.Drawing.Size(251, 42);
+            this.load.Style = MetroSet_UI.Design.Style.Light;
+            this.load.StyleManager = null;
+            this.load.TabIndex = 29;
+            this.load.Text = "Reload";
+            this.load.ThemeAuthor = "Narwin";
+            this.load.ThemeName = "MetroLite";
+            this.load.Click += new System.EventHandler(this.load_Click_1);
+            // 
+            // update
+            // 
+            this.update.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.update.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.update.DisabledForeColor = System.Drawing.Color.Gray;
+            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.update.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.update.HoverTextColor = System.Drawing.Color.White;
+            this.update.Location = new System.Drawing.Point(755, 86);
+            this.update.Name = "update";
+            this.update.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.update.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.update.NormalTextColor = System.Drawing.Color.White;
+            this.update.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.update.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.update.PressTextColor = System.Drawing.Color.White;
+            this.update.Size = new System.Drawing.Size(251, 42);
+            this.update.Style = MetroSet_UI.Design.Style.Light;
+            this.update.StyleManager = null;
+            this.update.TabIndex = 30;
+            this.update.Text = "Update";
+            this.update.ThemeAuthor = "Narwin";
+            this.update.ThemeName = "MetroLite";
+            this.update.Click += new System.EventHandler(this.update_Click_1);
+            // 
+            // delete
+            // 
+            this.delete.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.delete.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.delete.DisabledForeColor = System.Drawing.Color.Gray;
+            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.delete.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.delete.HoverTextColor = System.Drawing.Color.White;
+            this.delete.Location = new System.Drawing.Point(755, 392);
+            this.delete.Name = "delete";
+            this.delete.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.delete.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.delete.NormalTextColor = System.Drawing.Color.White;
+            this.delete.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.delete.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.delete.PressTextColor = System.Drawing.Color.White;
+            this.delete.Size = new System.Drawing.Size(251, 42);
+            this.delete.Style = MetroSet_UI.Design.Style.Light;
+            this.delete.StyleManager = null;
+            this.delete.TabIndex = 31;
+            this.delete.Text = "Delete";
+            this.delete.ThemeAuthor = "Narwin";
+            this.delete.ThemeName = "MetroLite";
+            this.delete.Click += new System.EventHandler(this.delete_Click_1);
             // 
             // ItemPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.update);
-            this.Controls.Add(this.load);
-            this.Controls.Add(this.create);
+            this.Controls.Add(this.panel1);
             this.Name = "ItemPage";
-            this.Size = new System.Drawing.Size(1168, 601);
+            this.Size = new System.Drawing.Size(1086, 505);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button create;
-        private System.Windows.Forms.Button load;
-        private System.Windows.Forms.Button update;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private MetroSet_UI.Controls.MetroSetButton create;
+        private MetroSet_UI.Controls.MetroSetButton load;
+        private MetroSet_UI.Controls.MetroSetButton delete;
+        private MetroSet_UI.Controls.MetroSetButton update;
     }
 }
