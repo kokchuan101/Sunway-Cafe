@@ -19,9 +19,9 @@ namespace Sunway_Cafe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Exit();
-            //Application.Run(new Form1());
+            Application.Run(new MainPage());
             //Application.Run(new SignInPage());
-            Application.Run(new ReportTest());
+            //Application.Run(new ReportTest());
 
         }
     }

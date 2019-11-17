@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.AddOrder = new System.Windows.Forms.Button();
             this.Pay = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ReloadOrder = new System.Windows.Forms.Button();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Retrieve = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,30 +47,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(383, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 46);
+            this.label1.Size = new System.Drawing.Size(99, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order";
             // 
-            // AddOrder
-            // 
-            this.AddOrder.Location = new System.Drawing.Point(44, 656);
-            this.AddOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AddOrder.Name = "AddOrder";
-            this.AddOrder.Size = new System.Drawing.Size(232, 62);
-            this.AddOrder.TabIndex = 2;
-            this.AddOrder.Text = "PlaceOrder";
-            this.AddOrder.UseVisualStyleBackColor = true;
-            this.AddOrder.Click += new System.EventHandler(this.AddOrder_Click);
-            // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(1279, 656);
-            this.Pay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pay.Location = new System.Drawing.Point(959, 533);
             this.Pay.Name = "Pay";
-            this.Pay.Size = new System.Drawing.Size(233, 62);
+            this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
             this.Pay.Text = "Pay";
             this.Pay.UseVisualStyleBackColor = true;
@@ -80,10 +66,9 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 119);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 97);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(900, 511);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 415);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // dataGridView1
@@ -91,17 +76,35 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
-            this.Add,
+            this.Price,
             this.Quantity,
-            this.Deduct,
-            this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(1020, 119);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Add,
+            this.Deduct});
+            this.dataGridView1.Location = new System.Drawing.Point(765, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(679, 390);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(817, 499);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 24);
+            this.lbltotal.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(755, 499);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Total:";
             // 
             // Product
             // 
@@ -110,12 +113,12 @@
             this.Product.Name = "Product";
             this.Product.Width = 125;
             // 
-            // Add
+            // Price
             // 
-            this.Add.HeaderText = "";
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            this.Add.Width = 125;
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
             // 
             // Quantity
             // 
@@ -124,6 +127,13 @@
             this.Quantity.Name = "Quantity";
             this.Quantity.Width = 125;
             // 
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
+            this.Add.Width = 125;
+            // 
             // Deduct
             // 
             this.Deduct.HeaderText = "";
@@ -131,60 +141,29 @@
             this.Deduct.Name = "Deduct";
             this.Deduct.Width = 125;
             // 
-            // Price
+            // Retrieve
             // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 125;
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(1089, 614);
-            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(0, 29);
-            this.lbltotal.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1007, 614);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 29);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Total:";
-            // 
-            // ReloadOrder
-            // 
-            this.ReloadOrder.Location = new System.Drawing.Point(360, 656);
-            this.ReloadOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ReloadOrder.Name = "ReloadOrder";
-            this.ReloadOrder.Size = new System.Drawing.Size(232, 62);
-            this.ReloadOrder.TabIndex = 10;
-            this.ReloadOrder.Text = "Reload";
-            this.ReloadOrder.UseVisualStyleBackColor = true;
-            this.ReloadOrder.Click += new System.EventHandler(this.ReloadOrder_Click);
+            this.Retrieve.Location = new System.Drawing.Point(1168, 533);
+            this.Retrieve.Name = "Retrieve";
+            this.Retrieve.Size = new System.Drawing.Size(175, 50);
+            this.Retrieve.TabIndex = 10;
+            this.Retrieve.Text = "Retrieve Data";
+            this.Retrieve.UseVisualStyleBackColor = true;
+            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
             // 
             // OrderPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ReloadOrder);
+            this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Pay);
-            this.Controls.Add(this.AddOrder);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(1885, 746);
+            this.Size = new System.Drawing.Size(1499, 705);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,17 +173,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AddOrder;
         private System.Windows.Forms.Button Pay;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewButtonColumn Add;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewButtonColumn Deduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button ReloadOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewButtonColumn Add;
+        private System.Windows.Forms.DataGridViewButtonColumn Deduct;
+        private System.Windows.Forms.Button Retrieve;
     }
 }

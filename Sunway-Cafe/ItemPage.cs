@@ -24,6 +24,35 @@ namespace Sunway_Cafe
         public ItemPage()
         {
             InitializeComponent();
+            OrderOptions.selectItemName = null;
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                flowLayoutPanel1.Controls.Remove(control);
+                control.Dispose();
+            }
+            flowLayoutPanel1.Controls.Clear();
+
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.ItemTestss.ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
+
+                foreach (var itemList in query)
+                {
+                    order[i] = new OrderOptions(this);
+                    order[i].Name_details = itemList.Name;
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
+                    order[i].Price = itemList.Price;
+                  
+                    order[i].WasClicked += OrderGrid_WasClicked;
+                    flowLayoutPanel1.Controls.Add(order[i]);
+                    i++;
+                }
+                i = 0;
+            }
         }
 
         public static ItemPage Instance
@@ -60,14 +89,14 @@ namespace Sunway_Cafe
                
                 foreach (var itemList in query)
                 {
-                    order[i] = new OrderOptions();
+                    order[i] = new OrderOptions(this);
                     order[i].Name_details = itemList.Name;
                     if (itemList.ImageURL != null)
                     {
                         order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
                     }
                     order[i].Price = itemList.Price;
-                    order[i].QTY = itemList.Quantity;
+                   
                     order[i].WasClicked += OrderGrid_WasClicked;
                     flowLayoutPanel1.Controls.Add(order[i]);     
                     i++;
@@ -158,6 +187,7 @@ namespace Sunway_Cafe
                 MessageBox.Show("Please select an item");
             }
         }
-    
+
+        
     }
 }
