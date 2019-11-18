@@ -34,12 +34,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Retrieve = new System.Windows.Forms.Button();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Retrieve = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(959, 533);
+            this.Pay.Location = new System.Drawing.Point(821, 557);
             this.Pay.Name = "Pay";
             this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
@@ -79,11 +80,12 @@
             this.Price,
             this.Quantity,
             this.Add,
-            this.Deduct});
-            this.dataGridView1.Location = new System.Drawing.Point(765, 97);
+            this.Deduct,
+            this.Clear});
+            this.dataGridView1.Location = new System.Drawing.Point(803, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(679, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(434, 390);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -100,56 +102,61 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(755, 499);
+            this.label2.Location = new System.Drawing.Point(799, 499);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Total:";
             // 
-            // Product
-            // 
-            this.Product.HeaderText = "Name";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            this.Product.Width = 125;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 125;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 125;
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "";
-            this.Add.MinimumWidth = 6;
-            this.Add.Name = "Add";
-            this.Add.Width = 125;
-            // 
-            // Deduct
-            // 
-            this.Deduct.HeaderText = "";
-            this.Deduct.MinimumWidth = 6;
-            this.Deduct.Name = "Deduct";
-            this.Deduct.Width = 125;
-            // 
             // Retrieve
             // 
-            this.Retrieve.Location = new System.Drawing.Point(1168, 533);
+            this.Retrieve.Location = new System.Drawing.Point(1039, 557);
             this.Retrieve.Name = "Retrieve";
             this.Retrieve.Size = new System.Drawing.Size(175, 50);
             this.Retrieve.TabIndex = 10;
             this.Retrieve.Text = "Retrieve Data";
             this.Retrieve.UseVisualStyleBackColor = true;
             this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Name";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 70;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 70;
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "";
+            this.Add.MinimumWidth = 6;
+            this.Add.Name = "Add";
+            this.Add.Width = 40;
+            // 
+            // Deduct
+            // 
+            this.Deduct.HeaderText = "";
+            this.Deduct.MinimumWidth = 6;
+            this.Deduct.Name = "Deduct";
+            this.Deduct.Width = 40;
+            // 
+            // Clear
+            // 
+            this.Clear.HeaderText = "";
+            this.Clear.Name = "Clear";
+            this.Clear.Width = 60;
             // 
             // OrderPage
             // 
@@ -163,7 +170,7 @@
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.label1);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(1499, 705);
+            this.Size = new System.Drawing.Size(1343, 705);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -178,11 +185,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Retrieve;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewButtonColumn Deduct;
-        private System.Windows.Forms.Button Retrieve;
+        private System.Windows.Forms.DataGridViewButtonColumn Clear;
     }
 }

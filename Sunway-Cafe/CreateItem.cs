@@ -27,12 +27,19 @@ namespace Sunway_Cafe
         {                     
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
-                int priceVal = int.Parse(priceBox.Text.Trim());
-                int quantityVal = int.Parse(quantityBox.Text.Trim());
-                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
-                db.ItemTestss.Add(item);
-                await db.SaveChangesAsync();
-                MessageBox.Show("Item Created");
+                if (textBox2 != null || priceBox != null || quantityBox != null)
+                {
+                    int priceVal = int.Parse(priceBox.Text.Trim());
+                    int quantityVal = int.Parse(quantityBox.Text.Trim());
+                    ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
+                    db.ItemTestss.Add(item);
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Item Created");
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all the information!");
+                }
             }
         }
 

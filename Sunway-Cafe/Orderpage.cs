@@ -131,6 +131,12 @@ namespace Sunway_Cafe
                         MessageBox.Show("Quantity is already at 0");
                     }
                 }
+                else if (e.ColumnIndex == dataGridView1.Columns["Clear"].Index)
+                {
+                    dataGridView1.Rows.Remove(row);
+                    MessageBox.Show("Item is removed from the order");
+
+                }
                 
             }
         }
@@ -141,7 +147,7 @@ namespace Sunway_Cafe
             for (int i = 0; i < DataGridView1.Rows.Count-1; i++)
             {
                 //Count-2 cause last two column is not needed
-                for (int j = 0; j < dataGridView1.Columns.Count-2; j++)
+                for (int j = 0; j < dataGridView1.Columns.Count-3; j++)
                 {
                     MessageBox.Show(dataGridView1.Rows[i].Cells[j].Value.ToString());
                 }

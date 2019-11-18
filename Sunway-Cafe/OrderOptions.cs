@@ -113,7 +113,7 @@ namespace Sunway_Cafe
 
                 if (update == false)
                 {
-                    orderPage.DataGridView1.Rows.Add(selectItemName, selectedItemPrice, 1, "+", "-");
+                    orderPage.DataGridView1.Rows.Add(selectItemName, selectedItemPrice, 1, "+", "-","Clear");
                     orderPage.Total();
                     firstTime = false;
                 }
