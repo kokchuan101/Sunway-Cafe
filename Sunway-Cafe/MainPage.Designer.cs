@@ -36,20 +36,21 @@
             this.sidepanel = new System.Windows.Forms.Panel();
             this.home = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mainpanel = new System.Windows.Forms.Panel();
-            this.logOutBtn = new MetroSet_UI.Controls.MetroSetButton();
             this.profile = new MetroSet_UI.Controls.MetroSetButton();
+            this.logOutBtn = new MetroSet_UI.Controls.MetroSetButton();
+            this.mainpanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Peru;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panel1.Controls.Add(this.item);
             this.panel1.Controls.Add(this.account);
             this.panel1.Controls.Add(this.order);
@@ -65,6 +66,7 @@
             // 
             this.item.FlatAppearance.BorderSize = 0;
             this.item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.item.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.item.ForeColor = System.Drawing.Color.SeaShell;
             this.item.Image = ((System.Drawing.Image)(resources.GetObject("item.Image")));
             this.item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -80,6 +82,7 @@
             // 
             this.account.FlatAppearance.BorderSize = 0;
             this.account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.account.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.account.ForeColor = System.Drawing.Color.SeaShell;
             this.account.Image = ((System.Drawing.Image)(resources.GetObject("account.Image")));
             this.account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,6 +98,7 @@
             // 
             this.order.FlatAppearance.BorderSize = 0;
             this.order.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.order.ForeColor = System.Drawing.Color.SeaShell;
             this.order.Image = ((System.Drawing.Image)(resources.GetObject("order.Image")));
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,6 +122,7 @@
             // 
             this.home.FlatAppearance.BorderSize = 0;
             this.home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.home.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.home.ForeColor = System.Drawing.Color.SeaShell;
             this.home.Image = ((System.Drawing.Image)(resources.GetObject("home.Image")));
             this.home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +136,9 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Peru;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.profile);
+            this.panel2.Controls.Add(this.logOutBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(160, 0);
             this.panel2.Name = "panel2";
@@ -183,7 +190,7 @@
             this.logOutBtn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.logOutBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.logOutBtn.DisabledForeColor = System.Drawing.Color.Gray;
-            this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.logOutBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.logOutBtn.HoverTextColor = System.Drawing.Color.White;
@@ -204,7 +211,7 @@
             this.logOutBtn.ThemeName = "MetroLite";
             this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
-            // profile
+            // mainpanel
             // 
             this.profile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.profile.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -239,18 +246,19 @@
             this.Controls.Add(this.profile);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.mainpanel);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sunway Cafe";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -259,9 +267,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button account;
         private System.Windows.Forms.Button order;
         private System.Windows.Forms.Panel sidepanel;
@@ -269,6 +274,9 @@
         private System.Windows.Forms.Button item;
         private MetroSet_UI.Controls.MetroSetButton logOutBtn;
         private MetroSet_UI.Controls.MetroSetButton profile;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label title;
     }
 }
 

@@ -102,6 +102,7 @@ namespace Sunway_Cafe
         {
             //home_Page(); 
             NavPage(HomePage.Instance, home);
+            title.Text = "Home";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -110,12 +111,14 @@ namespace Sunway_Cafe
 
             HomePage uc1 = new HomePage();
             MainPanel.Controls.Add(uc1);
+            title.Text = "Home";
         }
 
         public void order_Click(object sender, EventArgs e)
         {
             //order_Page();
             NavPage(OrderPage.Instance, order);
+            title.Text = "Order";
 
         }
 
@@ -124,6 +127,7 @@ namespace Sunway_Cafe
             //manage_Page();
             AccountPage mp = new AccountPage();
             nav(mp, mainpanel, account);
+            title.Text = "Account";
             //NavPage(UserControl2.Instance, manage);
         }
 
@@ -131,6 +135,7 @@ namespace Sunway_Cafe
         {
             //item_Page();
             NavPage(ItemPage.Instance, Item);
+            title.Text = "Item";
 
         }
 

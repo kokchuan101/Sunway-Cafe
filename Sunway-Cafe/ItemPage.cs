@@ -65,14 +65,19 @@ namespace Sunway_Cafe
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void create_Click(object sender, EventArgs e)
         {
             CreateItem create = new CreateItem();
             create.Show();
         }
 
       
-        private void load_Click(object sender, EventArgs e)
+        private void load_Click_1(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        public void loadData ()
         {
             OrderOptions.selectItemName = null;
             foreach (Control control in flowLayoutPanel1.Controls)
@@ -86,7 +91,7 @@ namespace Sunway_Cafe
             {
                 var query = db.ItemTestss.ToList();
                 OrderOptions[] order = new OrderOptions[query.Count];
-               
+
                 foreach (var itemList in query)
                 {
                     order[i] = new OrderOptions(this);
@@ -98,12 +103,11 @@ namespace Sunway_Cafe
                     order[i].Price = itemList.Price;
                    
                     order[i].WasClicked += OrderGrid_WasClicked;
-                    flowLayoutPanel1.Controls.Add(order[i]);     
+                    flowLayoutPanel1.Controls.Add(order[i]);
                     i++;
                 }
                 i = 0;
             }
-            
         }
 
         private void OrderGrid_WasClicked(object sender,EventArgs e)
@@ -127,7 +131,7 @@ namespace Sunway_Cafe
 
         Control foundControl = null;
 
-        private void delete_Click(object sender, EventArgs e)
+        private void delete_Click_1(object sender, EventArgs e)
         {
             if (OrderOptions.selectItemName !=null)
             {
@@ -175,7 +179,7 @@ namespace Sunway_Cafe
         }
 
 
-        private void update_Click(object sender, EventArgs e)
+        private void update_Click_1(object sender, EventArgs e)
         {
             if (OrderOptions.selectItemName != null)
             {

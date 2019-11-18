@@ -20,13 +20,13 @@ namespace Sunway_Cafe
             //listView1.HideSelection = false;
         }
 
-        private void AddStaff_Click(object sender, EventArgs e)
+        private void addStaff_Click_1(object sender, EventArgs e)
         {
             EditProfilePage editProfile = new EditProfilePage(null);
             editProfile.Show();
         }
 
-        private void Edit_Click_1(object sender, EventArgs e)
+        private void edit_Click(object sender, EventArgs e)
         {
             var id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             using(var db = new SunwayCafeContext())
@@ -46,7 +46,7 @@ namespace Sunway_Cafe
             RefreshListView();
         }
 
-        private void Delete_Click_1(object sender, EventArgs e)
+        private void delete_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -109,11 +109,6 @@ namespace Sunway_Cafe
                     MessageBox.Show("Null Value Detected");
                 }
             }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
