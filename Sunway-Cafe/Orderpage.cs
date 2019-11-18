@@ -135,6 +135,7 @@ namespace Sunway_Cafe
                 {
                     dataGridView1.Rows.Remove(row);
                     MessageBox.Show("Item is removed from the order");
+                    Total();
 
                 }
                 

@@ -19,7 +19,7 @@ namespace Sunway_Cafe
         public CreateItem()
         {
             InitializeComponent();
-            Image img = Image.FromFile(@"C:\Users\User\source\repos\Sunway-Cafe\Sunway-Cafe\banana.jpg");
+            Image img = global::Sunway_Cafe.Properties.Resources.banana;
             pictureBox.Image = img;
         }
 

@@ -41,7 +41,6 @@
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Retrieve = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,20 +159,10 @@
             this.Retrieve.UseVisualStyleBackColor = true;
             this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1003, 509);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "label3";
-            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
@@ -204,6 +193,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewButtonColumn Deduct;
         private System.Windows.Forms.DataGridViewButtonColumn Clear;
-        private System.Windows.Forms.Label label3;
     }
 }
