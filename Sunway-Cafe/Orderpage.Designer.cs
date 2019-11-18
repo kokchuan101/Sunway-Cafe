@@ -32,19 +32,20 @@
             this.Pay = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Retrieve = new System.Windows.Forms.Button();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Retrieve = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,35 +91,6 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(817, 499);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(0, 24);
-            this.lbltotal.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(799, 499);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Total:";
-            // 
-            // Retrieve
-            // 
-            this.Retrieve.Location = new System.Drawing.Point(1039, 557);
-            this.Retrieve.Name = "Retrieve";
-            this.Retrieve.Size = new System.Drawing.Size(175, 50);
-            this.Retrieve.TabIndex = 10;
-            this.Retrieve.Text = "Retrieve Data";
-            this.Retrieve.UseVisualStyleBackColor = true;
-            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
-            // 
             // Product
             // 
             this.Product.HeaderText = "Name";
@@ -159,14 +131,49 @@
             this.Clear.Name = "Clear";
             this.Clear.Width = 60;
             // 
-            // Pay
+            // lbltotal
             // 
-           
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(894, 501);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 24);
+            this.lbltotal.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(832, 501);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Total:";
+            // 
+            // Retrieve
+            // 
+            this.Retrieve.Location = new System.Drawing.Point(1039, 557);
+            this.Retrieve.Name = "Retrieve";
+            this.Retrieve.Size = new System.Drawing.Size(175, 50);
+            this.Retrieve.TabIndex = 10;
+            this.Retrieve.Text = "Retrieve Data";
+            this.Retrieve.UseVisualStyleBackColor = true;
+            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1003, 509);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "label3";
             // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
@@ -178,6 +185,7 @@
             this.Size = new System.Drawing.Size(1343, 705);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -196,5 +204,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewButtonColumn Deduct;
         private System.Windows.Forms.DataGridViewButtonColumn Clear;
+        private System.Windows.Forms.Label label3;
     }
 }
