@@ -148,7 +148,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Peru;
-            this.panel3.Controls.Add(this.label1);
+           
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(160, 1);
             this.panel3.Name = "panel3";
@@ -157,14 +157,7 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(17, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "MuCheng\'s Burger";
+          
             // 
             // pictureBox1
             // 
