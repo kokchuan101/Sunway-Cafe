@@ -36,8 +36,8 @@ namespace Sunway_Cafe
         ItemPage itemPage;
         public static string selectItemName;
         public static Image selectedItemImage;
-        public static int selectedItemPrice;
-        public static int selectedItemQuantity;
+        public static decimal selectedItemPrice;
+        public static decimal selectedItemCostPrice;
         public bool firstTime = true;
 
         private string nameDetails;
@@ -55,14 +55,19 @@ namespace Sunway_Cafe
             set { _image = value; pictureBox.Image = value; pictureBox.SizeMode = PictureBoxSizeMode.Zoom; }
         }
 
-       
-
-        private int _price;
-
-        public int Price
+        private decimal _costPrice;
+        public decimal CostPrice
         {
-            get { return _price; }
-            set { _price = value; price.Text = value.ToString(); }
+            get { return _costPrice; }
+            set { _costPrice = value;}
+        }
+
+        private decimal _sellPrice;
+
+        public decimal Price
+        {
+            get { return _sellPrice; }
+            set { _sellPrice = value; price.Text = value.ToString(); }
         }
 
         private void OrderOptions_Load(object sender, EventArgs e)
@@ -84,6 +89,7 @@ namespace Sunway_Cafe
             selectItemName = this.Name_details;
             selectedItemImage = this.displayImage;
             selectedItemPrice = this.Price;
+            selectedItemCostPrice = this.CostPrice;
             
             bool update = false;
 

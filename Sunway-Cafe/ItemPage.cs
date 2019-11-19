@@ -34,7 +34,7 @@ namespace Sunway_Cafe
 
             using (var db = new SunwayCafeContext())
             {
-                var query = db.ItemTestss.ToList();
+                var query = db.Items.ToList();
                 OrderOptions[] order = new OrderOptions[query.Count];
 
                 foreach (var itemList in query)
@@ -45,8 +45,8 @@ namespace Sunway_Cafe
                     {
                         order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
                     }
-                    order[i].Price = itemList.Price;
-                  
+                    order[i].Price = itemList.SellingPrice;
+                    order[i].CostPrice = itemList.CostPrice;                 
                     order[i].WasClicked += OrderGrid_WasClicked;
                     flowLayoutPanel1.Controls.Add(order[i]);
                     i++;
@@ -89,7 +89,7 @@ namespace Sunway_Cafe
 
             using (var db = new SunwayCafeContext())
             {
-                var query = db.ItemTestss.ToList();
+                var query = db.Items.ToList();
                 OrderOptions[] order = new OrderOptions[query.Count];
 
                 foreach (var itemList in query)
@@ -100,8 +100,8 @@ namespace Sunway_Cafe
                     {
                         order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
                     }
-                    order[i].Price = itemList.Price;
-                   
+                    order[i].Price = itemList.SellingPrice;
+                    order[i].CostPrice = itemList.CostPrice;                  
                     order[i].WasClicked += OrderGrid_WasClicked;
                     flowLayoutPanel1.Controls.Add(order[i]);
                     i++;
@@ -137,9 +137,9 @@ namespace Sunway_Cafe
             {
                 using (var db = new SunwayCafeContext())
                 {
-                    var query = db.ItemTestss.ToList();
+                    var query = db.Items.ToList();
                     OrderOptions[] order = new OrderOptions[query.Count];
-                    ItemTests delItem;
+                    Item delItem;
 
 
 
@@ -163,8 +163,8 @@ namespace Sunway_Cafe
                             if (OrderOptions.selectItemName == itemList.Name)
                             {
                                 MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
-                                delItem = db.ItemTestss.Where(d => d.Name == OrderOptions.selectItemName).First();
-                                db.ItemTestss.Remove(delItem);
+                                delItem = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
+                                db.Items.Remove(delItem);
                                 db.SaveChanges();
                             }
                         }

@@ -36,18 +36,20 @@ namespace Sunway_Cafe
             : base(modelBuilder) { }
 
         protected override void Seed(SunwayCafeContext context)
-        {
-            context.Set<Item>().Add(new Item() { Name = "apple pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
-            context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
-            context.Set<Item>().Add(new Item() { Name = "Pineapple Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M });
+        {           
             context.Set<Account>().Add(new Account() { Username = "test1", Password = "test1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "adminuser1", Password = "adminuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "Admin" });
             context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
             context.Set<Account>().Add(new Account() { Username = "saleuser2", Password = "saleuser2", GivenName = "Mu", FamilyName = "Cheng 2.0", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
 
-            Image img = Image.FromFile(@"C:\Users\User\source\repos\Sunway-Cafe\Sunway-Cafe\banana.jpg");
-            context.Set<ItemTests>().Add(new ItemTests() { Name = "Iced Lemon Tea", ImageURL = Global.ConvertImageToBinary(img), Quantity = 10, Price = 7 });
-            context.Set<ItemTests>().Add(new ItemTests() { Name = "Burger", ImageURL = Global.ConvertImageToBinary(img), Quantity = 30, Price = 15 });
+            Image img = Properties.Resources.banana;
+            Image img2 = Properties.Resources.Korean_Burger;
+            Image img3 = Properties.Resources.Ice_Lemon_Water;       
+            context.Set<Item>().Add(new Item() { Name = "Korean Burger", Type = "food", CostPrice = 7.00M, SellingPrice = 15.00M, ImageURL = Global.ConvertImageToBinary(img2)});
+            context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M, ImageURL = Global.ConvertImageToBinary(img)});
+            context.Set<Item>().Add(new Item() { Name = "iced Lemon Water", Type = "drinks", CostPrice = 1.50M, SellingPrice = 2.50M, ImageURL = Global.ConvertImageToBinary(img3)});
+
+
         }
 
     }
