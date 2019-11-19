@@ -19,20 +19,20 @@ namespace Sunway_Cafe.Model
             InitializeComponent();
             using(var db = new SunwayCafeContext())
             {
-                var query = db.Accounts.FirstOrDefault();
+                //var query = db.Accounts.FirstOrDefault();
 
-                var param = new ReportParameter[]
-                {
-                    new ReportParameter("username", query.Username),
-                    new ReportParameter("role", query.Role)
-                };
+                //var param = new ReportParameter[]
+                //{
+                //    new ReportParameter("username", query.Username),
+                //    new ReportParameter("role", query.Role)
+                //};
 
                 //create a dummy data set
-                var ds = new ReportDataSource("DataSet1", db.Accounts.ToList());
-                reportViewer1.LocalReport.SetParameters(param);
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(ds);
-                reportViewer1.RefreshReport();
+                //var ds = new ReportDataSource("DataSet1", db.Accounts.ToList());
+                //reportViewer1.LocalReport.SetParameters(param);
+                //reportViewer1.LocalReport.DataSources.Clear();
+                //reportViewer1.LocalReport.DataSources.Add(ds);
+                //reportViewer1.RefreshReport();
             }
         }
 

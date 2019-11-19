@@ -14,36 +14,40 @@ namespace Sunway_Cafe
 {
     public partial class OrderOptions : UserControl
     {
-        public event EventHandler<EventArgs> WasClicked;
+        public event EventHandler<EventArgs> WasClicked;       
+       
 
-        public OrderOptions()
+        //access datagridview in orderpage
+        public OrderOptions(OrderPage ordP)
         {
             InitializeComponent();
+            this.orderPage = ordP;
         }
+
+        //access controls in itempage
+        public OrderOptions(ItemPage itmP)
+        {
+            InitializeComponent();
+            this.itemPage = itmP;
+        }
+
         public Item item;
+        OrderPage orderPage;
+        ItemPage itemPage;
         public static string selectItemName;
         public static Image selectedItemImage;
         public static int selectedItemPrice;
         public static int selectedItemQuantity;
+        public bool firstTime = true;
 
         private string nameDetails;
-
-
-        
         public string Name_details
         {
             get { return nameDetails; }
             set { nameDetails = value; nameDet.Text = value; }
         }
 
-        private int _id;
-  
-        public int ID
-        {
-            get { return _id; }
-            set { _id = value; ID = 1; }
-        }
-
+ 
         private Image _image;
         public Image  displayImage
         {
@@ -51,13 +55,7 @@ namespace Sunway_Cafe
             set { _image = value; pictureBox.Image = value; pictureBox.SizeMode = PictureBoxSizeMode.Zoom; }
         }
 
-        private int _qty;
-
-        public int QTY
-        {
-            get { return _qty; }
-            set { _qty = value; quantity.Text = value.ToString(); }
-        }
+       
 
         private int _price;
 
@@ -67,35 +65,15 @@ namespace Sunway_Cafe
             set { _price = value; price.Text = value.ToString(); }
         }
 
-        byte [] ConvertImageToBinary(Image img)
-        {
-            using(MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
-        }
-
-        Image ConvertBinaryToImage(byte[]image)
-        {
-            using (MemoryStream ms = new MemoryStream(image))
-            {
-                return Image.FromStream(ms);
-            }
-        }
-
         private void OrderOptions_Load(object sender, EventArgs e)
-        {
-            this.MouseClick += Control_MouseClick;
-
+        {           
             foreach (Control control in Controls)
             {
                control.MouseClick += Control_MouseClick;
             }
-
         }
 
-        private void Control_MouseClick(object sender,MouseEventArgs e)
+        private void Control_MouseClick(object sender, MouseEventArgs e)
         {
             var wasClicked = WasClicked;
             if (wasClicked != null)
@@ -106,11 +84,49 @@ namespace Sunway_Cafe
             selectItemName = this.Name_details;
             selectedItemImage = this.displayImage;
             selectedItemPrice = this.Price;
-            selectedItemQuantity = this.QTY;
-           
+            
+            bool update = false;
+
+            //Execute the codes below when OrderOption(OrderPage) constructor invoked
+            if (orderPage != null)
+            {
+                foreach (DataGridViewRow row in orderPage.DataGridView1.Rows)
+                {
+                    var quantity = (Convert.ToInt32(row.Cells[orderPage.DataGridView1.Columns["Quantity"].Index].Value));
+
+                    //Check if there is any row exist in datagridview1 to prevent null exception
+                    if (row.Cells["Product"].Value != null)
+                    {
+                        if (firstTime == false)
+                        {
+                            if (row.Cells["Product"].Value.ToString() == selectItemName)
+                            {
+                                quantity++;
+                                row.Cells["Quantity"].Value = quantity;
+                                update = true;
+                                orderPage.Total();
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (update == false)
+                {
+                    orderPage.DataGridView1.Rows.Add(selectItemName, selectedItemPrice, 1, "+", "-","Clear");
+                    orderPage.Total();
+                    firstTime = false;
+                }
+
+                //UserControl click animation
+                Task.Delay(20).Wait();
+                IsSelected = false;
+                wasClicked = null;
+            }
         }
 
         private bool _isSelected;
+
         public bool IsSelected
         {
             get { return _isSelected; }
@@ -121,6 +137,6 @@ namespace Sunway_Cafe
             }
         }
 
-  
+       
     }
 }

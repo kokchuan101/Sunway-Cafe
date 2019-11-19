@@ -18,25 +18,37 @@ namespace Sunway_Cafe
 
         public CreateItem()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            Image img = global::Sunway_Cafe.Properties.Resources.banana;
+            pictureBox.Image = img;
         }
 
 
 
         private async void button1_Click_1(object sender, EventArgs e)
-        {                     
+        {
+            bool success;
+            bool success2;
+           
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
-                int priceVal = int.Parse(priceBox.Text.Trim());
-                int quantityVal = int.Parse(quantityBox.Text.Trim());
-                ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
-                db.ItemTestss.Add(item);
-                await db.SaveChangesAsync();
-                MessageBox.Show("Item Created");
+
+                success = int.TryParse(priceBox.Text.Trim(), out int priceVal);
+                success2 = int.TryParse(quantityBox.Text.Trim(), out int quantityVal);
+
+                if (success && success2)
+                {
+                    ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
+                    db.ItemTestss.Add(item);
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Item Created");
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all the information!");
+                }
             }
-            ItemPage ip = new ItemPage();
-            ip.loadData();
-            this.Close();
+
         }
 
         private void open_Click(object sender, EventArgs e)
