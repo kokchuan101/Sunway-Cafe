@@ -41,7 +41,14 @@
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Retrieve = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Food = new System.Windows.Forms.TabPage();
+            this.Drinks = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.Food.SuspendLayout();
+            this.Drinks.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +63,7 @@
             // 
             // Pay
             // 
-            this.Pay.Location = new System.Drawing.Point(821, 557);
+            this.Pay.Location = new System.Drawing.Point(821, 579);
             this.Pay.Name = "Pay";
             this.Pay.Size = new System.Drawing.Size(175, 50);
             this.Pay.TabIndex = 4;
@@ -67,9 +74,9 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 97);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 14);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 415);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(722, 438);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // dataGridView1
@@ -83,7 +90,7 @@
             this.Add,
             this.Deduct,
             this.Clear});
-            this.dataGridView1.Location = new System.Drawing.Point(803, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(803, 119);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(434, 390);
@@ -134,7 +141,7 @@
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(894, 501);
+            this.lbltotal.Location = new System.Drawing.Point(879, 522);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(0, 24);
             this.lbltotal.TabIndex = 8;
@@ -143,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(832, 501);
+            this.label2.Location = new System.Drawing.Point(817, 522);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 9;
@@ -151,7 +158,7 @@
             // 
             // Retrieve
             // 
-            this.Retrieve.Location = new System.Drawing.Point(1039, 557);
+            this.Retrieve.Location = new System.Drawing.Point(1039, 579);
             this.Retrieve.Name = "Retrieve";
             this.Retrieve.Size = new System.Drawing.Size(175, 50);
             this.Retrieve.TabIndex = 10;
@@ -159,20 +166,64 @@
             this.Retrieve.UseVisualStyleBackColor = true;
             this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.Food);
+            this.tabControl1.Controls.Add(this.Drinks);
+            this.tabControl1.Location = new System.Drawing.Point(33, 97);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(742, 496);
+            this.tabControl1.TabIndex = 11;
+            // 
+            // Food
+            // 
+            this.Food.Controls.Add(this.flowLayoutPanel1);
+            this.Food.Location = new System.Drawing.Point(4, 22);
+            this.Food.Name = "Food";
+            this.Food.Padding = new System.Windows.Forms.Padding(3);
+            this.Food.Size = new System.Drawing.Size(734, 470);
+            this.Food.TabIndex = 0;
+            this.Food.Text = "Food";
+            this.Food.UseVisualStyleBackColor = true;
+            // 
+            // Drinks
+            // 
+            this.Drinks.Controls.Add(this.flowLayoutPanel2);
+            this.Drinks.Location = new System.Drawing.Point(4, 22);
+            this.Drinks.Name = "Drinks";
+            this.Drinks.Padding = new System.Windows.Forms.Padding(3);
+            this.Drinks.Size = new System.Drawing.Size(734, 470);
+            this.Drinks.TabIndex = 1;
+            this.Drinks.Text = "Drinks";
+            this.Drinks.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Peru;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 16);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(722, 438);
+            this.flowLayoutPanel2.TabIndex = 7;
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.label1);
             this.Name = "OrderPage";
             this.Size = new System.Drawing.Size(1343, 705);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.Food.ResumeLayout(false);
+            this.Drinks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +244,9 @@
         private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewButtonColumn Deduct;
         private System.Windows.Forms.DataGridViewButtonColumn Clear;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Food;
+        private System.Windows.Forms.TabPage Drinks;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

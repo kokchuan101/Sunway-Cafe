@@ -19,7 +19,7 @@ namespace Sunway_Cafe
         public CreateItem()
         {
             InitializeComponent();
-            Image img = global::Sunway_Cafe.Properties.Resources.banana;
+            Image img = Properties.Resources.banana;
             pictureBox.Image = img;
         }
 
@@ -29,17 +29,29 @@ namespace Sunway_Cafe
         {
             bool success;
             bool success2;
-           
+            string type;
+            bool isChecked = Food.Checked;
+
+            if (isChecked)
+            {
+                type = Food.Text;
+            }
+            else
+            {
+                type = Drinks.Text;
+                isChecked = true;
+            }
+
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
 
-                success = int.TryParse(priceBox.Text.Trim(), out int priceVal);
-                success2 = int.TryParse(quantityBox.Text.Trim(), out int quantityVal);
+                success = int.TryParse(priceBox.Text.Trim(), out int priceVal);                
+                success2 = int.TryParse(costPriceBox.Text.Trim(), out int costVal);
 
-                if (success && success2)
+                if (success && success2 && isChecked)
                 {
-                    ItemTests item = new ItemTests() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), Price = priceVal, Quantity = quantityVal };
-                    db.ItemTestss.Add(item);
+                    Item item = new Item() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), SellingPrice = priceVal, CostPrice = costVal, Type = type };
+                    db.Items.Add(item);
                     await db.SaveChangesAsync();
                     MessageBox.Show("Item Created");
                 }

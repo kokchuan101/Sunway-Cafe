@@ -27,6 +27,8 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             textBox1.Text = OrderOptions.selectItemName;
+            textBox2.Text = OrderOptions.selectedItemPrice.ToString();
+            textBox3.Text = OrderOptions.selectedItemCostPrice.ToString();
             pictureBox.Image = OrderOptions.selectedItemImage;
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
         }

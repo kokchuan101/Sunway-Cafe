@@ -280,6 +280,8 @@
   <ItemGroup>
     <Content Include="banana.jpg" />
     <Content Include="Properties\Resources\banana.jpg" />
+    <None Include="Properties\Resources\Korean Burger.jpg" />
+    <None Include="Properties\Resources\Ice Lemon Water.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Image\" />
