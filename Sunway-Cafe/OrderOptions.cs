@@ -40,6 +40,8 @@ namespace Sunway_Cafe
         public static decimal selectedItemCostPrice;
         public bool firstTime = true;
 
+        public int ID { get; set; }
+
         private string nameDetails;
         public string Name_details
         {
@@ -119,7 +121,7 @@ namespace Sunway_Cafe
 
                 if (update == false)
                 {
-                    orderPage.DataGridView1.Rows.Add(selectItemName, selectedItemPrice, 1, "+", "-","Clear");
+                    orderPage.DataGridView1.Rows.Add(ID,selectItemName, selectedItemPrice, 1, "+", "-","Clear");
                     orderPage.Total();
                     firstTime = false;
                 }

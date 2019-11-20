@@ -32,6 +32,7 @@
             this.Pay = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +70,7 @@
             this.Pay.TabIndex = 4;
             this.Pay.Text = "Pay";
             this.Pay.UseVisualStyleBackColor = true;
+            this.Pay.Click += new System.EventHandler(this.Pay_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -84,6 +86,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Product,
             this.Price,
             this.Quantity,
@@ -96,6 +99,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(434, 390);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // Product
             // 
@@ -238,15 +247,16 @@
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Retrieve;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Food;
+        private System.Windows.Forms.TabPage Drinks;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewButtonColumn Add;
         private System.Windows.Forms.DataGridViewButtonColumn Deduct;
         private System.Windows.Forms.DataGridViewButtonColumn Clear;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Food;
-        private System.Windows.Forms.TabPage Drinks;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
