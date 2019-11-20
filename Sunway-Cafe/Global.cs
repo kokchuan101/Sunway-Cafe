@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,17 @@ namespace Sunway_Cafe
                     return ms.ToArray();
                 }
             }
+        }
+
+        public static DateTime ConvToDateTime(string dts)
+        {
+            var pattern = "dd/MM/yyy HH:mm:ss";
+            return DateTime.ParseExact(dts, pattern, null);
+        }
+
+        public static string ConvToDateTimeString(DateTime dt)
+        {
+            return dt.ToString("dd/MM/yyy HH:mm:ss");
         }
     }
 }

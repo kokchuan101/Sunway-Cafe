@@ -15,7 +15,6 @@ namespace Sunway_Cafe
         public AccountPage()
         {
             InitializeComponent();
-            listView1.Items.Clear();
             RefreshListView();
             //listView1.HideSelection = false;
         }
@@ -78,6 +77,7 @@ namespace Sunway_Cafe
 
         private void RefreshListView()
         {
+            listView1.Items.Clear();
             try
             {
                 using (var db = new SunwayCafeContext())
@@ -110,5 +110,6 @@ namespace Sunway_Cafe
                 }
             }
         }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,23 +18,45 @@ namespace Sunway_Cafe.Model
         public ReportTest()
         {
             InitializeComponent();
-            using(var db = new SunwayCafeContext())
+            //using(var db = new SunwayCafeContext())
+            //{
+            //    var query = db.Accounts.FirstOrDefault();
+
+            //    var param = new ReportParameter[]
+            //    {
+            //        new ReportParameter("username", query.Username),
+            //        new ReportParameter("role", query.Role)
+            //    };
+
+            //    //create a dummy data set
+            //    var ds = new ReportDataSource("DataSet1", db.Accounts.ToList());
+            //    reportViewer1.LocalReport.SetParameters(param);
+            //    reportViewer1.LocalReport.DataSources.Clear();
+            //    reportViewer1.LocalReport.DataSources.Add(ds);
+            //    reportViewer1.RefreshReport();
+            //}
+        }
+
+        public ReportTest(Receipt rcp)
+        {
+            InitializeComponent();
+            var param = new ReportParameter[]
             {
-                //var query = db.Accounts.FirstOrDefault();
+                    new ReportParameter("Date", rcp.Date),
+                    new ReportParameter("Subtotal", $"{rcp.Subtotal}"),
+                    new ReportParameter("SST", rcp.CalculateSST()),
+                    new ReportParameter("ServCharge", rcp.CalculateServCharge()),
+                    new ReportParameter("Total", rcp.CalculateTotal())
+            };
 
-                //var param = new ReportParameter[]
-                //{
-                //    new ReportParameter("username", query.Username),
-                //    new ReportParameter("role", query.Role)
-                //};
+            //create a dummy data set
+            var ds = new ReportDataSource("Receipt", rcp.ReceiptItems);
+            reportViewer1.LocalReport.SetParameters(param);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
+            reportViewer1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 1000);
 
-                //create a dummy data set
-                //var ds = new ReportDataSource("DataSet1", db.Accounts.ToList());
-                //reportViewer1.LocalReport.SetParameters(param);
-                //reportViewer1.LocalReport.DataSources.Clear();
-                //reportViewer1.LocalReport.DataSources.Add(ds);
-                //reportViewer1.RefreshReport();
-            }
         }
 
         private void ReportTest_Load(object sender, EventArgs e)

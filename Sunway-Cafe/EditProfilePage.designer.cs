@@ -76,7 +76,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(349, 544);
+            this.panel1.Size = new System.Drawing.Size(375, 544);
             this.panel1.TabIndex = 0;
             // 
             // role
@@ -238,7 +238,7 @@
             this.exitBtn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.exitBtn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.exitBtn.HoverTextColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(293, 9);
+            this.exitBtn.Location = new System.Drawing.Point(324, 8);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.exitBtn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -272,7 +272,7 @@
             this.editProfile.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.editProfile.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.editProfile.PressTextColor = System.Drawing.Color.White;
-            this.editProfile.Size = new System.Drawing.Size(328, 57);
+            this.editProfile.Size = new System.Drawing.Size(355, 57);
             this.editProfile.Style = MetroSet_UI.Design.Style.Light;
             this.editProfile.StyleManager = null;
             this.editProfile.TabIndex = 18;
@@ -458,7 +458,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(355, 550);
+            this.ClientSize = new System.Drawing.Size(382, 550);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditProfilePage";

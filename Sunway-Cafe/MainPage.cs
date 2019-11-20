@@ -100,24 +100,21 @@ namespace Sunway_Cafe
 
         public void button1_Click(object sender, EventArgs e)
         {
-            //home_Page(); 
-            NavPage(HomePage.Instance, home);
+            NavPage(new HomePage(), home);
             title.Text = "Home";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             _obj = this;
-
-            HomePage uc1 = new HomePage();
-            MainPanel.Controls.Add(uc1);
+            MainPanel.Controls.Add(new HomePage());
             title.Text = "Home";
         }
 
         public void order_Click(object sender, EventArgs e)
         {
             //order_Page();
-            NavPage(OrderPage.Instance, order);
+            NavPage(new OrderPage(), order);
             title.Text = "Order";
 
         }
@@ -125,8 +122,7 @@ namespace Sunway_Cafe
         public void manage_Click(object sender, EventArgs e)
         {
             //manage_Page();
-            AccountPage mp = new AccountPage();
-            nav(mp, mainpanel, account);
+            nav(new AccountPage(), mainpanel, account);
             title.Text = "Account";
             //NavPage(UserControl2.Instance, manage);
         }
@@ -134,7 +130,7 @@ namespace Sunway_Cafe
         private void item_Click(object sender, EventArgs e)
         {
             //item_Page();
-            NavPage(ItemPage.Instance, Item);
+            NavPage(new ItemPage(), Item);
             title.Text = "Item";
 
         }
@@ -177,6 +173,12 @@ namespace Sunway_Cafe
         private void Mainpanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Kitchen_Click(object sender, EventArgs e)
+        {
+            NavPage(new KitchenPage(), kitchen);
+            title.Text = "Kitchen";
         }
     }
 

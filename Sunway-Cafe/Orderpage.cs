@@ -14,7 +14,7 @@ using Sunway_Cafe.Model;
 namespace Sunway_Cafe
 {
     public partial class OrderPage : UserControl
-    { 
+    {
         public DataGridView DataGridView1
         {
             get
@@ -60,6 +60,7 @@ namespace Sunway_Cafe
                 foreach (var itemList in query)
                 {
                     order[i] = new OrderOptions(this);
+                    order[i].ID = itemList.Id;
                     order[i].Name_details = itemList.Name;
                     if (itemList.ImageURL != null)
                     {
@@ -68,7 +69,7 @@ namespace Sunway_Cafe
                     order[i].WasClicked += OrderGrid_WasClicked;
                     order[i].Price = itemList.SellingPrice;
                     order[i].CostPrice = itemList.CostPrice;
-                    
+
                     flowLayoutPanel1.Controls.Add(order[i]);
                     i++;
                 }
@@ -83,6 +84,7 @@ namespace Sunway_Cafe
                 foreach (var itemList in query)
                 {
                     order[i] = new OrderOptions(this);
+                    order[i].ID = itemList.Id;
                     order[i].Name_details = itemList.Name;
                     if (itemList.ImageURL != null)
                     {
@@ -114,8 +116,8 @@ namespace Sunway_Cafe
         Image ConvertBinaryToImage(byte[] image)
         {
             using (MemoryStream ms = new MemoryStream(image))
-            {              
-                return Image.FromStream(ms); 
+            {
+                return Image.FromStream(ms);
             }
         }
 
@@ -123,8 +125,8 @@ namespace Sunway_Cafe
         {
             var total = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
-            {              
-                total += Convert.ToInt32(row.Cells["Price"].Value) * Convert.ToInt32(row.Cells["Quantity"].Value);              
+            {
+                total += Convert.ToInt32(row.Cells["Price"].Value) * Convert.ToInt32(row.Cells["Quantity"].Value);
             }
             lbltotal.Text = total.ToString();
         }
@@ -144,7 +146,7 @@ namespace Sunway_Cafe
                     Total();
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["Deduct"].Index)
-                {                   
+                {
                     if (quantity > 0)
                     {
                         quantity--;
@@ -165,23 +167,75 @@ namespace Sunway_Cafe
                     Total();
 
                 }
-                
+
             }
         }
 
         //Retrieve data from datagridview
         private void Retrieve_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < DataGridView1.Rows.Count-1; i++)
+            for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
             {
                 //Count-2 cause last two column is not needed
-                for (int j = 0; j < dataGridView1.Columns.Count-3; j++)
+                for (int j = 0; j < dataGridView1.Columns.Count - 3; j++)
                 {
                     MessageBox.Show(dataGridView1.Rows[i].Cells[j].Value.ToString());
                 }
             }
         }
 
-       
+        private void Pay_Click(object sender, EventArgs e)
+        {
+
+            
+            var order = new Order()
+            {
+                NetPrice = decimal.Parse(lbltotal.Text),
+                TotalPrice = decimal.Parse(lbltotal.Text) * 1.16M,
+                Status = "Processing",
+                DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
+
+            };
+
+            using (var db = new SunwayCafeContext())
+            {
+                var lst = new List<OrderedItem>();
+                //Add all item object from datagrid using id
+                for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+                {
+                    var id = Convert.ToInt32((dataGridView1.Rows[i].Cells[0].Value));
+                    var item = db.Items.Where(x => x.Id == id).FirstOrDefault();
+                    if (item == null)
+                    {
+                        MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        lst.Add(new OrderedItem()
+                        {
+                            Order = order,
+                            Item = item,
+                            Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity"].Value))
+                        });
+                    }
+                }
+
+                order.OrderedItems = lst;
+                db.Orders.Add(order);
+                db.SaveChanges();
+
+            }
+
+            var receiptItems = new List<ReceiptItem>();
+            foreach (var item in order.OrderedItems)
+            {
+                receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
+            }
+
+            var receipt = new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems , Date = order.DateTimeCreated};
+
+            var reportPage = new ReportTest(receipt);
+            reportPage.Show();
+        }
     }
 }
