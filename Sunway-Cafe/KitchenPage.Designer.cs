@@ -34,10 +34,10 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(40, 21);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 23);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1000, 451);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1024, 503);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // KitchenPage
@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "KitchenPage";
-            this.Size = new System.Drawing.Size(1086, 505);
+            this.Size = new System.Drawing.Size(1086, 543);
             this.ResumeLayout(false);
 
         }

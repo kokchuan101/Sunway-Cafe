@@ -126,31 +126,31 @@ namespace Sunway_Cafe
             var total = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                total += Convert.ToInt32(row.Cells["Price"].Value) * Convert.ToInt32(row.Cells["Quantity"].Value);
+                total += Convert.ToInt32(row.Cells["Price1"].Value) * Convert.ToInt32(row.Cells["Quantity1"].Value);
             }
             lbltotal.Text = total.ToString();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             var row = dataGridView1.CurrentRow;
-            var quantity = (Convert.ToInt32(row.Cells[dataGridView1.Columns["Quantity"].Index].Value));
+            var quantity = (Convert.ToInt32(row.Cells[dataGridView1.Columns["Quantity1"].Index].Value));
 
 
-            if (row.Cells["Product"].Value != null)
+            if (row.Cells["Product1"].Value != null)
             {
-                if (e.ColumnIndex == dataGridView1.Columns["Add"].Index)
+                if (e.ColumnIndex == dataGridView1.Columns["Add1"].Index)
                 {
                     quantity++;
-                    row.Cells["Quantity"].Value = quantity;
+                    row.Cells["Quantity1"].Value = quantity;
                     Total();
                 }
-                else if (e.ColumnIndex == dataGridView1.Columns["Deduct"].Index)
+                else if (e.ColumnIndex == dataGridView1.Columns["Deduct1"].Index)
                 {
                     if (quantity > 0)
                     {
                         quantity--;
-                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["Quantity1"].Value = quantity;
                         Total();
                     }
                     else if (quantity < 1)
@@ -160,7 +160,7 @@ namespace Sunway_Cafe
                         MessageBox.Show("Quantity is already at 0");
                     }
                 }
-                else if (e.ColumnIndex == dataGridView1.Columns["Clear"].Index)
+                else if (e.ColumnIndex == dataGridView1.Columns["Clear1"].Index)
                 {
                     dataGridView1.Rows.Remove(row);
                     MessageBox.Show("Item is removed from the order");
@@ -172,7 +172,7 @@ namespace Sunway_Cafe
         }
 
         //Retrieve data from datagridview
-        private void Retrieve_Click(object sender, EventArgs e)
+        private void Retrieve_Click_1(object sender, EventArgs e)
         {
             for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
             {
@@ -184,10 +184,8 @@ namespace Sunway_Cafe
             }
         }
 
-        private void Pay_Click(object sender, EventArgs e)
+        private void Pay_Click_1(object sender, EventArgs e)
         {
-
-            
             var order = new Order()
             {
                 NetPrice = decimal.Parse(lbltotal.Text),
@@ -215,7 +213,7 @@ namespace Sunway_Cafe
                         {
                             Order = order,
                             Item = item,
-                            Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity"].Value))
+                            Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity1"].Value))
                         });
                     }
                 }
@@ -237,5 +235,6 @@ namespace Sunway_Cafe
             var reportPage = new ReportTest(receipt);
             reportPage.Show();
         }
+
     }
 }

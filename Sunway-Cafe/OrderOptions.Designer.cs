@@ -37,16 +37,16 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox.Location = new System.Drawing.Point(3, 3);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(143, 146);
+            this.pictureBox.Size = new System.Drawing.Size(118, 146);
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
             // 
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(90, 201);
+            this.price.Location = new System.Drawing.Point(68, 170);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(35, 13);
             this.price.TabIndex = 3;
@@ -55,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 201);
+            this.label1.Location = new System.Drawing.Point(38, 170);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 5;
@@ -64,9 +64,10 @@
             // nameDet
             // 
             this.nameDet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameDet.Location = new System.Drawing.Point(6, 174);
+            this.nameDet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameDet.Location = new System.Drawing.Point(19, 149);
             this.nameDet.Name = "nameDet";
-            this.nameDet.Size = new System.Drawing.Size(166, 18);
+            this.nameDet.Size = new System.Drawing.Size(84, 18);
             this.nameDet.TabIndex = 8;
             this.nameDet.Text = "label3";
             this.nameDet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +82,7 @@
             this.Controls.Add(this.price);
             this.Controls.Add(this.pictureBox);
             this.Name = "OrderOptions";
-            this.Size = new System.Drawing.Size(180, 241);
+            this.Size = new System.Drawing.Size(124, 187);
             this.Load += new System.EventHandler(this.OrderOptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

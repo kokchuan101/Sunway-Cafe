@@ -28,103 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.Pay = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Deduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Retrieve = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Food = new System.Windows.Forms.TabPage();
             this.Drinks = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.Food.SuspendLayout();
+            this.Food = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Deduct1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Clear1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Pay = new MetroSet_UI.Controls.MetroSetButton();
+            this.Retrieve = new MetroSet_UI.Controls.MetroSetButton();
             this.Drinks.SuspendLayout();
+            this.Food.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Clear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(383, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Order";
-            // 
-            // Pay
-            // 
-            this.Pay.Location = new System.Drawing.Point(821, 579);
-            this.Pay.Name = "Pay";
-            this.Pay.Size = new System.Drawing.Size(175, 50);
-            this.Pay.TabIndex = 4;
-            this.Pay.Text = "Pay";
-            this.Pay.UseVisualStyleBackColor = true;
-            this.Pay.Click += new System.EventHandler(this.Pay_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Peru;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 14);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(722, 438);
-            this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Silver;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Product,
-            this.Price,
-            this.Quantity,
-            this.Add,
-            this.Deduct,
-            this.Clear});
-            this.dataGridView1.Location = new System.Drawing.Point(803, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(434, 390);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Name";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.Width = 70;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Width = 70;
+            this.Clear.HeaderText = "";
+            this.Clear.Name = "Clear";
+            this.Clear.Width = 60;
             // 
             // Add
             // 
@@ -133,24 +70,38 @@
             this.Add.Name = "Add";
             this.Add.Width = 40;
             // 
-            // Deduct
+            // Quantity
             // 
-            this.Deduct.HeaderText = "";
-            this.Deduct.MinimumWidth = 6;
-            this.Deduct.Name = "Deduct";
-            this.Deduct.Width = 40;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Width = 70;
             // 
-            // Clear
+            // Price
             // 
-            this.Clear.HeaderText = "";
-            this.Clear.Name = "Clear";
-            this.Clear.Width = 60;
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 70;
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Name";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            this.Product.Width = 130;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(879, 522);
+            this.lbltotal.Location = new System.Drawing.Point(671, 444);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(0, 24);
             this.lbltotal.TabIndex = 8;
@@ -159,50 +110,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(817, 522);
+            this.label2.Location = new System.Drawing.Point(615, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Total:";
             // 
-            // Retrieve
-            // 
-            this.Retrieve.Location = new System.Drawing.Point(1039, 579);
-            this.Retrieve.Name = "Retrieve";
-            this.Retrieve.Size = new System.Drawing.Size(175, 50);
-            this.Retrieve.TabIndex = 10;
-            this.Retrieve.Text = "Retrieve Data";
-            this.Retrieve.UseVisualStyleBackColor = true;
-            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.Food);
-            this.tabControl1.Controls.Add(this.Drinks);
-            this.tabControl1.Location = new System.Drawing.Point(33, 97);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(742, 496);
-            this.tabControl1.TabIndex = 11;
-            // 
-            // Food
-            // 
-            this.Food.Controls.Add(this.flowLayoutPanel1);
-            this.Food.Location = new System.Drawing.Point(4, 22);
-            this.Food.Name = "Food";
-            this.Food.Padding = new System.Windows.Forms.Padding(3);
-            this.Food.Size = new System.Drawing.Size(734, 470);
-            this.Food.TabIndex = 0;
-            this.Food.Text = "Food";
-            this.Food.UseVisualStyleBackColor = true;
-            // 
             // Drinks
             // 
             this.Drinks.Controls.Add(this.flowLayoutPanel2);
-            this.Drinks.Location = new System.Drawing.Point(4, 22);
+            this.Drinks.Location = new System.Drawing.Point(4, 25);
             this.Drinks.Name = "Drinks";
             this.Drinks.Padding = new System.Windows.Forms.Padding(3);
-            this.Drinks.Size = new System.Drawing.Size(734, 470);
+            this.Drinks.Size = new System.Drawing.Size(550, 460);
             this.Drinks.TabIndex = 1;
             this.Drinks.Text = "Drinks";
             this.Drinks.UseVisualStyleBackColor = true;
@@ -210,29 +130,170 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Peru;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 16);
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 17);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(722, 438);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(533, 437);
             this.flowLayoutPanel2.TabIndex = 7;
+            // 
+            // Food
+            // 
+            this.Food.Controls.Add(this.flowLayoutPanel1);
+            this.Food.Location = new System.Drawing.Point(4, 25);
+            this.Food.Name = "Food";
+            this.Food.Padding = new System.Windows.Forms.Padding(3);
+            this.Food.Size = new System.Drawing.Size(550, 460);
+            this.Food.TabIndex = 0;
+            this.Food.Text = "Food";
+            this.Food.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 14);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(535, 447);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.Food);
+            this.tabControl1.Controls.Add(this.Drinks);
+            this.tabControl1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(32, 26);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(558, 489);
+            this.tabControl1.TabIndex = 11;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID1,
+            this.Product1,
+            this.Price1,
+            this.Quantity1,
+            this.Add1,
+            this.Deduct1,
+            this.Clear1});
+            this.dataGridView1.Location = new System.Drawing.Point(605, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(467, 390);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // ID1
+            // 
+            this.ID1.HeaderText = "ID";
+            this.ID1.Name = "ID1";
+            this.ID1.Width = 25;
+            // 
+            // Product1
+            // 
+            this.Product1.HeaderText = "Name";
+            this.Product1.Name = "Product1";
+            this.Product1.Width = 145;
+            // 
+            // Price1
+            // 
+            this.Price1.HeaderText = "Price";
+            this.Price1.Name = "Price1";
+            // 
+            // Quantity1
+            // 
+            this.Quantity1.HeaderText = "Quantity";
+            this.Quantity1.Name = "Quantity1";
+            this.Quantity1.Width = 50;
+            // 
+            // Add1
+            // 
+            this.Add1.HeaderText = "";
+            this.Add1.Name = "Add1";
+            this.Add1.Width = 30;
+            // 
+            // Deduct1
+            // 
+            this.Deduct1.HeaderText = "";
+            this.Deduct1.Name = "Deduct1";
+            this.Deduct1.Width = 30;
+            // 
+            // Clear1
+            // 
+            this.Clear1.HeaderText = "";
+            this.Clear1.Name = "Clear1";
+            this.Clear1.Width = 50;
+            // 
+            // Pay
+            // 
+            this.Pay.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Pay.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Pay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Pay.DisabledForeColor = System.Drawing.Color.Gray;
+            this.Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.Pay.HoverTextColor = System.Drawing.Color.White;
+            this.Pay.Location = new System.Drawing.Point(647, 475);
+            this.Pay.Name = "Pay";
+            this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.Pay.NormalTextColor = System.Drawing.Color.White;
+            this.Pay.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
+            this.Pay.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
+            this.Pay.PressTextColor = System.Drawing.Color.White;
+            this.Pay.Size = new System.Drawing.Size(101, 37);
+            this.Pay.Style = MetroSet_UI.Design.Style.Light;
+            this.Pay.StyleManager = null;
+            this.Pay.TabIndex = 13;
+            this.Pay.Text = "Pay";
+            this.Pay.ThemeAuthor = "Narwin";
+            this.Pay.ThemeName = "";
+            this.Pay.Click += new System.EventHandler(this.Pay_Click_1);
+            // 
+            // Retrieve
+            // 
+            this.Retrieve.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Retrieve.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Retrieve.DisabledForeColor = System.Drawing.Color.Gray;
+            this.Retrieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Retrieve.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.Retrieve.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.Retrieve.HoverTextColor = System.Drawing.Color.White;
+            this.Retrieve.Location = new System.Drawing.Point(935, 474);
+            this.Retrieve.Name = "Retrieve";
+            this.Retrieve.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Retrieve.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Retrieve.NormalTextColor = System.Drawing.Color.White;
+            this.Retrieve.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.Retrieve.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.Retrieve.PressTextColor = System.Drawing.Color.White;
+            this.Retrieve.Size = new System.Drawing.Size(109, 37);
+            this.Retrieve.Style = MetroSet_UI.Design.Style.Light;
+            this.Retrieve.StyleManager = null;
+            this.Retrieve.TabIndex = 14;
+            this.Retrieve.Text = "Retrieve Data";
+            this.Retrieve.ThemeAuthor = "Narwin";
+            this.Retrieve.ThemeName = "MetroLite";
+            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click_1);
             // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Retrieve);
+            this.Controls.Add(this.Pay);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Pay);
-            this.Controls.Add(this.label1);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(1343, 705);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.Food.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1086, 543);
             this.Drinks.ResumeLayout(false);
+            this.Food.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,23 +301,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Pay;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewButtonColumn Clear;
+        private System.Windows.Forms.DataGridViewButtonColumn Add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Retrieve;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Food;
         private System.Windows.Forms.TabPage Drinks;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewButtonColumn Add;
-        private System.Windows.Forms.DataGridViewButtonColumn Deduct;
-        private System.Windows.Forms.DataGridViewButtonColumn Clear;
+        private System.Windows.Forms.TabPage Food;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity1;
+        private System.Windows.Forms.DataGridViewButtonColumn Add1;
+        private System.Windows.Forms.DataGridViewButtonColumn Deduct1;
+        private System.Windows.Forms.DataGridViewButtonColumn Clear1;
+        private MetroSet_UI.Controls.MetroSetButton Pay;
+        private MetroSet_UI.Controls.MetroSetButton Retrieve;
     }
 }

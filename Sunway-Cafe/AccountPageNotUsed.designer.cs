@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 450);
+            this.panel1.Size = new System.Drawing.Size(197, 719);
             this.panel1.TabIndex = 0;
             // 
             // manageBtn
@@ -124,9 +124,9 @@
             // content
             // 
             this.content.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.content.Location = new System.Drawing.Point(197, 0);
+            this.content.Location = new System.Drawing.Point(197, 67);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(603, 450);
+            this.content.Size = new System.Drawing.Size(1230, 652);
             this.content.TabIndex = 1;
             // 
             // panel4
@@ -137,7 +137,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(197, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(603, 61);
+            this.panel4.Size = new System.Drawing.Size(1230, 61);
             this.panel4.TabIndex = 14;
             // 
             // welcomeLabel
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1427, 719);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.content);
             this.Controls.Add(this.panel1);

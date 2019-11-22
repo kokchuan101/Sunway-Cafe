@@ -101,21 +101,21 @@ namespace Sunway_Cafe
         public void button1_Click(object sender, EventArgs e)
         {
             NavPage(new HomePage(), home);
-            title.Text = "Home";
+            label1.Text = "Home";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             _obj = this;
             MainPanel.Controls.Add(new HomePage());
-            title.Text = "Home";
+            label1.Text = "Home";
         }
 
         public void order_Click(object sender, EventArgs e)
         {
             //order_Page();
             NavPage(new OrderPage(), order);
-            title.Text = "Order";
+            label1.Text = "Order";
 
         }
 
@@ -123,7 +123,7 @@ namespace Sunway_Cafe
         {
             //manage_Page();
             nav(new AccountPage(), mainpanel, account);
-            title.Text = "Account";
+            label1.Text = "Account";
             //NavPage(UserControl2.Instance, manage);
         }
 
@@ -131,7 +131,7 @@ namespace Sunway_Cafe
         {
             //item_Page();
             NavPage(new ItemPage(), Item);
-            title.Text = "Item";
+            label1.Text = "Item";
 
         }
 
@@ -156,29 +156,30 @@ namespace Sunway_Cafe
             navPage.Show();
         }
 
-        private void logOutBtn_Click(object sender, EventArgs e)
+        private void Kitchen_Click(object sender, EventArgs e)
         {
-            Form signIn = new SignInPage();
-            this.Close();
-            signIn.Show();
-            Global.user = new User();
+            NavPage(new KitchenPage(), kitchen);
+            label1.Text = "Kitchen";
         }
 
-        private void profile_Click(object sender, EventArgs e)
+        private void stock_Click(object sender, EventArgs e)
+        {
+            nav(new StockPage(), mainpanel, stock);
+            label1.Text = "Stock";
+        }
+
+        private void profile1_Click(object sender, EventArgs e)
         {
             ProfilePage pp = new ProfilePage();
             nav(pp, mainpanel, home);
         }
 
-        private void Mainpanel_Paint(object sender, PaintEventArgs e)
+        private void logOutBtn_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void Kitchen_Click(object sender, EventArgs e)
-        {
-            NavPage(new KitchenPage(), kitchen);
-            title.Text = "Kitchen";
+            Form signIn = new SignInPage();
+            this.Close();
+            signIn.Show();
+            Global.user = new User();
         }
     }
 

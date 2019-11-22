@@ -100,17 +100,17 @@ namespace Sunway_Cafe
             {
                 foreach (DataGridViewRow row in orderPage.DataGridView1.Rows)
                 {
-                    var quantity = (Convert.ToInt32(row.Cells[orderPage.DataGridView1.Columns["Quantity"].Index].Value));
+                    var quantity = (Convert.ToInt32(row.Cells[orderPage.DataGridView1.Columns["Quantity1"].Index].Value));
 
                     //Check if there is any row exist in datagridview1 to prevent null exception
-                    if (row.Cells["Product"].Value != null)
+                    if (row.Cells["Product1"].Value != null)
                     {
                         if (firstTime == false)
                         {
-                            if (row.Cells["Product"].Value.ToString() == selectItemName)
+                            if (row.Cells["Product1"].Value.ToString() == selectItemName)
                             {
                                 quantity++;
-                                row.Cells["Quantity"].Value = quantity;
+                                row.Cells["Quantity1"].Value = quantity;
                                 update = true;
                                 orderPage.Total();
                                 break;
@@ -121,7 +121,7 @@ namespace Sunway_Cafe
 
                 if (update == false)
                 {
-                    orderPage.DataGridView1.Rows.Add(ID,selectItemName, selectedItemPrice, 1, "+", "-","Clear");
+                    orderPage.DataGridView1.Rows.Add(ID, selectItemName, selectedItemPrice, 1, "+", "-","Clear");
                     orderPage.Total();
                     firstTime = false;
                 }

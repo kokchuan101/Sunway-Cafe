@@ -44,7 +44,7 @@
             this.panel1.Controls.Add(this.Manage);
             this.panel1.Location = new System.Drawing.Point(32, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 459);
+            this.panel1.Size = new System.Drawing.Size(1024, 503);
             this.panel1.TabIndex = 4;
             // 
             // Order
@@ -53,7 +53,7 @@
             this.Order.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Order.ForeColor = System.Drawing.Color.Black;
             this.Order.Image = ((System.Drawing.Image)(resources.GetObject("Order.Image")));
-            this.Order.Location = new System.Drawing.Point(57, 44);
+            this.Order.Location = new System.Drawing.Point(59, 64);
             this.Order.Name = "Order";
             this.Order.Size = new System.Drawing.Size(203, 371);
             this.Order.TabIndex = 5;
@@ -68,7 +68,7 @@
             this.Item.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Item.ForeColor = System.Drawing.Color.Black;
             this.Item.Image = ((System.Drawing.Image)(resources.GetObject("Item.Image")));
-            this.Item.Location = new System.Drawing.Point(764, 44);
+            this.Item.Location = new System.Drawing.Point(753, 64);
             this.Item.Name = "Item";
             this.Item.Size = new System.Drawing.Size(203, 371);
             this.Item.TabIndex = 7;
@@ -83,7 +83,7 @@
             this.Manage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Manage.ForeColor = System.Drawing.Color.Black;
             this.Manage.Image = ((System.Drawing.Image)(resources.GetObject("Manage.Image")));
-            this.Manage.Location = new System.Drawing.Point(413, 44);
+            this.Manage.Location = new System.Drawing.Point(413, 64);
             this.Manage.Name = "Manage";
             this.Manage.Size = new System.Drawing.Size(203, 371);
             this.Manage.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "HomePage";
-            this.Size = new System.Drawing.Size(1086, 505);
+            this.Size = new System.Drawing.Size(1086, 543);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
