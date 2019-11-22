@@ -49,7 +49,21 @@ namespace Sunway_Cafe
             context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M, ImageURL = Global.ConvertImageToBinary(img)});
             context.Set<Item>().Add(new Item() { Name = "iced Lemon Water", Type = "drinks", CostPrice = 1.50M, SellingPrice = 2.50M, ImageURL = Global.ConvertImageToBinary(img3)});
 
+            //hardcode order
+            context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
+            context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
+            context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
+            context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
+            context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
 
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 1, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 1, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 3, ItemId = 1, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 4, ItemId = 1, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 5, ItemId = 1, Qty = 2 });
+
+
+            context.Set<Stock>().Add(new Stock() { Name = "Salt", Type = "Spice", Qty = "10", Unit = "Grams", CriticalLevel = "2"});
         }
 
     }

@@ -181,6 +181,12 @@
     <Compile Include="SignInPage.designer.cs">
       <DependentUpon>SignInPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockCreate.Designer.cs">
+      <DependentUpon>StockCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="SignInPage.resx">
       <DependentUpon>SignInPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StockCreate.resx">
+      <DependentUpon>StockCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StockPage.resx">
       <DependentUpon>StockPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +331,7 @@
     <Content Include="Images\Korean Burger.jpg" />
     <Content Include="Images\logo.jfif" />
     <Content Include="Properties\Resources\banana.jpg" />
+    <None Include="Resources\image01.jpg" />
     <None Include="Properties\Resources\Korean Burger.jpg" />
     <None Include="Properties\Resources\Ice Lemon Water.jpg" />
   </ItemGroup>
