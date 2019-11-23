@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.Drinks = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.costPriceBox = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -282,6 +285,10 @@
             this.costPriceBox.UseSystemPasswordChar = false;
             this.costPriceBox.WatermarkText = "";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CreateItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +314,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateItem";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +336,6 @@
         private System.Windows.Forms.RadioButton Drinks;
         private System.Windows.Forms.Label label5;
         private MetroSet_UI.Controls.MetroSetTextBox costPriceBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

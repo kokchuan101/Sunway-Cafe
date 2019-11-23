@@ -162,10 +162,11 @@ namespace Sunway_Cafe
                         {
                             if (OrderOptions.selectItemName == itemList.Name)
                             {
-                                MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
+                                MessageBox.Show(itemList.Name + " is deleted from database.");
                                 delItem = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
                                 db.Items.Remove(delItem);
                                 db.SaveChanges();
+                                loadData();
                             }
                         }
                     }
