@@ -311,7 +311,13 @@
     <Content Include="Images\Ice Lemon Water.jpg" />
     <Content Include="Images\Korean Burger.jpg" />
     <Content Include="Images\logo.jfif" />
+    <Content Include="Properties\Resources\Banana Cake.jpeg" />
     <Content Include="Properties\Resources\banana.jpg" />
+    <Content Include="Properties\Resources\ButterMilk Chicken.jpg" />
+    <Content Include="Properties\Resources\Cola.jpg" />
+    <Content Include="Properties\Resources\Korean Fried Rice.jpg" />
+    <Content Include="Properties\Resources\Milo Ice.jpg" />
+    <Content Include="Properties\Resources\Nasi Lemak.jpg" />
     <None Include="Resources\image01.jpg" />
     <None Include="Properties\Resources\Korean Burger.jpg" />
     <None Include="Properties\Resources\Ice Lemon Water.jpg" />
