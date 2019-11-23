@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sunway_Cafe.Model
+namespace Sunway_Cafe
 {
-    public partial class ReportTest : Form
+    public partial class ReceiptPage : Form
     {
-        public ReportTest()
-        {
-            InitializeComponent();
-        }
-
-        public ReportTest(Receipt rcp)
+        public ReceiptPage(Receipt rcp)
         {
             InitializeComponent();
             var param = new ReportParameter[]
             {
                     new ReportParameter("Date", rcp.Date),
-                    new ReportParameter("Subtotal", $"{rcp.Subtotal}"),
+                    new ReportParameter("Subtotal", $"{rcp.Subtotal:0.00}"),
                     new ReportParameter("SST", rcp.CalculateSST()),
                     new ReportParameter("ServCharge", rcp.CalculateServCharge()),
                     new ReportParameter("Total", rcp.CalculateTotal())
@@ -38,25 +32,13 @@ namespace Sunway_Cafe.Model
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.RefreshReport();
-            reportViewer1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 1000);
-
+            reportViewer1.PrinterSettings.DefaultPageSettings.PaperSize = new PaperSize("Custom", 315, 300);
         }
 
-        private void ReportTest_Load(object sender, EventArgs e)
+        private void ReceiptPage_Load(object sender, EventArgs e)
         {
 
             this.reportViewer1.RefreshReport();
-            
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            this.reportViewer1.PrintDialog();
-        }
-
-        private void ReportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

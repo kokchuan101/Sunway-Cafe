@@ -1,6 +1,6 @@
-﻿namespace Sunway_Cafe.Model
+﻿namespace Sunway_Cafe
 {
-    partial class ReportTest
+    partial class ReceiptPage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,27 @@
         private void InitializeComponent()
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sunway_Cafe.Receipt.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(37, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(1, -2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(387, 410);
+            this.reportViewer1.Size = new System.Drawing.Size(297, 539);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.ReportViewer1_Load);
             // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // ReportTest
+            // ReceiptPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 450);
+            this.ClientSize = new System.Drawing.Size(299, 537);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ReportTest";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ReportTest_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "ReceiptPage";
+            this.Text = "Receipt";
+            this.Load += new System.EventHandler(this.ReceiptPage_Load);
             this.ResumeLayout(false);
 
         }
@@ -62,6 +57,5 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

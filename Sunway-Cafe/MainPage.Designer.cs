@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.stock = new System.Windows.Forms.Button();
+            this.profile1 = new System.Windows.Forms.Button();
             this.kitchen = new System.Windows.Forms.Button();
             this.item = new System.Windows.Forms.Button();
             this.account = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.title = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.profile1 = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -79,13 +79,30 @@
             this.stock.ForeColor = System.Drawing.Color.SeaShell;
             this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
             this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stock.Location = new System.Drawing.Point(12, 374);
+            this.stock.Location = new System.Drawing.Point(12, 440);
             this.stock.Name = "stock";
             this.stock.Size = new System.Drawing.Size(155, 54);
             this.stock.TabIndex = 8;
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
             this.stock.Click += new System.EventHandler(this.stock_Click);
+            // 
+            // profile1
+            // 
+            this.profile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.profile1.FlatAppearance.BorderSize = 0;
+            this.profile1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profile1.ForeColor = System.Drawing.Color.Black;
+            this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
+            this.profile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.profile1.Location = new System.Drawing.Point(8, 609);
+            this.profile1.Name = "profile1";
+            this.profile1.Size = new System.Drawing.Size(147, 63);
+            this.profile1.TabIndex = 9;
+            this.profile1.Text = "     Profile";
+            this.profile1.UseVisualStyleBackColor = false;
+            this.profile1.Click += new System.EventHandler(this.profile1_Click);
             // 
             // kitchen
             // 
@@ -95,7 +112,7 @@
             this.kitchen.ForeColor = System.Drawing.Color.SeaShell;
             this.kitchen.Image = ((System.Drawing.Image)(resources.GetObject("kitchen.Image")));
             this.kitchen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kitchen.Location = new System.Drawing.Point(12, 432);
+            this.kitchen.Location = new System.Drawing.Point(12, 260);
             this.kitchen.Name = "kitchen";
             this.kitchen.Size = new System.Drawing.Size(169, 54);
             this.kitchen.TabIndex = 7;
@@ -111,7 +128,7 @@
             this.item.ForeColor = System.Drawing.Color.SeaShell;
             this.item.Image = ((System.Drawing.Image)(resources.GetObject("item.Image")));
             this.item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.item.Location = new System.Drawing.Point(12, 316);
+            this.item.Location = new System.Drawing.Point(12, 380);
             this.item.Name = "item";
             this.item.Size = new System.Drawing.Size(143, 54);
             this.item.TabIndex = 6;
@@ -127,7 +144,7 @@
             this.account.ForeColor = System.Drawing.Color.SeaShell;
             this.account.Image = ((System.Drawing.Image)(resources.GetObject("account.Image")));
             this.account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.account.Location = new System.Drawing.Point(12, 258);
+            this.account.Location = new System.Drawing.Point(12, 320);
             this.account.Name = "account";
             this.account.Size = new System.Drawing.Size(148, 54);
             this.account.TabIndex = 4;
@@ -143,7 +160,7 @@
             this.order.ForeColor = System.Drawing.Color.SeaShell;
             this.order.Image = ((System.Drawing.Image)(resources.GetObject("order.Image")));
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.order.Location = new System.Drawing.Point(12, 200);
+            this.order.Location = new System.Drawing.Point(12, 202);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(148, 54);
             this.order.TabIndex = 5;
@@ -235,23 +252,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
-            // 
-            // profile1
-            // 
-            this.profile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.profile1.FlatAppearance.BorderSize = 0;
-            this.profile1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profile1.ForeColor = System.Drawing.Color.Black;
-            this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
-            this.profile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profile1.Location = new System.Drawing.Point(8, 609);
-            this.profile1.Name = "profile1";
-            this.profile1.Size = new System.Drawing.Size(147, 63);
-            this.profile1.TabIndex = 9;
-            this.profile1.Text = "     Profile";
-            this.profile1.UseVisualStyleBackColor = false;
-            this.profile1.Click += new System.EventHandler(this.profile1_Click);
             // 
             // logOutBtn
             // 
