@@ -16,8 +16,9 @@ namespace Sunway_Cafe
     public partial class CreateItem : Form
     {
 
+
         private Dictionary<string, MetroSetTextBox> textBoxs;
-        public CreateItem()
+        public CreateItem(Item item)
         {
             InitializeComponent();
             textBoxs = new Dictionary<string, MetroSetTextBox>()
@@ -27,8 +28,24 @@ namespace Sunway_Cafe
                 { "CostPrice", costPriceBox}
             };
 
-            Image img = Properties.Resources.banana;
-            pictureBox.Image = img;
+
+            InitializeComponent();
+            if (item == null)
+            {
+                Image img = Properties.Resources.No_Image;
+                pictureBox.Image = img;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else
+            {
+                button1.Text = "Update";
+                pictureBox.Image = OrderOptions.selectedItemImage;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                priceBox.Text = OrderOptions.selectedItemPrice.ToString();
+                costPriceBox.Text = OrderOptions.selectedItemCostPrice.ToString();
+                textBox2.Text = OrderOptions.selectItemName;
+            }
+
         }
 
 
@@ -49,6 +66,7 @@ namespace Sunway_Cafe
                 errorProvider1.SetError(costPriceBox, "Numbers only.");
                 success = false;
             }
+
 
             if(String.IsNullOrEmpty(textBox2.Text.Trim()))
             {
@@ -72,13 +90,55 @@ namespace Sunway_Cafe
                     await db.SaveChangesAsync();
                     MessageBox.Show("Item Created");
                 }
+
+            if (button1.Text == "Create")
+            {
+                using (SunwayCafeContext db = new SunwayCafeContext())
+                {
+
+                    success = int.TryParse(priceBox.Text.Trim(), out int priceVal);
+                    success2 = int.TryParse(costPriceBox.Text.Trim(), out int costVal);
+
+                    if (success && success2 && isChecked)
+                    {
+                        Item item = new Item() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), SellingPrice = priceVal, CostPrice = costVal, Type = type };
+                        db.Items.Add(item);
+                        await db.SaveChangesAsync();
+                        MessageBox.Show("Item Created");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill in all the information!");
+                    }
+                }
+            }
+            else if (button1.Text == "Update")
+            {
+                using (SunwayCafeContext db = new SunwayCafeContext())
+                {
+                    if (OrderOptions.selectItemName != null)
+                    {
+                        var item = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
+                        item.Name = textBox2.Text.Trim();
+                        if (pictureBox.Image != OrderOptions.selectedItemImage)
+                        {
+                            item.ImageURL = Global.ConvertImageToBinary(pictureBox.Image);
+                        }
+                        item.CostPrice = int.Parse(costPriceBox.Text.ToString());
+                        item.SellingPrice = int.Parse(priceBox.Text.ToString());
+                        item.Type = type;
+                        await db.SaveChangesAsync();
+                        MessageBox.Show("Item Updated");
+                    }
+                }
+
             }
 
         }
 
         private void open_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg;*.jpeg;*.png", ValidateNames = true, Multiselect = false })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
