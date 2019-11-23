@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroSet_UI.Controls;
 using Sunway_Cafe.Model;
 
 namespace Sunway_Cafe
@@ -16,9 +17,16 @@ namespace Sunway_Cafe
     {
 
 
+        private Dictionary<string, MetroSetTextBox> textBoxs;
         public CreateItem(Item item)
         {
             InitializeComponent();
+            textBoxs = new Dictionary<string, MetroSetTextBox>()
+            {
+                { "Name", textBox2},
+                { "SellingPrice", priceBox},
+                { "CostPrice", costPriceBox}
+            };
             if (item == null)
             {
                 Image img = Properties.Resources.No_Image;
@@ -34,25 +42,26 @@ namespace Sunway_Cafe
                 costPriceBox.Text = OrderOptions.selectedItemCostPrice.ToString();
                 textBox2.Text = OrderOptions.selectItemName;
             }
+
         }
 
 
 
         private async void button1_Click_1(object sender, EventArgs e)
         {
-            bool success;
-            bool success2;
-            string type;
-            bool isChecked = Food.Checked;
+            Global.ClearErrors(errorProvider1, textBoxs);
+            var success = true;
 
-            if (isChecked)
+            if(!decimal.TryParse(priceBox.Text.Trim(), out decimal priceVal))
             {
-                type = Food.Text;
+                errorProvider1.SetError(priceBox, "Numbers only.");
+                success = false;
             }
-            else
+
+            if (!decimal.TryParse(priceBox.Text.Trim(), out decimal costVal))
             {
-                type = Drinks.Text;
-                isChecked = true;
+                errorProvider1.SetError(costPriceBox, "Numbers only.");
+                success = false;
             }
 
             if (button1.Text == "Create")
@@ -95,6 +104,30 @@ namespace Sunway_Cafe
                         MessageBox.Show("Item Updated");
                     }
                 }
+
+            if(String.IsNullOrEmpty(textBox2.Text.Trim()))
+            {
+                errorProvider1.SetError(textBox2, "The Name field is required.");
+                success = false;
+            }
+           
+            using (SunwayCafeContext db = new SunwayCafeContext())
+            {
+                if (success)
+                {
+                    Item item = new Item()
+                    {
+                        Name = textBox2.Text.Trim(),
+                        ImageURL = Global.ConvertImageToBinary(pictureBox.Image),
+                        SellingPrice = priceVal,
+                        CostPrice = costVal,
+                        Type = Food.Checked? Food.Text: Drinks.Text
+                    };
+                    db.Items.Add(item);
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Item Created");
+                }
+
             }
 
         }

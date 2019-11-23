@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.quantity = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,8 +46,10 @@
             this.others = new System.Windows.Forms.RadioButton();
             this.spice = new System.Windows.Forms.RadioButton();
             this.ingredient = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // quantity
@@ -126,6 +129,7 @@
             this.name.ThemeName = "MetroLite";
             this.name.UseSystemPasswordChar = false;
             this.name.WatermarkText = "";
+            this.name.Click += new System.EventHandler(this.Name_Click);
             // 
             // button1
             // 
@@ -310,6 +314,10 @@
             this.ingredient.Text = "Ingredient";
             this.ingredient.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // StockCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +342,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +367,6 @@
         private System.Windows.Forms.RadioButton others;
         private System.Windows.Forms.RadioButton spice;
         private System.Windows.Forms.RadioButton ingredient;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

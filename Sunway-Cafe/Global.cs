@@ -1,4 +1,5 @@
-﻿using Sunway_Cafe.Model;
+﻿using MetroSet_UI.Controls;
+using Sunway_Cafe.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sunway_Cafe
 {
@@ -57,6 +59,16 @@ namespace Sunway_Cafe
         public static string ConvToDateTimeString(DateTime dt)
         {
             return dt.ToString("dd/MM/yyy HH:mm:ss");
+        }
+
+        public static void ClearErrors(ErrorProvider ep, Dictionary<string, MetroSetTextBox> tbs)
+        {
+            ep.Clear();
+            foreach(var tb in tbs)
+            {
+                tb.Value.BorderColor = Color.Gray;
+            }
+
         }
     }
 }
