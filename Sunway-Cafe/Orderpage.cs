@@ -114,20 +114,7 @@ namespace Sunway_Cafe
 
             }
         }
-
-        //Retrieve data from datagridview
-        private void Retrieve_Click_1(object sender, EventArgs e)
-        {
-            for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
-            {
-                //Count-3 cause last two column is not needed
-                for (int j = 0; j < dataGridView1.Columns.Count - 3; j++)
-                {
-                    MessageBox.Show(dataGridView1.Rows[i].Cells[j].Value.ToString());
-                }
-            }
-        }
-
+      
         private void Pay_Click_1(object sender, EventArgs e)
         {
             var order = new Order()

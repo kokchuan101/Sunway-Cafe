@@ -51,7 +51,6 @@
             this.Deduct1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Clear1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Pay = new MetroSet_UI.Controls.MetroSetButton();
-            this.Retrieve = new MetroSet_UI.Controls.MetroSetButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -126,7 +125,7 @@
             this.Drinks.Location = new System.Drawing.Point(4, 25);
             this.Drinks.Name = "Drinks";
             this.Drinks.Padding = new System.Windows.Forms.Padding(3);
-            this.Drinks.Size = new System.Drawing.Size(550, 460);
+            this.Drinks.Size = new System.Drawing.Size(576, 460);
             this.Drinks.TabIndex = 1;
             this.Drinks.Text = "Drinks";
             this.Drinks.UseVisualStyleBackColor = true;
@@ -240,7 +239,7 @@
             this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverTextColor = System.Drawing.Color.White;
-            this.Pay.Location = new System.Drawing.Point(971, 478);
+            this.Pay.Location = new System.Drawing.Point(1018, 505);
             this.Pay.Name = "Pay";
             this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -256,32 +255,6 @@
             this.Pay.ThemeAuthor = "Narwin";
             this.Pay.ThemeName = "";
             this.Pay.Click += new System.EventHandler(this.Pay_Click_1);
-            // 
-            // Retrieve
-            // 
-            this.Retrieve.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.Retrieve.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.Retrieve.DisabledForeColor = System.Drawing.Color.Gray;
-            this.Retrieve.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Retrieve.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.Retrieve.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.Retrieve.HoverTextColor = System.Drawing.Color.White;
-            this.Retrieve.Location = new System.Drawing.Point(982, 519);
-            this.Retrieve.Name = "Retrieve";
-            this.Retrieve.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.Retrieve.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.Retrieve.NormalTextColor = System.Drawing.Color.White;
-            this.Retrieve.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.Retrieve.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.Retrieve.PressTextColor = System.Drawing.Color.White;
-            this.Retrieve.Size = new System.Drawing.Size(109, 37);
-            this.Retrieve.Style = MetroSet_UI.Design.Style.Light;
-            this.Retrieve.StyleManager = null;
-            this.Retrieve.TabIndex = 14;
-            this.Retrieve.Text = "Retrieve Data";
-            this.Retrieve.ThemeAuthor = "Narwin";
-            this.Retrieve.ThemeName = "MetroLite";
-            this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click_1);
             // 
             // label1
             // 
@@ -312,7 +285,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tabControl1);
@@ -353,7 +325,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Deduct1;
         private System.Windows.Forms.DataGridViewButtonColumn Clear1;
         private MetroSet_UI.Controls.MetroSetButton Pay;
-        private MetroSet_UI.Controls.MetroSetButton Retrieve;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
