@@ -13,6 +13,7 @@ namespace Sunway_Cafe
 {
     public partial class SignInPage : Form
     {
+        private int failure = 0; 
         public SignInPage()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace Sunway_Cafe
             {
                 if (ice == null)
                 {
-                    MessageBox.Show("Null Value Detected");
+                    MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -55,19 +56,24 @@ namespace Sunway_Cafe
                         {
                             Global.user = new SalesStaff(query);
                         }
-                        //AccountPage account = new AccountPage();
-                        //account.Show();
                         MainPage form1 = new MainPage();
                         form1.Show();
 
                         this.Hide();
-                        //MessageBox.Show($"{Global.user.Details.GivenName} and {Global.user.Details.Role}");
-
-
+                        
                     }
                     else
                     {
-                        
+                        failure++;
+                        if(failure == 5)
+                        {
+                            MessageBox.Show("Terminating program due to 5 consecutive invalid credentials. ", "Auto Close", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Username or Password", "Invalid Credential", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
 
                 }
@@ -76,7 +82,7 @@ namespace Sunway_Cafe
             {
                 if (ice == null)
                 {
-                    MessageBox.Show("Null Value Detected");
+                    MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             

@@ -64,7 +64,7 @@ namespace Sunway_Cafe
                 {
                     if(ice == null)
                     {
-                        MessageBox.Show("Null Value Detected");
+                        MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 RefreshListView();
@@ -106,7 +106,7 @@ namespace Sunway_Cafe
             {
                 if (ice == null)
                 {
-                    MessageBox.Show("Null Value Detected");
+                    MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -18,10 +18,16 @@ namespace Sunway_Cafe.Model
             Details = acc;
         }
 
-        public virtual void ModifyDisplay(AccountPageNotUsed form)
+        public virtual void ModifyMainDisplay(MainPage form)
         { 
             
         }
+
+        public virtual void ModifyHomeDisplay(HomePage form)
+        {
+
+        }
+
 
         public virtual void ModifyEditDisplay(EditProfilePage form)
         {
@@ -36,11 +42,18 @@ namespace Sunway_Cafe.Model
 
         }
 
-        public override void ModifyDisplay(AccountPageNotUsed form)
+        public override void ModifyMainDisplay(MainPage form)
         {
-            form.manageBtn.Show();
-            form.profileBtn.Show();
-            form.stockBtn.Show();
+            form.Account.Show();
+            form.Item.Show();
+            form.Stock.Show();
+        }
+
+        public override void ModifyHomeDisplay(HomePage form)
+        {
+            form.Account.Show();
+            form.Item.Show();
+            form.Stock.Show();
         }
 
         public override void ModifyEditDisplay(EditProfilePage form)
@@ -57,13 +70,19 @@ namespace Sunway_Cafe.Model
 
         }
 
-        public override void ModifyDisplay(AccountPageNotUsed form)
+        public override void ModifyMainDisplay(MainPage form)
         {
-            form.manageBtn.Hide();
-            form.profileBtn.Show();
-            form.stockBtn.Show();
+            form.Account.Hide();
+            form.Item.Hide();
+            form.Stock.Hide();
         }
 
+        public override void ModifyHomeDisplay(HomePage form)
+        {
+            form.Account.Hide();
+            form.Item.Hide();
+            form.Stock.Hide();
+        }
         public override void ModifyEditDisplay(EditProfilePage form)
         {
             form.label6.Hide();

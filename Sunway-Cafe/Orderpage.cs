@@ -128,7 +128,7 @@ namespace Sunway_Cafe
             {
                 total += Convert.ToInt32(row.Cells["Price1"].Value) * Convert.ToInt32(row.Cells["Quantity1"].Value);
             }
-            lbltotal.Text = total.ToString();
+            lbltotal.Text = $"{total * 1.16:0.00}";
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -188,8 +188,8 @@ namespace Sunway_Cafe
         {
             var order = new Order()
             {
-                NetPrice = decimal.Parse(lbltotal.Text),
-                TotalPrice = decimal.Parse(lbltotal.Text) * 1.16M,
+                NetPrice = decimal.Parse(lbltotal.Text)/1.16M,
+                TotalPrice = decimal.Parse(lbltotal.Text),
                 Status = "Processing",
                 DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
 
@@ -232,7 +232,7 @@ namespace Sunway_Cafe
 
             var receipt = new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems , Date = order.DateTimeCreated};
 
-            var reportPage = new ReportTest(receipt);
+            var reportPage = new ReceiptPage(receipt);
             reportPage.Show();
         }
 
