@@ -64,6 +64,7 @@
             // nameDet
             // 
             this.nameDet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameDet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nameDet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameDet.Location = new System.Drawing.Point(19, 149);
             this.nameDet.Name = "nameDet";

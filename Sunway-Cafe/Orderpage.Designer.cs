@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,9 @@
             this.Clear1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Pay = new MetroSet_UI.Controls.MetroSetButton();
             this.Retrieve = new MetroSet_UI.Controls.MetroSetButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Drinks.SuspendLayout();
             this.Food.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -101,7 +105,7 @@
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(671, 444);
+            this.lbltotal.Location = new System.Drawing.Point(718, 489);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(0, 24);
             this.lbltotal.TabIndex = 8;
@@ -110,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(615, 444);
+            this.label2.Location = new System.Drawing.Point(662, 489);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 9;
@@ -142,7 +146,7 @@
             this.Food.Location = new System.Drawing.Point(4, 25);
             this.Food.Name = "Food";
             this.Food.Padding = new System.Windows.Forms.Padding(3);
-            this.Food.Size = new System.Drawing.Size(550, 460);
+            this.Food.Size = new System.Drawing.Size(576, 460);
             this.Food.TabIndex = 0;
             this.Food.Text = "Food";
             this.Food.UseVisualStyleBackColor = true;
@@ -153,7 +157,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 14);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(535, 447);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(564, 447);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // tabControl1
@@ -161,10 +165,10 @@
             this.tabControl1.Controls.Add(this.Food);
             this.tabControl1.Controls.Add(this.Drinks);
             this.tabControl1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(32, 26);
+            this.tabControl1.Location = new System.Drawing.Point(45, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(558, 489);
+            this.tabControl1.Size = new System.Drawing.Size(584, 489);
             this.tabControl1.TabIndex = 11;
             // 
             // dataGridView1
@@ -178,7 +182,7 @@
             this.Add1,
             this.Deduct1,
             this.Clear1});
-            this.dataGridView1.Location = new System.Drawing.Point(605, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(652, 96);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(467, 390);
             this.dataGridView1.TabIndex = 12;
@@ -232,16 +236,16 @@
             this.Pay.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Pay.DisabledForeColor = System.Drawing.Color.Gray;
             this.Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
+            this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverTextColor = System.Drawing.Color.White;
-            this.Pay.Location = new System.Drawing.Point(647, 475);
+            this.Pay.Location = new System.Drawing.Point(694, 520);
             this.Pay.Name = "Pay";
-            this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
-            this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Pay.NormalTextColor = System.Drawing.Color.White;
-            this.Pay.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
-            this.Pay.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(0)))));
+            this.Pay.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.Pay.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.Pay.PressTextColor = System.Drawing.Color.White;
             this.Pay.Size = new System.Drawing.Size(101, 37);
             this.Pay.Style = MetroSet_UI.Design.Style.Light;
@@ -261,7 +265,7 @@
             this.Retrieve.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Retrieve.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Retrieve.HoverTextColor = System.Drawing.Color.White;
-            this.Retrieve.Location = new System.Drawing.Point(935, 474);
+            this.Retrieve.Location = new System.Drawing.Point(982, 519);
             this.Retrieve.Name = "Retrieve";
             this.Retrieve.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Retrieve.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -278,10 +282,35 @@
             this.Retrieve.ThemeName = "MetroLite";
             this.Retrieve.Click += new System.EventHandler(this.Retrieve_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 24);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Search:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(138, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(452, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Retrieve);
             this.Controls.Add(this.Pay);
             this.Controls.Add(this.dataGridView1);
@@ -289,7 +318,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbltotal);
             this.Name = "OrderPage";
-            this.Size = new System.Drawing.Size(1086, 543);
+            this.Size = new System.Drawing.Size(1249, 599);
             this.Drinks.ResumeLayout(false);
             this.Food.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -324,5 +353,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Clear1;
         private MetroSet_UI.Controls.MetroSetButton Pay;
         private MetroSet_UI.Controls.MetroSetButton Retrieve;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

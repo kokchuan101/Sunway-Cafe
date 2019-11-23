@@ -130,4 +130,22 @@
   <data name="image0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Banana_Cake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Banana Cake.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButterMilk_Chicken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ButterMilk Chicken.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Cola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Korean_Fried_Rice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Korean Fried Rice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Milo_Ice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Milo Ice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nasi_Lemak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Nasi Lemak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

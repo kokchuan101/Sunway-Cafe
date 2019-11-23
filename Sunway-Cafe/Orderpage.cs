@@ -42,63 +42,7 @@ namespace Sunway_Cafe
         public OrderPage()
         {
             InitializeComponent();
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                flowLayoutPanel1.Controls.Remove(control);
-                flowLayoutPanel2.Controls.Remove(control);
-                control.Dispose();
-            }
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel2.Controls.Clear();
-
-
-            using (var db = new SunwayCafeContext())
-            {
-                var query = db.Items.Where(d => d.Type == "food").ToList();
-                OrderOptions[] order = new OrderOptions[query.Count];
-
-                foreach (var itemList in query)
-                {
-                    order[i] = new OrderOptions(this);
-                    order[i].ID = itemList.Id;
-                    order[i].Name_details = itemList.Name;
-                    if (itemList.ImageURL != null)
-                    {
-                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
-                    }
-                    order[i].WasClicked += OrderGrid_WasClicked;
-                    order[i].Price = itemList.SellingPrice;
-                    order[i].CostPrice = itemList.CostPrice;
-
-                    flowLayoutPanel1.Controls.Add(order[i]);
-                    i++;
-                }
-                i = 0;
-            }
-
-            using (var db = new SunwayCafeContext())
-            {
-                var query = db.Items.Where(d => d.Type == "drinks").ToList();
-                OrderOptions[] order = new OrderOptions[query.Count];
-
-                foreach (var itemList in query)
-                {
-                    order[i] = new OrderOptions(this);
-                    order[i].ID = itemList.Id;
-                    order[i].Name_details = itemList.Name;
-                    if (itemList.ImageURL != null)
-                    {
-                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
-                    }
-                    order[i].WasClicked += OrderGrid_WasClicked;
-                    order[i].Price = itemList.SellingPrice;
-                    order[i].CostPrice = itemList.CostPrice;
-
-                    flowLayoutPanel2.Controls.Add(order[i]);
-                    i++;
-                }
-                i = 0;
-            }
+            loadData();
 
         }
 
@@ -176,7 +120,7 @@ namespace Sunway_Cafe
         {
             for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
             {
-                //Count-2 cause last two column is not needed
+                //Count-3 cause last two column is not needed
                 for (int j = 0; j < dataGridView1.Columns.Count - 3; j++)
                 {
                     MessageBox.Show(dataGridView1.Rows[i].Cells[j].Value.ToString());
@@ -230,11 +174,155 @@ namespace Sunway_Cafe
                 receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
             }
 
-            var receipt = new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems , Date = order.DateTimeCreated};
+            var receipt = new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems, Date = order.DateTimeCreated };
 
             var reportPage = new ReportTest(receipt);
             reportPage.Show();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            i = 0;
+          
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+
+
+            string search = textBox1.Text.Trim();
+            // Search items in our Jobs ListView, remove those that do not match search
+            if (search != String.Empty)
+            {
+                using (var db = new SunwayCafeContext())
+                {
+                    //got two ToLower() is because need to allow upper case and lower case both acceptable by the search function
+                    var query = db.Items.Where(d => d.Type == "food").ToList();
+
+                    var query2 = from d in query
+                                where d.Name.ToLower().StartsWith(search.ToLower())  
+                                select d;
+
+                    OrderOptions[] order = new OrderOptions[query2.Count()];
+
+
+                    foreach (var itemList in query2)
+                    {
+                        order[i] = new OrderOptions(this);                      
+                        order[i].Name_details = itemList.Name;
+                        if (itemList.ImageURL != null)
+                        {
+                            order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                        }
+                        order[i].WasClicked += OrderGrid_WasClicked;
+                        order[i].Price = itemList.SellingPrice;
+                        order[i].CostPrice = itemList.CostPrice;
+
+                        flowLayoutPanel1.Controls.Add(order[i]);
+                        i++;
+                    }
+                   
+
+                   
+                    var query3 = db.Items.Where(d => d.Type == "drinks").ToList();
+
+                    var query4 = from d in query3
+                                where d.Name.ToLower().StartsWith(search.ToLower())
+                                select d;
+
+                    OrderOptions[] order2 = new OrderOptions[query4.Count()];
+
+                    foreach (var itemList in query4)
+                    {
+                        order2[i] = new OrderOptions(this);
+                        order2[i].Name_details = itemList.Name;
+                        if (itemList.ImageURL != null)
+                        {
+                            order2[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                        }
+                        order2[i].WasClicked += OrderGrid_WasClicked;
+                        order2[i].Price = itemList.SellingPrice;
+                        order2[i].CostPrice = itemList.CostPrice;
+
+                        flowLayoutPanel2.Controls.Add(order2[i]);
+                        i++;
+                    }
+                   
+
+                }
+                
+            }
+            else
+            {
+                loadData();
+            }
+
+        }
+        public void loadData()
+        {
+            OrderOptions.selectItemName = null;
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                flowLayoutPanel1.Controls.Remove(control);              
+                control.Dispose();
+            }
+            foreach (Control control in flowLayoutPanel2.Controls)
+            {              
+                flowLayoutPanel2.Controls.Remove(control);
+                control.Dispose();
+            }
+
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.Items.Where(d => d.Type == "food").ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
+
+                foreach (var itemList in query)
+                {
+                    order[i] = new OrderOptions(this);
+                    order[i].Name_details = itemList.Name;
+                    order[i].ID = itemList.Id;
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
+                    order[i].Price = itemList.SellingPrice;
+                    order[i].CostPrice = itemList.CostPrice;
+                    order[i].WasClicked += OrderGrid_WasClicked;
+                    flowLayoutPanel1.Controls.Add(order[i]);
+                    i++;
+                }
+                i = 0;
+            }
+
+            using (var db = new SunwayCafeContext())
+            {
+                var query = db.Items.Where(d => d.Type == "drinks").ToList();
+                OrderOptions[] order = new OrderOptions[query.Count];
+
+                foreach (var itemList in query)
+                {
+                    order[i] = new OrderOptions(this);
+                    order[i].ID = itemList.Id;
+                    order[i].Name_details = itemList.Name;
+                    if (itemList.ImageURL != null)
+                    {
+                        order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
+                    }
+                    order[i].WasClicked += OrderGrid_WasClicked;
+                    order[i].Price = itemList.SellingPrice;
+                    order[i].CostPrice = itemList.CostPrice;
+
+                    flowLayoutPanel2.Controls.Add(order[i]);
+                    i++;
+                }
+                i = 0;
+            }
+        }
+
+      
     }
 }
+
+

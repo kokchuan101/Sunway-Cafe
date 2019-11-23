@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.stock = new System.Windows.Forms.Button();
+            this.profile1 = new System.Windows.Forms.Button();
             this.kitchen = new System.Windows.Forms.Button();
             this.item = new System.Windows.Forms.Button();
             this.account = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.title = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.profile1 = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 684);
+            this.panel1.Size = new System.Drawing.Size(160, 766);
             this.panel1.TabIndex = 0;
             // 
             // stock
@@ -86,6 +86,23 @@
             this.stock.Text = "Stock";
             this.stock.UseVisualStyleBackColor = true;
             this.stock.Click += new System.EventHandler(this.stock_Click);
+            // 
+            // profile1
+            // 
+            this.profile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.profile1.FlatAppearance.BorderSize = 0;
+            this.profile1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profile1.ForeColor = System.Drawing.Color.Black;
+            this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
+            this.profile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.profile1.Location = new System.Drawing.Point(8, 609);
+            this.profile1.Name = "profile1";
+            this.profile1.Size = new System.Drawing.Size(147, 63);
+            this.profile1.TabIndex = 9;
+            this.profile1.Text = "     Profile";
+            this.profile1.UseVisualStyleBackColor = false;
+            this.profile1.Click += new System.EventHandler(this.profile1_Click);
             // 
             // kitchen
             // 
@@ -181,14 +198,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(160, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1088, 23);
+            this.panel2.Size = new System.Drawing.Size(1168, 23);
             this.panel2.TabIndex = 1;
             // 
             // mainpanel
             // 
             this.mainpanel.Location = new System.Drawing.Point(161, 141);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1086, 543);
+            this.mainpanel.Size = new System.Drawing.Size(1141, 613);
             this.mainpanel.TabIndex = 4;
             // 
             // panel3
@@ -236,23 +253,6 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // profile1
-            // 
-            this.profile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.profile1.FlatAppearance.BorderSize = 0;
-            this.profile1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profile1.ForeColor = System.Drawing.Color.Black;
-            this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
-            this.profile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profile1.Location = new System.Drawing.Point(8, 609);
-            this.profile1.Name = "profile1";
-            this.profile1.Size = new System.Drawing.Size(147, 63);
-            this.profile1.TabIndex = 9;
-            this.profile1.Text = "     Profile";
-            this.profile1.UseVisualStyleBackColor = false;
-            this.profile1.Click += new System.EventHandler(this.profile1_Click);
-            // 
             // logOutBtn
             // 
             this.logOutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 684);
+            this.ClientSize = new System.Drawing.Size(1328, 766);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.panel4);

@@ -44,10 +44,23 @@ namespace Sunway_Cafe
 
             Image img = Properties.Resources.banana;
             Image img2 = Properties.Resources.Korean_Burger;
-            Image img3 = Properties.Resources.Ice_Lemon_Water;       
+            Image img3 = Properties.Resources.Ice_Lemon_Water;
+            Image img4 = Properties.Resources.Milo_Ice;
+            Image img5 = Properties.Resources.Banana_Cake;
+            Image img6 = Properties.Resources.Korean_Fried_Rice;
+            Image img7 = Properties.Resources.ButterMilk_Chicken;
+            Image img8 = Properties.Resources.Nasi_Lemak;
+            Image img9 = Properties.Resources.Cola;
             context.Set<Item>().Add(new Item() { Name = "Korean Burger", Type = "food", CostPrice = 7.00M, SellingPrice = 15.00M, ImageURL = Global.ConvertImageToBinary(img2)});
             context.Set<Item>().Add(new Item() { Name = "Banana Pie", Type = "food", CostPrice = 5.00M, SellingPrice = 2.00M, ImageURL = Global.ConvertImageToBinary(img)});
             context.Set<Item>().Add(new Item() { Name = "iced Lemon Water", Type = "drinks", CostPrice = 1.50M, SellingPrice = 2.50M, ImageURL = Global.ConvertImageToBinary(img3)});
+            context.Set<Item>().Add(new Item() { Name = "Korean Fried Rice", Type = "food", CostPrice = 5.00M, SellingPrice = 12.00M, ImageURL = Global.ConvertImageToBinary(img6) });
+            context.Set<Item>().Add(new Item() { Name = "Banana Cake", Type = "food", CostPrice = 8.00M, SellingPrice = 20.00M, ImageURL = Global.ConvertImageToBinary(img5) });
+            context.Set<Item>().Add(new Item() { Name = "Milo Ice", Type = "drinks", CostPrice = 1.50M, SellingPrice = 3.50M, ImageURL = Global.ConvertImageToBinary(img4) });
+            context.Set<Item>().Add(new Item() { Name = "Butter Milk Chicken", Type = "food", CostPrice = 5.50M, SellingPrice = 10.00M, ImageURL = Global.ConvertImageToBinary(img7) });
+            context.Set<Item>().Add(new Item() { Name = "Nasi Lemak", Type = "food", CostPrice = 1.50M, SellingPrice = 4.50M, ImageURL = Global.ConvertImageToBinary(img8) });
+            context.Set<Item>().Add(new Item() { Name = "Cola", Type = "drinks", CostPrice = 1.50M, SellingPrice = 2.50M, ImageURL = Global.ConvertImageToBinary(img9) });
+
 
             //hardcode order
             context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });

@@ -302,6 +302,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.label2);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "CreateItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateItem";
