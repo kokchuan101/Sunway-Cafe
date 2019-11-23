@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.order = new System.Windows.Forms.Button();
+            this.kitchen = new System.Windows.Forms.Button();
             this.account = new System.Windows.Forms.Button();
             this.item = new System.Windows.Forms.Button();
             this.stock = new System.Windows.Forms.Button();
-            this.kitchen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,22 @@
             this.order.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.order.UseVisualStyleBackColor = false;
             this.order.Click += new System.EventHandler(this.Order_Click);
+            // 
+            // kitchen
+            // 
+            this.kitchen.BackColor = System.Drawing.Color.SlateGray;
+            this.kitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kitchen.ForeColor = System.Drawing.Color.Black;
+            this.kitchen.Image = ((System.Drawing.Image)(resources.GetObject("kitchen.Image")));
+            this.kitchen.Location = new System.Drawing.Point(209, 5);
+            this.kitchen.Margin = new System.Windows.Forms.Padding(5);
+            this.kitchen.Name = "kitchen";
+            this.kitchen.Size = new System.Drawing.Size(194, 249);
+            this.kitchen.TabIndex = 10;
+            this.kitchen.Text = "Kitchen";
+            this.kitchen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.kitchen.UseVisualStyleBackColor = false;
+            this.kitchen.Click += new System.EventHandler(this.Kitchen_Click);
             // 
             // account
             // 
@@ -115,21 +131,7 @@
             this.stock.Text = "Stock";
             this.stock.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.stock.UseVisualStyleBackColor = false;
-            // 
-            // kitchen
-            // 
-            this.kitchen.BackColor = System.Drawing.Color.SlateGray;
-            this.kitchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kitchen.ForeColor = System.Drawing.Color.Black;
-            this.kitchen.Image = ((System.Drawing.Image)(resources.GetObject("kitchen.Image")));
-            this.kitchen.Location = new System.Drawing.Point(209, 5);
-            this.kitchen.Margin = new System.Windows.Forms.Padding(5);
-            this.kitchen.Name = "kitchen";
-            this.kitchen.Size = new System.Drawing.Size(194, 249);
-            this.kitchen.TabIndex = 10;
-            this.kitchen.Text = "Kitchen";
-            this.kitchen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.kitchen.UseVisualStyleBackColor = false;
+            this.stock.Click += new System.EventHandler(this.Stock_Click);
             // 
             // panel1
             // 
