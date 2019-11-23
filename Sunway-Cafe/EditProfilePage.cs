@@ -24,6 +24,8 @@ namespace Sunway_Cafe
             InitializeComponent();
             textBoxs = new Dictionary<string, MetroSetTextBox>()
             {
+                { "Username", username },
+                { "Password", password },
                 { "FamilyName", familyName},
                 { "GivenName", givenName},
                 { "Contact", contact},

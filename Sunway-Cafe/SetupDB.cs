@@ -42,6 +42,7 @@ namespace Sunway_Cafe
             context.Set<Account>().Add(new Account() { Username = "saleuser1", Password = "saleuser1", GivenName = "Mu", FamilyName = "Cheng", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
             context.Set<Account>().Add(new Account() { Username = "saleuser2", Password = "saleuser2", GivenName = "Mu", FamilyName = "Cheng 2.0", Gender = "Female", Contact = "130401404", Email = "mucheng@yourheart.com", Role = "SalesStaff" });
 
+
             Image img = Properties.Resources.banana;
             Image img2 = Properties.Resources.Korean_Burger;
             Image img3 = Properties.Resources.Ice_Lemon_Water;
@@ -68,6 +69,7 @@ namespace Sunway_Cafe
             context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
             context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
             context.Set<Order>().Add(new Order() { NetPrice = 6, TotalPrice = 12, Status = "Processing", DateTimeCreated = "DK", DateTimeClosed = "DK2" });
+
 
             context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 1, Qty = 2 });
             context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 1, Qty = 2 });

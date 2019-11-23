@@ -34,11 +34,13 @@ namespace Sunway_Cafe
 
         private void Manage_Click_1(object sender, EventArgs e)
         {         
-            UserControl2 uc2 = new UserControl2();
+            var uc2 = new AccountPage();
+            uc2.TopLevel = false;
             MainPage.Instance.MainPanel.Controls.Clear();
             MainPage.Instance.MainPanel.Controls.Add(uc2);
             MainPage.Instance.SidePanel.Height = MainPage.Instance.Account.Height;
             MainPage.Instance.SidePanel.Top = MainPage.Instance.Account.Top;
+            uc2.Show();
         }
 
         private void Item_Click_1(object sender, EventArgs e)
@@ -48,6 +50,25 @@ namespace Sunway_Cafe
             MainPage.Instance.MainPanel.Controls.Add(uc4);
             MainPage.Instance.SidePanel.Height = MainPage.Instance.Item.Height;
             MainPage.Instance.SidePanel.Top = MainPage.Instance.Item.Top;
+        }
+
+        private void Kitchen_Click(object sender, EventArgs e)
+        {
+            MainPage.Instance.MainPanel.Controls.Clear();
+            MainPage.Instance.MainPanel.Controls.Add(new KitchenPage());
+            MainPage.Instance.SidePanel.Height = MainPage.Instance.Kitchen.Height;
+            MainPage.Instance.SidePanel.Top = MainPage.Instance.Kitchen.Top;
+        }
+
+        private void Stock_Click(object sender, EventArgs e)
+        {
+            var stockPage = new StockPage();
+            stockPage.TopLevel = false;
+            MainPage.Instance.MainPanel.Controls.Clear();
+            MainPage.Instance.MainPanel.Controls.Add(stockPage);
+            MainPage.Instance.SidePanel.Height = MainPage.Instance.Stock.Height;
+            MainPage.Instance.SidePanel.Top = MainPage.Instance.Stock.Top;
+            stockPage.Show();
         }
     }
 }

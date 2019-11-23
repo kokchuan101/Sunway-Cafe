@@ -23,23 +23,25 @@ namespace Sunway_Cafe.Model
         }
         public int Id { get; set; }
 
+        [Required]
         public string Username { get; set; }
 
+        [Required]
         public string Password { get; set; }
 
         [Required]
         public string GivenName { get; set; }
 
         [Required]
-
         public string FamilyName { get; set; }
 
-        
         public string Gender { get; set; }
 
-        public string Contact { get; set; }
-        [Display(Name = "Mail")]
         [Required]
+        public string Contact { get; set; }
+
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         public string Role { get; set; }
