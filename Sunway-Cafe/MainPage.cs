@@ -51,6 +51,8 @@ namespace Sunway_Cafe
             }
         }
 
+        public Label Label1 { get => label1; set => label1 = value; }
+
         public Button Order
         {
             get
@@ -87,7 +89,7 @@ namespace Sunway_Cafe
             }
         }
         public Button Stock { get => stock; set => stock = value; }
-
+        public Button Kitchen { get=> kitchen; set => kitchen = value; }
 
 
         public MainPage()
@@ -155,7 +157,7 @@ namespace Sunway_Cafe
             SidePanel.Height = navButton.Height;
             SidePanel.Top = navButton.Top;
             MainPanel.Controls.Add(navPage);
-            navPage.Show();
+            //navPage.Show();
         }
 
         private void Kitchen_Click(object sender, EventArgs e)

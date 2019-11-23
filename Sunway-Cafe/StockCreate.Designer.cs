@@ -38,10 +38,10 @@
             this.criticalLevel = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.piece = new System.Windows.Forms.RadioButton();
             this.miliLiter = new System.Windows.Forms.RadioButton();
             this.gram = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.others = new System.Windows.Forms.RadioButton();
             this.spice = new System.Windows.Forms.RadioButton();
             this.ingredient = new System.Windows.Forms.RadioButton();
@@ -224,16 +224,6 @@
             this.panel1.Size = new System.Drawing.Size(125, 146);
             this.panel1.TabIndex = 89;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.others);
-            this.panel2.Controls.Add(this.spice);
-            this.panel2.Controls.Add(this.ingredient);
-            this.panel2.Location = new System.Drawing.Point(693, 134);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 146);
-            this.panel2.TabIndex = 90;
-            // 
             // piece
             // 
             this.piece.AutoSize = true;
@@ -243,7 +233,6 @@
             this.piece.Name = "piece";
             this.piece.Size = new System.Drawing.Size(99, 26);
             this.piece.TabIndex = 89;
-            this.piece.TabStop = true;
             this.piece.Text = "Piece(s)";
             this.piece.UseVisualStyleBackColor = true;
             // 
@@ -256,13 +245,13 @@
             this.miliLiter.Name = "miliLiter";
             this.miliLiter.Size = new System.Drawing.Size(117, 26);
             this.miliLiter.TabIndex = 88;
-            this.miliLiter.TabStop = true;
             this.miliLiter.Text = "Mili Liter(s)";
             this.miliLiter.UseVisualStyleBackColor = true;
             // 
             // gram
             // 
             this.gram.AutoSize = true;
+            this.gram.Checked = true;
             this.gram.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gram.ForeColor = System.Drawing.Color.White;
             this.gram.Location = new System.Drawing.Point(3, 28);
@@ -273,6 +262,16 @@
             this.gram.Text = "Gram(s)";
             this.gram.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.others);
+            this.panel2.Controls.Add(this.spice);
+            this.panel2.Controls.Add(this.ingredient);
+            this.panel2.Location = new System.Drawing.Point(693, 134);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 146);
+            this.panel2.TabIndex = 90;
+            // 
             // others
             // 
             this.others.AutoSize = true;
@@ -282,7 +281,6 @@
             this.others.Name = "others";
             this.others.Size = new System.Drawing.Size(89, 26);
             this.others.TabIndex = 85;
-            this.others.TabStop = true;
             this.others.Text = "Others";
             this.others.UseVisualStyleBackColor = true;
             // 
@@ -295,13 +293,13 @@
             this.spice.Name = "spice";
             this.spice.Size = new System.Drawing.Size(77, 26);
             this.spice.TabIndex = 84;
-            this.spice.TabStop = true;
             this.spice.Text = "Spice";
             this.spice.UseVisualStyleBackColor = true;
             // 
             // ingredient
             // 
             this.ingredient.AutoSize = true;
+            this.ingredient.Checked = true;
             this.ingredient.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingredient.ForeColor = System.Drawing.Color.White;
             this.ingredient.Location = new System.Drawing.Point(3, 28);
@@ -331,7 +329,7 @@
             this.Controls.Add(this.label2);
             this.Name = "StockCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StockCreate";
+            this.Text = "a";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

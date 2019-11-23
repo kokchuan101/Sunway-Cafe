@@ -220,6 +220,7 @@
             // Food
             // 
             this.Food.AutoSize = true;
+            this.Food.Checked = true;
             this.Food.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Food.ForeColor = System.Drawing.Color.White;
             this.Food.Location = new System.Drawing.Point(497, 233);
@@ -239,7 +240,6 @@
             this.Drinks.Name = "Drinks";
             this.Drinks.Size = new System.Drawing.Size(79, 26);
             this.Drinks.TabIndex = 65;
-            this.Drinks.TabStop = true;
             this.Drinks.Text = "drinks";
             this.Drinks.UseVisualStyleBackColor = true;
             // 
