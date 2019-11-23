@@ -79,7 +79,7 @@
             this.stock.ForeColor = System.Drawing.Color.SeaShell;
             this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
             this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stock.Location = new System.Drawing.Point(12, 374);
+            this.stock.Location = new System.Drawing.Point(12, 440);
             this.stock.Name = "stock";
             this.stock.Size = new System.Drawing.Size(155, 54);
             this.stock.TabIndex = 8;
@@ -112,7 +112,7 @@
             this.kitchen.ForeColor = System.Drawing.Color.SeaShell;
             this.kitchen.Image = ((System.Drawing.Image)(resources.GetObject("kitchen.Image")));
             this.kitchen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kitchen.Location = new System.Drawing.Point(12, 432);
+            this.kitchen.Location = new System.Drawing.Point(12, 260);
             this.kitchen.Name = "kitchen";
             this.kitchen.Size = new System.Drawing.Size(169, 54);
             this.kitchen.TabIndex = 7;
@@ -128,7 +128,7 @@
             this.item.ForeColor = System.Drawing.Color.SeaShell;
             this.item.Image = ((System.Drawing.Image)(resources.GetObject("item.Image")));
             this.item.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.item.Location = new System.Drawing.Point(12, 316);
+            this.item.Location = new System.Drawing.Point(12, 380);
             this.item.Name = "item";
             this.item.Size = new System.Drawing.Size(143, 54);
             this.item.TabIndex = 6;
@@ -144,7 +144,7 @@
             this.account.ForeColor = System.Drawing.Color.SeaShell;
             this.account.Image = ((System.Drawing.Image)(resources.GetObject("account.Image")));
             this.account.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.account.Location = new System.Drawing.Point(12, 258);
+            this.account.Location = new System.Drawing.Point(12, 320);
             this.account.Name = "account";
             this.account.Size = new System.Drawing.Size(148, 54);
             this.account.TabIndex = 4;
@@ -160,7 +160,7 @@
             this.order.ForeColor = System.Drawing.Color.SeaShell;
             this.order.Image = ((System.Drawing.Image)(resources.GetObject("order.Image")));
             this.order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.order.Location = new System.Drawing.Point(12, 200);
+            this.order.Location = new System.Drawing.Point(12, 202);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(148, 54);
             this.order.TabIndex = 5;

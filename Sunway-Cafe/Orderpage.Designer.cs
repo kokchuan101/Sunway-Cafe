@@ -192,6 +192,7 @@
             // 
             this.ID1.HeaderText = "ID";
             this.ID1.Name = "ID1";
+            this.ID1.Visible = false;
             this.ID1.Width = 25;
             // 
             // Product1
@@ -239,7 +240,7 @@
             this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverTextColor = System.Drawing.Color.White;
-            this.Pay.Location = new System.Drawing.Point(694, 520);
+            this.Pay.Location = new System.Drawing.Point(971, 478);
             this.Pay.Name = "Pay";
             this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));

@@ -63,7 +63,7 @@ namespace Sunway_Cafe
             }
         }
 
-        public Button Manage
+        public Button Account
         {
             get
             {
@@ -86,6 +86,7 @@ namespace Sunway_Cafe
                 item = value;
             }
         }
+        public Button Stock { get => stock; set => stock = value; }
 
 
 
@@ -96,6 +97,7 @@ namespace Sunway_Cafe
             {
                 var query = db.Items.ToList();
             }
+            Global.user.ModifyMainDisplay(this);
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -177,9 +179,9 @@ namespace Sunway_Cafe
         private void logOutBtn_Click_1(object sender, EventArgs e)
         {
             Form signIn = new SignInPage();
-            this.Close();
             signIn.Show();
             Global.user = new User();
+            this.Close();
         }
     }
 

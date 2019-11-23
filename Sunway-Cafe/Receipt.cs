@@ -15,17 +15,17 @@ namespace Sunway_Cafe
 
         public string CalculateSST()
         {
-            return $"{Subtotal * 0.06M}";
+            return $"{Subtotal * 0.06M:0.00}";
         }
 
         public string CalculateServCharge()
         {
-            return $"{Subtotal * 0.1M}";
+            return $"{Subtotal * 0.1M:0.00}";
         }
 
         public string CalculateTotal()
         {
-            return $"{Subtotal * 1.16M}";
+            return $"{Subtotal * 1.16M:0.00}";
         }
 
 

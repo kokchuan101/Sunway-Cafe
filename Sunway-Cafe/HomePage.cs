@@ -12,22 +12,13 @@ namespace Sunway_Cafe
 {
     public partial class HomePage : UserControl
     {
-        private static HomePage _instance;
-
-        
-        public static HomePage Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new HomePage();
-                return _instance;
-            }
-        }
+        public Button Account { get => account; set => account = value; }
+        public Button Item { get => item; set => item = value; }
+        public Button Stock { get => stock; set => stock = value; }
         public HomePage()
         {
             InitializeComponent();
-            
+            Global.user.ModifyHomeDisplay(this);
 
         }
 
@@ -46,8 +37,8 @@ namespace Sunway_Cafe
             UserControl2 uc2 = new UserControl2();
             MainPage.Instance.MainPanel.Controls.Clear();
             MainPage.Instance.MainPanel.Controls.Add(uc2);
-            MainPage.Instance.SidePanel.Height = MainPage.Instance.Manage.Height;
-            MainPage.Instance.SidePanel.Top = MainPage.Instance.Manage.Top;
+            MainPage.Instance.SidePanel.Height = MainPage.Instance.Account.Height;
+            MainPage.Instance.SidePanel.Top = MainPage.Instance.Account.Top;
         }
 
         private void Item_Click_1(object sender, EventArgs e)
