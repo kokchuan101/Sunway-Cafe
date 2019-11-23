@@ -55,19 +55,10 @@ namespace Sunway_Cafe
             }
         }
 
-        public static ItemPage Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new ItemPage();
-                return _instance;
-            }
-        }
-
+       
         private void create_Click(object sender, EventArgs e)
         {
-            CreateItem create = new CreateItem();
+            CreateItem create = new CreateItem(null);
             create.Show();
         }
 
@@ -135,43 +126,47 @@ namespace Sunway_Cafe
         {
             if (OrderOptions.selectItemName != null)
             {
-                using (var db = new SunwayCafeContext())
-                {
-                    var query = db.Items.ToList();
-                    OrderOptions[] order = new OrderOptions[query.Count];
-                    Item delItem;
-
-
-
-                    foreach (Control c in flowLayoutPanel1.Controls)
-                    {
-                        if (((OrderOptions)c).IsSelected == true)
+                DialogResult dialogResult = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {               
+                        using (var db = new SunwayCafeContext())
                         {
-                            foreach (var itemList in query)
+                            var query = db.Items.ToList();
+                            OrderOptions[] order = new OrderOptions[query.Count];
+                            Item delItem;
+
+                            foreach (Control c in flowLayoutPanel1.Controls)
                             {
-                                foundControl = c;
-                                break;
+                                if (((OrderOptions)c).IsSelected == true)
+                                {
+                                    foreach (var itemList in query)
+                                    {
+                                        foundControl = c;
+                                        break;
+                                    }
+                                }
+                            }
+
+
+                            if (foundControl != null)
+                            {
+                                foreach (var itemList in query)
+                                {
+                                    if (OrderOptions.selectItemName == itemList.Name)
+                                    {
+                                        MessageBox.Show(itemList.Name + " is deleted from database. Reload the page");
+                                        delItem = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
+                                        db.Items.Remove(delItem);
+                                        db.SaveChanges();
+                                    }
+                                }
                             }
                         }
-                    }
-
-
-                    if (foundControl != null)
-                    {
-                        foreach (var itemList in query)
-                        {
-                            if (OrderOptions.selectItemName == itemList.Name)
-                            {
-                                MessageBox.Show(itemList.Name + " is deleted from database.");
-                                delItem = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
-                                db.Items.Remove(delItem);
-                                db.SaveChanges();
-                                loadData();
-                            }
-                        }
-                    }
                 }
+                else if (dialogResult == DialogResult.No)
+                {
 
+                }
             }
             else
             {
@@ -182,15 +177,28 @@ namespace Sunway_Cafe
 
         private void update_Click_1(object sender, EventArgs e)
         {
+            var itemName = OrderOptions.selectItemName;
             if (OrderOptions.selectItemName != null)
             {
-                UpdateItem update = new UpdateItem();
-                update.Show();
+                using (var db = new SunwayCafeContext())
+                {
+                    var query = db.Items.Where(d => d.Name == itemName).FirstOrDefault();
+                    if (query != null)
+                    {
+                        CreateItem update = new CreateItem(query);
+                        update.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
                 MessageBox.Show("Please select an item");
             }
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
