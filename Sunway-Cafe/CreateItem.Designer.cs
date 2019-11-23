@@ -148,7 +148,7 @@
             this.button1.Style = MetroSet_UI.Design.Style.Light;
             this.button1.StyleManager = null;
             this.button1.TabIndex = 57;
-            this.button1.Text = "Create Item";
+            this.button1.Text = "Create";
             this.button1.ThemeAuthor = "Narwin";
             this.button1.ThemeName = "MetroLite";
             this.button1.Click += new System.EventHandler(this.button1_Click_1);

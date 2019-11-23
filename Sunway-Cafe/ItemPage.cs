@@ -58,7 +58,7 @@ namespace Sunway_Cafe
        
         private void create_Click(object sender, EventArgs e)
         {
-            CreateItem create = new CreateItem(null);
+            CreateItem create = new CreateItem(null,this);
             create.Show();
         }
 
@@ -185,7 +185,7 @@ namespace Sunway_Cafe
                     var query = db.Items.Where(d => d.Name == itemName).FirstOrDefault();
                     if (query != null)
                     {
-                        CreateItem update = new CreateItem(query);
+                        CreateItem update = new CreateItem(query, this);
                         update.Show();
                     }
                     else

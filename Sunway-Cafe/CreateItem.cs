@@ -16,11 +16,12 @@ namespace Sunway_Cafe
     public partial class CreateItem : Form
     {
 
-
+        private ItemPage itemPageRef;
         private Dictionary<string, MetroSetTextBox> textBoxs;
-        public CreateItem(Item item)
+        public CreateItem(Item item, ItemPage ip)
         {
             InitializeComponent();
+            itemPageRef = ip;
             textBoxs = new Dictionary<string, MetroSetTextBox>()
             {
                 { "Name", textBox2},
@@ -47,7 +48,7 @@ namespace Sunway_Cafe
 
 
 
-        private async void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Global.ClearErrors(errorProvider1, textBoxs);
             var success = true;
@@ -55,80 +56,74 @@ namespace Sunway_Cafe
             if(!decimal.TryParse(priceBox.Text.Trim(), out decimal priceVal))
             {
                 errorProvider1.SetError(priceBox, "Numbers only.");
+                priceBox.BorderColor = Color.Red;
                 success = false;
             }
 
-            if (!decimal.TryParse(priceBox.Text.Trim(), out decimal costVal))
+            if (!decimal.TryParse(costPriceBox.Text.Trim(), out decimal costVal))
             {
                 errorProvider1.SetError(costPriceBox, "Numbers only.");
+                costPriceBox.BorderColor = Color.Red;
                 success = false;
             }
 
-            if (button1.Text == "Create")
-            {
-                using (SunwayCafeContext db = new SunwayCafeContext())
-                {
-
-                    success = int.TryParse(priceBox.Text.Trim(), out int priceVal);
-                    success2 = int.TryParse(costPriceBox.Text.Trim(), out int costVal);
-
-                    if (success && success2 && isChecked)
-                    {
-                        Item item = new Item() { Name = textBox2.Text.Trim(), ImageURL = Global.ConvertImageToBinary(pictureBox.Image), SellingPrice = priceVal, CostPrice = costVal, Type = type };
-                        db.Items.Add(item);
-                        await db.SaveChangesAsync();
-                        MessageBox.Show("Item Created");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please fill in all the information!");
-                    }
-                }
-            }
-            else if (button1.Text == "Update")
-            {
-                using (SunwayCafeContext db = new SunwayCafeContext())
-                {
-                    if (OrderOptions.selectItemName != null)
-                    {
-                        var item = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
-                        item.Name = textBox2.Text.Trim();
-                        if (pictureBox.Image != OrderOptions.selectedItemImage)
-                        {
-                            item.ImageURL = Global.ConvertImageToBinary(pictureBox.Image);
-                        }
-                        item.CostPrice = int.Parse(costPriceBox.Text.ToString());
-                        item.SellingPrice = int.Parse(priceBox.Text.ToString());
-                        item.Type = type;
-                        await db.SaveChangesAsync();
-                        MessageBox.Show("Item Updated");
-                    }
-                }
-
-            if(String.IsNullOrEmpty(textBox2.Text.Trim()))
+            if (String.IsNullOrEmpty(textBox2.Text.Trim()))
             {
                 errorProvider1.SetError(textBox2, "The Name field is required.");
+                textBox2.BorderColor = Color.Red;
                 success = false;
             }
-           
+
+            var msg = string.Empty;
             using (SunwayCafeContext db = new SunwayCafeContext())
             {
                 if (success)
                 {
-                    Item item = new Item()
+
+                    if (button1.Text == "Create")
                     {
-                        Name = textBox2.Text.Trim(),
-                        ImageURL = Global.ConvertImageToBinary(pictureBox.Image),
-                        SellingPrice = priceVal,
-                        CostPrice = costVal,
-                        Type = Food.Checked? Food.Text: Drinks.Text
-                    };
-                    db.Items.Add(item);
-                    await db.SaveChangesAsync();
-                    MessageBox.Show("Item Created");
+                        Item item = new Item()
+                        {
+                            Name = textBox2.Text.Trim(),
+                            ImageURL = Global.ConvertImageToBinary(pictureBox.Image),
+                            SellingPrice = priceVal,
+                            CostPrice = costVal,
+                            Type = Food.Checked ? Food.Text : Drinks.Text
+                        };
+                        db.Items.Add(item);
+                        msg = "Item Created";
+                    }
+                    else
+                    {
+                        
+                        if (OrderOptions.selectItemName != null)
+                        {
+                            var item = db.Items.Where(d => d.Name == OrderOptions.selectItemName).First();
+                            item.Name = textBox2.Text.Trim();
+                            if (pictureBox.Image != OrderOptions.selectedItemImage)
+                            {
+                                item.ImageURL = Global.ConvertImageToBinary(pictureBox.Image);
+                            }
+                            item.SellingPrice = priceVal;
+                            item.CostPrice = costVal;
+                            item.Type = Food.Checked ? Food.Text : Drinks.Text;
+                            msg = "Item Updated";
+                        }
+                        
+                    }
+
+                    db.SaveChanges();
+                    MessageBox.Show(msg);
+                    itemPageRef.loadData();
+                    this.Close();
                 }
 
+
             }
+
+
+           
+            
 
         }
 
