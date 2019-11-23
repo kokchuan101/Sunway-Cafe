@@ -16,11 +16,24 @@ namespace Sunway_Cafe
     {
 
 
-        public CreateItem()
+        public CreateItem(Item item)
         {
             InitializeComponent();
-            Image img = Properties.Resources.banana;
-            pictureBox.Image = img;
+            if (item == null)
+            {
+                Image img = Properties.Resources.No_Image;
+                pictureBox.Image = img;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else
+            {
+                button1.Text = "Update";
+                pictureBox.Image = OrderOptions.selectedItemImage;
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                priceBox.Text = OrderOptions.selectedItemPrice.ToString();
+                costPriceBox.Text = OrderOptions.selectedItemCostPrice.ToString();
+                textBox2.Text = OrderOptions.selectItemName;
+            }
         }
 
 
