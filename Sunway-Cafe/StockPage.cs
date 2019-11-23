@@ -22,11 +22,11 @@ namespace Sunway_Cafe
 
         private void create_Click(object sender, EventArgs e)
         {
-            StockCreate sc = new StockCreate(null);
+            StockCreate sc = new StockCreate(null, this);
             sc.Show();
         }
 
-        private void RefreshListView()
+        public void RefreshListView()
         {
             listView1.Items.Clear();
             try
@@ -100,7 +100,7 @@ namespace Sunway_Cafe
                 var stock = db.Stocks.Where(x => x.Id == id).FirstOrDefault();
                 if (stock != null)
                 {
-                    StockCreate sc = new StockCreate(stock);
+                    StockCreate sc = new StockCreate(stock, this);
                     sc.Show();
                 }
                 else

@@ -66,7 +66,7 @@ namespace Sunway_Cafe
 
         private void editProfile_Click(object sender, EventArgs e)
         {
-
+            Global.ClearErrors(errorProvider1, textBoxs);
             var account = new Account()
             {
                 Username = username.Text,
@@ -121,74 +121,7 @@ namespace Sunway_Cafe
 
 
 
-            //if (string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(password.Text) ||  string.IsNullOrEmpty(familyName.Text) || string.IsNullOrEmpty(givenName.Text) || string.IsNullOrEmpty(contact.Text) || string.IsNullOrEmpty(email.Text))
-            //{
-            //    MessageBox.Show("Please enter all the fields");
-            //    Close();
-            //}
-            //else
-            //{
-            //    editProfile.Enabled = true;
-            //    if (editProfile.Text == "Add Staff")
-            //    {
-            //        try
-            //        {
-            //            using (var db = new SunwayCafeContext())
-            //            {
-            //                var lst = db.Accounts.ToList();
-
-            //                var newStaff = new Account()
-            //                {
-            //                    Username = username.Text,
-            //                    Password = password.Text,
-            //                    Role = role.Text,
-            //                    FamilyName = familyName.Text,
-            //                    GivenName = givenName.Text,
-            //                    Gender = gender.Text,
-            //                    Contact = int.Parse(contact.Text),
-            //                    Email = email.Text,
-            //                };
-
-            //                db.Accounts.Add(newStaff);
-            //                db.SaveChanges();
-            //            }
-            //        }
-            //        catch (InvalidCastException ice)
-            //        {
-            //            if (ice == null)
-            //            {
-            //                MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        try
-            //        {
-            //            using (var db = new SunwayCafeContext())
-            //            {
-            //                var query = db.Accounts.Where(acc => acc.Id == ID).FirstOrDefault();
-
-            //                query.Username = username.Text;
-            //                query.Password = password.Text;
-            //                query.Role = role.Text;
-            //                query.FamilyName = familyName.Text;
-            //                query.GivenName = givenName.Text;
-            //                query.Gender = gender.Text;
-            //                query.Contact = int.Parse(contact.Text);
-            //                query.Email = email.Text;
-            //                db.SaveChanges();
-            //            }
-            //        }
-            //        catch (InvalidCastException ice)
-            //        {
-            //            if (ice == null)
-            //            {
-            //                MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            }
-            //        }
-            //    }
-            //}
+           
 
         }
 

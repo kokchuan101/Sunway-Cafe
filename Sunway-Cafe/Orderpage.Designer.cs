@@ -198,12 +198,14 @@
             // 
             this.Product1.HeaderText = "Name";
             this.Product1.Name = "Product1";
+            this.Product1.ReadOnly = true;
             this.Product1.Width = 145;
             // 
             // Price1
             // 
             this.Price1.HeaderText = "Price";
             this.Price1.Name = "Price1";
+            this.Price1.ReadOnly = true;
             // 
             // Quantity1
             // 
