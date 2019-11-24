@@ -24,7 +24,7 @@ namespace Sunway_Cafe
             //    while (true)
             //    {
             //        RefreshKitchenOrder();
-            //        Thread.Sleep(1000);
+            //        Thread.Sleep(2000);
             //    }
             //});
             //thread.IsBackground = true;
@@ -35,15 +35,32 @@ namespace Sunway_Cafe
         public void RefreshKitchenOrder()
         {
 
-            foreach (Control control in flowLayoutPanel1.Controls)
+            //foreach (Control control in flowLayoutPanel1.Controls)
+            //{
+            //    if (this.InvokeRequired)
+            //    {
+            //        Invoke(new MethodInvoker(() => 
+            //        {
+            //            flowLayoutPanel1.Controls.Clear();
+            //            control.Dispose();
+            //        }));
+            //    }
+            //    else
+            //    {
+            //        flowLayoutPanel1.Controls.Remove(control);
+            //        control.Dispose();
+            //    }
+                    
+            //}
+            if (this.InvokeRequired)
             {
-                flowLayoutPanel1.Controls.Remove(control);
-                control.Dispose();
+                Invoke(new MethodInvoker(() => flowLayoutPanel1.Controls.Clear()));
             }
-
-            flowLayoutPanel1.Controls.Clear();
-
-
+            else
+            {
+                flowLayoutPanel1.Controls.Clear();
+            }
+            
             using (var db = new SunwayCafeContext())
             {
                 //Get orders with "Processing" status and populate in flowlayout
@@ -51,10 +68,19 @@ namespace Sunway_Cafe
                 foreach(var order in orders)
                 {
                     var kitchenOrder = new KitchenOrder(order, this);
-                    flowLayoutPanel1.Controls.Add(kitchenOrder);
+                    if(this.InvokeRequired)
+                    {
+                        Invoke(new MethodInvoker(() => flowLayoutPanel1.Controls.Add(kitchenOrder)));
+                    }
+                    else
+                    {
+                        flowLayoutPanel1.Controls.Add(kitchenOrder);
+
+                    }
                 }
             }
         }
+
 
     }
 }

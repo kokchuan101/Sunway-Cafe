@@ -36,7 +36,20 @@ namespace Sunway_Cafe
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            using(var db = new SunwayCafeContext())
+            {
+                var order = db.Orders.Where(x => x.Status == "Processing").FirstOrDefault();
+                if(order == null)
+                {
+                    var form = new BusinessReportPage();
+                    this.Hide();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to close application. There is some orders still being processed. Please check Kitchen Page.", "Outstanding Orders", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void signInBtn_Click(object sender, EventArgs e)

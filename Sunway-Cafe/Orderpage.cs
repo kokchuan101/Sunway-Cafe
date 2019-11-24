@@ -117,54 +117,61 @@ namespace Sunway_Cafe
       
         private void Pay_Click_1(object sender, EventArgs e)
         {
-            var order = new Order()
+            if(dataGridView1.Rows.Count -1 <= 0)
             {
-                NetPrice = decimal.Parse(lbltotal.Text)/1.16M,
-                TotalPrice = decimal.Parse(lbltotal.Text),
-                Status = "Processing",
-                DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
-
-            };
-
-            using (var db = new SunwayCafeContext())
+                MessageBox.Show("Zero item detected. Please order at least one item.", "Empty Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
             {
-                var lst = new List<OrderedItem>();
-                //Add all item object from datagrid using id
-                for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+                var order = new Order()
                 {
-                    var id = Convert.ToInt32((dataGridView1.Rows[i].Cells[0].Value));
-                    var item = db.Items.Where(x => x.Id == id).FirstOrDefault();
-                    if (item == null)
+                    NetPrice = decimal.Parse(lbltotal.Text) / 1.16M,
+                    Status = "Processing",
+                    DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
+
+                };
+
+                using (var db = new SunwayCafeContext())
+                {
+                    var lst = new List<OrderedItem>();
+                    //Add all item object from datagrid using id
+                    for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
                     {
-                        MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        lst.Add(new OrderedItem()
+                        var id = Convert.ToInt32((dataGridView1.Rows[i].Cells[0].Value));
+                        var item = db.Items.Where(x => x.Id == id).FirstOrDefault();
+                        if (item == null)
                         {
-                            Order = order,
-                            Item = item,
-                            Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity1"].Value))
-                        });
+                            MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            lst.Add(new OrderedItem()
+                            {
+                                Order = order,
+                                Item = item,
+                                Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity1"].Value))
+                            });
+                        }
                     }
+
+                    order.OrderedItems = lst;
+                    db.Orders.Add(order);
+                    db.SaveChanges();
+
                 }
 
-                order.OrderedItems = lst;
-                db.Orders.Add(order);
-                db.SaveChanges();
+                var receiptItems = new List<ReceiptItem>();
+                foreach (var item in order.OrderedItems)
+                {
+                    receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
+                }
 
+                var reportPage = new ReceiptPage(new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems, Date = order.DateTimeCreated });
+                dataGridView1.Rows.Clear();
+                
+                reportPage.Show();
             }
-
-            var receiptItems = new List<ReceiptItem>();
-            foreach (var item in order.OrderedItems)
-            {
-                receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
-            }
-
-            var receipt = new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems, Date = order.DateTimeCreated };
-
-            var reportPage = new ReceiptPage(receipt);
-            reportPage.Show();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -173,7 +180,7 @@ namespace Sunway_Cafe
           
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
-
+            
 
             string search = textBox1.Text.Trim();
             // Search items in our Jobs ListView, remove those that do not match search
