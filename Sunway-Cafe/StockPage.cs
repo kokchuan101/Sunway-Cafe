@@ -115,5 +115,65 @@ namespace Sunway_Cafe
         {
             RefreshListView();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string search = textBox1.Text.Trim();
+            if (search != String.Empty)
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = listView1.Items[i];
+                    if (item.SubItems[1].Text.ToLower().StartsWith(search.ToLower()))                    
+                    {
+                        item.BackColor = SystemColors.Highlight;
+                        item.ForeColor = SystemColors.HighlightText;
+                    }
+                    else
+                    {
+                        listView1.Items.Remove(item);
+                    }                   
+                }
+                if (listView1.SelectedItems.Count == 1)
+                {
+                    listView1.Focus();
+                }
+            }
+            else
+            {
+                RefreshListView();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string search = textBox2.Text.Trim();
+            if (search != String.Empty)
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = listView1.Items[i];
+                    if (item.SubItems[2].Text.ToLower().StartsWith(search.ToLower()))
+                    {
+                        item.BackColor = SystemColors.Highlight;
+                        item.ForeColor = SystemColors.HighlightText;
+                    }
+                    else
+                    {
+                        listView1.Items.Remove(item);
+                    }
+                }
+                if (listView1.SelectedItems.Count == 1)
+                {
+                    listView1.Focus();
+                }
+            }
+            else
+            {
+                RefreshListView();
+            }
+        }
     }
+
 }
+
