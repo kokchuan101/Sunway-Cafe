@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 766);
+            this.panel1.Size = new System.Drawing.Size(160, 678);
             this.panel1.TabIndex = 0;
             // 
             // stock
@@ -198,14 +198,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(160, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1168, 23);
+            this.panel2.Size = new System.Drawing.Size(1063, 23);
             this.panel2.TabIndex = 1;
             // 
             // mainpanel
             // 
             this.mainpanel.Location = new System.Drawing.Point(161, 141);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1141, 613);
+            this.mainpanel.Size = new System.Drawing.Size(1047, 531);
             this.mainpanel.TabIndex = 4;
             // 
             // panel3
@@ -282,14 +282,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1328, 766);
+            this.ClientSize = new System.Drawing.Size(1223, 678);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sunway Cafe";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -203,6 +204,9 @@
             // 
             // Price1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            this.Price1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Price1.HeaderText = "Price";
             this.Price1.Name = "Price1";
             this.Price1.ReadOnly = true;

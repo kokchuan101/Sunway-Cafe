@@ -86,6 +86,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessReport.cs">
+      <DependentUpon>BusinessReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusinessReportPage.Designer.cs">
+      <DependentUpon>BusinessReportPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +223,10 @@
     <Compile Include="ItemPage.Designer.cs">
       <DependentUpon>ItemPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BusinessReport.rdlc" />
+    <EmbeddedResource Include="BusinessReportPage.resx">
+      <DependentUpon>BusinessReportPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateItem.resx">
       <DependentUpon>CreateItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +290,17 @@
     <EmbeddedResource Include="ItemPage.resx">
       <DependentUpon>ItemPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BusinessReport.xsc">
+      <DependentUpon>BusinessReport.xsd</DependentUpon>
+    </None>
+    <None Include="BusinessReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BusinessReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BusinessReport.xss">
+      <DependentUpon>BusinessReport.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
