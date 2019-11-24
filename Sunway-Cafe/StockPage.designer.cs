@@ -40,12 +40,20 @@
             this.qty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.criticalLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.delete);
             this.panel1.Controls.Add(this.update);
             this.panel1.Controls.Add(this.load);
@@ -53,7 +61,7 @@
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Location = new System.Drawing.Point(32, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 484);
+            this.panel1.Size = new System.Drawing.Size(1082, 531);
             this.panel1.TabIndex = 6;
             // 
             // delete
@@ -65,7 +73,7 @@
             this.delete.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.delete.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.delete.HoverTextColor = System.Drawing.Color.White;
-            this.delete.Location = new System.Drawing.Point(754, 416);
+            this.delete.Location = new System.Drawing.Point(789, 460);
             this.delete.Name = "delete";
             this.delete.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.delete.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -91,7 +99,7 @@
             this.update.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.update.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.update.HoverTextColor = System.Drawing.Color.White;
-            this.update.Location = new System.Drawing.Point(754, 86);
+            this.update.Location = new System.Drawing.Point(789, 130);
             this.update.Name = "update";
             this.update.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.update.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -117,7 +125,7 @@
             this.load.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.load.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.load.HoverTextColor = System.Drawing.Color.White;
-            this.load.Location = new System.Drawing.Point(754, 153);
+            this.load.Location = new System.Drawing.Point(789, 197);
             this.load.Name = "load";
             this.load.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.load.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -143,7 +151,7 @@
             this.create.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.create.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.create.HoverTextColor = System.Drawing.Color.White;
-            this.create.Location = new System.Drawing.Point(754, 20);
+            this.create.Location = new System.Drawing.Point(789, 64);
             this.create.Name = "create";
             this.create.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.create.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -174,7 +182,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 20);
+            this.listView1.Location = new System.Drawing.Point(37, 64);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(687, 438);
             this.listView1.TabIndex = 26;
@@ -211,16 +219,55 @@
             this.criticalLevel.Text = "Critical Level";
             this.criticalLevel.Width = 145;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(24, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Search by name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(215, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 20);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(454, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "by type:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(552, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(172, 20);
+            this.textBox2.TabIndex = 39;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // StockPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 543);
+            this.ClientSize = new System.Drawing.Size(1140, 587);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StockPage";
             this.Text = "Stock";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +286,9 @@
         private MetroSet_UI.Controls.MetroSetButton update;
         private MetroSet_UI.Controls.MetroSetButton load;
         private MetroSet_UI.Controls.MetroSetButton create;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
