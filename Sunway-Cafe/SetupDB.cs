@@ -64,21 +64,21 @@ namespace Sunway_Cafe
 
 
             //hardcode order
-            //context.Set<Order>().Add(new Order() { NetPrice = 12, Status = "Processing", DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now) });
-            //context.Set<Order>().Add(new Order() { NetPrice = 6, Status = "Processing", DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now) });
+            context.Set<Order>().Add(new Order() { NetPrice = 12, Status = "Processing", DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now) });
+            context.Set<Order>().Add(new Order() { NetPrice = 6, Status = "Processing", DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now) });
 
 
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 1, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 2, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 3, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 4, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 5, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 6, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 7, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 8, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 3, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 4, Qty = 2 });
-            //context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 7, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 1, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 2, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 3, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 4, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 5, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 6, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 7, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 1, ItemId = 8, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 3, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 4, Qty = 2 });
+            context.Set<OrderedItem>().Add(new OrderedItem() { OrderId = 2, ItemId = 7, Qty = 2 });
 
             context.Set<Stock>().Add(new Stock() { Name = "Salt", Type = "Spice", Qty = "10", Unit = "Grams", CriticalLevel = "2"});
         }

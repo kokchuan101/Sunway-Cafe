@@ -14,7 +14,7 @@ namespace Sunway_Cafe.Model
     
         public int Id { get; set; }
         public decimal NetPrice { get; set; }
-        public decimal TotalPrice { get => NetPrice * 1.16M; }
+        public decimal TotalPrice { get; set; }
         public string Status { get; set; }
         public string DateTimeCreated { get; set; }
         public string DateTimeClosed { get; set; }

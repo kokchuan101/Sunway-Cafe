@@ -30,7 +30,6 @@
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BusinessReportPage_Closing);
             // 
             // reportViewer1
             // 
@@ -38,7 +37,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1031, 491);
+            this.reportViewer1.Size = new System.Drawing.Size(1031, 649);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.ReportViewer1_Load);
             // 
@@ -46,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 492);
+            this.ClientSize = new System.Drawing.Size(1031, 648);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -54,6 +53,7 @@
             this.Name = "BusinessReportPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusinessReportPage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BusinessReportPage_Closing);
             this.Load += new System.EventHandler(this.BusinessReportPage_Load);
             this.ResumeLayout(false);
 

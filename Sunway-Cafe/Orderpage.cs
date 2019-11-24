@@ -126,6 +126,7 @@ namespace Sunway_Cafe
                 var order = new Order()
                 {
                     NetPrice = decimal.Parse(lbltotal.Text) / 1.16M,
+                    TotalPrice = decimal.Parse(lbltotal.Text),
                     Status = "Processing",
                     DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
 
@@ -202,6 +203,7 @@ namespace Sunway_Cafe
                     {
                         order[i] = new OrderOptions(this);                      
                         order[i].Name_details = itemList.Name;
+                        order[i].ID = itemList.Id;
                         if (itemList.ImageURL != null)
                         {
                             order[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
@@ -228,6 +230,7 @@ namespace Sunway_Cafe
                     {
                         order2[i] = new OrderOptions(this);
                         order2[i].Name_details = itemList.Name;
+                        order2[i].ID = itemList.Id;
                         if (itemList.ImageURL != null)
                         {
                             order2[i].displayImage = ConvertBinaryToImage(itemList.ImageURL);
