@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 678);
+            this.panel1.Size = new System.Drawing.Size(160, 739);
             this.panel1.TabIndex = 0;
             // 
             // stock
@@ -96,7 +96,7 @@
             this.profile1.ForeColor = System.Drawing.Color.Black;
             this.profile1.Image = ((System.Drawing.Image)(resources.GetObject("profile1.Image")));
             this.profile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profile1.Location = new System.Drawing.Point(8, 609);
+            this.profile1.Location = new System.Drawing.Point(8, 664);
             this.profile1.Name = "profile1";
             this.profile1.Size = new System.Drawing.Size(147, 63);
             this.profile1.TabIndex = 9;
@@ -198,14 +198,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(160, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1063, 23);
+            this.panel2.Size = new System.Drawing.Size(1142, 23);
             this.panel2.TabIndex = 1;
             // 
             // mainpanel
             // 
-            this.mainpanel.Location = new System.Drawing.Point(161, 141);
+            this.mainpanel.Location = new System.Drawing.Point(162, 141);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1047, 531);
+            this.mainpanel.Size = new System.Drawing.Size(1129, 586);
             this.mainpanel.TabIndex = 4;
             // 
             // panel3
@@ -261,7 +261,7 @@
             this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutBtn.ForeColor = System.Drawing.Color.Black;
             this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
-            this.logOutBtn.Location = new System.Drawing.Point(1138, 49);
+            this.logOutBtn.Location = new System.Drawing.Point(1221, 65);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(70, 63);
             this.logOutBtn.TabIndex = 14;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 678);
+            this.ClientSize = new System.Drawing.Size(1302, 739);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.panel4);
