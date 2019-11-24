@@ -176,6 +176,7 @@ namespace Sunway_Cafe
         {
             ProfilePage pp = new ProfilePage();
             nav(pp, mainpanel, home);
+            label1.Text = "Profile";
         }
 
         private void logOutBtn_Click_1(object sender, EventArgs e)
