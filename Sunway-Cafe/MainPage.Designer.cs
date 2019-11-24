@@ -198,7 +198,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(160, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1142, 23);
+            this.panel2.Size = new System.Drawing.Size(1149, 23);
             this.panel2.TabIndex = 1;
             // 
             // mainpanel
@@ -261,7 +261,7 @@
             this.logOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutBtn.ForeColor = System.Drawing.Color.Black;
             this.logOutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logOutBtn.Image")));
-            this.logOutBtn.Location = new System.Drawing.Point(1221, 65);
+            this.logOutBtn.Location = new System.Drawing.Point(1192, 40);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(70, 63);
             this.logOutBtn.TabIndex = 14;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 739);
+            this.ClientSize = new System.Drawing.Size(1309, 739);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.panel4);
