@@ -110,7 +110,7 @@ namespace Sunway_Cafe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            _obj = this;
             MainPanel.Controls.Add(new HomePage());
             label1.Text = "Home";
         }
