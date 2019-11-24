@@ -347,7 +347,6 @@
             this.contact.ThemeName = "MetroLite";
             this.contact.UseSystemPasswordChar = false;
             this.contact.WatermarkText = "";
-            this.contact.Validating += new System.ComponentModel.CancelEventHandler(this.contact_Validating);
             // 
             // label4
             // 

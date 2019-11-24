@@ -16,12 +16,11 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             RefreshListView();
-            //listView1.HideSelection = false;
         }
 
         private void addStaff_Click_1(object sender, EventArgs e)
         {
-            EditProfilePage editProfile = new EditProfilePage(null);
+            EditProfilePage editProfile = new EditProfilePage(null,this);
             editProfile.Show();
         }
 
@@ -33,7 +32,7 @@ namespace Sunway_Cafe
                 var acc = db.Accounts.Where(x => x.Id == id).FirstOrDefault();
                 if(acc != null)
                 {
-                    EditProfilePage editProfile = new EditProfilePage(acc);
+                    EditProfilePage editProfile = new EditProfilePage(acc,this);
                     editProfile.Show();
 
                 }
@@ -42,7 +41,7 @@ namespace Sunway_Cafe
                     MessageBox.Show("Unable to find account in database. Please contact administrator.");
                 }
             }
-            RefreshListView();
+            
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -75,7 +74,7 @@ namespace Sunway_Cafe
             }
         }
 
-        private void RefreshListView()
+        public void RefreshListView()
         {
             listView1.Items.Clear();
             try

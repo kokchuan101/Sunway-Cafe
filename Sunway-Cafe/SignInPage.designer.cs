@@ -33,14 +33,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.exitBtn = new MetroSet_UI.Controls.MetroSetButton();
-            this.signInBtn = new MetroSet_UI.Controls.MetroSetButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.password = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.username = new MetroSet_UI.Controls.MetroSetTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.exitBtn = new MetroSet_UI.Controls.MetroSetButton();
+            this.signInBtn = new MetroSet_UI.Controls.MetroSetButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,6 +91,96 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(516, 561);
             this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel3.Controls.Add(this.password);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.username);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(23, 109);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(481, 178);
+            this.panel3.TabIndex = 8;
+            // 
+            // password
+            // 
+            this.password.AutoCompleteCustomSource = null;
+            this.password.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.password.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.password.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.password.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.password.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.password.Image = null;
+            this.password.Lines = null;
+            this.password.Location = new System.Drawing.Point(14, 123);
+            this.password.MaxLength = 32767;
+            this.password.Multiline = false;
+            this.password.Name = "password";
+            this.password.ReadOnly = false;
+            this.password.Size = new System.Drawing.Size(452, 35);
+            this.password.Style = MetroSet_UI.Design.Style.Light;
+            this.password.StyleManager = null;
+            this.password.TabIndex = 8;
+            this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.password.ThemeAuthor = "Narwin";
+            this.password.ThemeName = "MetroLite";
+            this.password.UseSystemPasswordChar = true;
+            this.password.WatermarkText = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(10, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 25);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Password";
+            // 
+            // username
+            // 
+            this.username.AutoCompleteCustomSource = null;
+            this.username.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.username.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.username.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.username.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.username.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.username.Image = null;
+            this.username.Lines = null;
+            this.username.Location = new System.Drawing.Point(14, 48);
+            this.username.MaxLength = 32767;
+            this.username.Multiline = false;
+            this.username.Name = "username";
+            this.username.ReadOnly = false;
+            this.username.Size = new System.Drawing.Size(452, 35);
+            this.username.Style = MetroSet_UI.Design.Style.Light;
+            this.username.StyleManager = null;
+            this.username.TabIndex = 6;
+            this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.username.ThemeAuthor = "Narwin";
+            this.username.ThemeName = "MetroLite";
+            this.username.UseSystemPasswordChar = false;
+            this.username.WatermarkText = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(10, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Username";
             // 
             // exitBtn
             // 
@@ -154,98 +244,6 @@
             this.label2.Size = new System.Drawing.Size(137, 44);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sign In";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel3.Controls.Add(this.password);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.username);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(23, 109);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(481, 178);
-            this.panel3.TabIndex = 8;
-            // 
-            // password
-            // 
-            this.password.AutoCompleteCustomSource = null;
-            this.password.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.password.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.password.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.password.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.password.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.password.Image = null;
-            this.password.Lines = null;
-            this.password.Location = new System.Drawing.Point(14, 123);
-            this.password.MaxLength = 32767;
-            this.password.Multiline = false;
-            this.password.Name = "password";
-            this.password.ReadOnly = false;
-            this.password.Size = new System.Drawing.Size(452, 35);
-            this.password.Style = MetroSet_UI.Design.Style.Light;
-            this.password.StyleManager = null;
-            this.password.TabIndex = 8;
-            this.password.Text = "test1";
-            this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.password.ThemeAuthor = "Narwin";
-            this.password.ThemeName = "MetroLite";
-            this.password.UseSystemPasswordChar = true;
-            this.password.WatermarkText = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Password";
-            // 
-            // username
-            // 
-            this.username.AutoCompleteCustomSource = null;
-            this.username.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.username.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.username.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.username.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.username.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.username.Image = null;
-            this.username.Lines = null;
-            this.username.Location = new System.Drawing.Point(14, 48);
-            this.username.MaxLength = 32767;
-            this.username.Multiline = false;
-            this.username.Name = "username";
-            this.username.ReadOnly = false;
-            this.username.Size = new System.Drawing.Size(452, 35);
-            this.username.Style = MetroSet_UI.Design.Style.Light;
-            this.username.StyleManager = null;
-            this.username.TabIndex = 6;
-            this.username.Text = "test1";
-            this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.username.ThemeAuthor = "Narwin";
-            this.username.ThemeName = "MetroLite";
-            this.username.UseSystemPasswordChar = false;
-            this.username.WatermarkText = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Username";
             // 
             // SignInPage
             // 

@@ -19,7 +19,21 @@ namespace Sunway_Cafe
 
         private Dictionary<string, MetroSetTextBox> textBoxs;
         private int Id;
-        public EditProfilePage(Account editAccount)
+        private AccountPage accountPageRef = null;
+        private ProfilePage profilePageRef = null; 
+        public EditProfilePage(Account editAccount, AccountPage ap)
+        {
+            LoadData(editAccount);
+            accountPageRef = ap;
+        }
+
+        public EditProfilePage(Account editAccount, ProfilePage pp)
+        {
+            LoadData(editAccount);
+            profilePageRef = pp;
+        }
+
+        public void LoadData(Account editAccount)
         {
             InitializeComponent();
             textBoxs = new Dictionary<string, MetroSetTextBox>()
@@ -37,11 +51,9 @@ namespace Sunway_Cafe
                 editProfile.Text = "Add Staff";
                 role.SelectedItem = "SalesStaff";
                 gender.SelectedItem = "Male";
-            } 
+            }
             else
             {
-
-
                 username.Text = editAccount.Username;
                 password.Text = editAccount.Password;
                 role.Text = editAccount.Role;
@@ -52,11 +64,8 @@ namespace Sunway_Cafe
                 email.Text = editAccount.Email;
                 Id = editAccount.Id;
 
-   
-                Global.user.ModifyEditDisplay(this);
             }
-
-
+            Global.user.ModifyEditDisplay(this);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -105,9 +114,19 @@ namespace Sunway_Cafe
                       
                     }
                     db.SaveChanges();
+
+                    if (accountPageRef == null)
+                    {
+                        var query = db.Accounts.Where(acc => acc.Id == Id).FirstOrDefault();
+                        Global.user.Details = query;
+                        profilePageRef.RefreshPage();
+                    }
+                    else
+                    {
+                        accountPageRef.RefreshListView();
+                    }
                 }
-                Form profilePage = new ProfilePage();
-                profilePage.Refresh();
+                
                 this.Close();
             }
             else
@@ -125,20 +144,8 @@ namespace Sunway_Cafe
 
         }
 
-        private void contact_Validating(object sender, CancelEventArgs e)
-        {
-            if (int.TryParse(contact.Text, out int value) == false)
-            {
-                editProfile.Enabled = false;
-                contact.Focus();
-                errorProvider1.SetError(contact, "Please enter a username");
-            }
-            else
-            {
-                editProfile.Enabled = true;
-                errorProvider1.SetError(contact, null);
-            }
-        }
+
+
 
         //private void username_Validating(object sender, CancelEventArgs e)
         //{
