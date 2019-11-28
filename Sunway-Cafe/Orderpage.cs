@@ -43,7 +43,7 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             loadData();
-
+            var diningType = radioButton1.Checked ? radioButton1.Text : radioButton2.Text;
         }
 
         private void OrderGrid_WasClicked(object sender, EventArgs e)

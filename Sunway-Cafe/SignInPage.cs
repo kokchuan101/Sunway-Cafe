@@ -16,7 +16,7 @@ namespace Sunway_Cafe
         private int failure = 0; 
         public SignInPage()
         {
-            InitializeComponent();
+            InitializeComponent();           
             password.UseSystemPasswordChar = true;
             try
             {
