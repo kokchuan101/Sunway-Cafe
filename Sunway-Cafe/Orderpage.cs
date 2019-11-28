@@ -43,7 +43,6 @@ namespace Sunway_Cafe
         {
             InitializeComponent();
             loadData();
-            var diningType = radioButton1.Checked ? radioButton1.Text : radioButton2.Text;
         }
 
         private void OrderGrid_WasClicked(object sender, EventArgs e)
@@ -123,54 +122,83 @@ namespace Sunway_Cafe
             }
             else
             {
-                var order = new Order()
+                decimal py;
+                if(decimal.TryParse(payment.Text, out py))
                 {
-                    NetPrice = decimal.Parse(lbltotal.Text) / 1.16M,
-                    TotalPrice = decimal.Parse(lbltotal.Text),
-                    Status = "Processing",
-                    DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
-
-                };
-
-                using (var db = new SunwayCafeContext())
-                {
-                    var lst = new List<OrderedItem>();
-                    //Add all item object from datagrid using id
-                    for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+                    
+                    if(py < decimal.Parse(lbltotal.Text))
                     {
-                        var id = Convert.ToInt32((dataGridView1.Rows[i].Cells[0].Value));
-                        var item = db.Items.Where(x => x.Id == id).FirstOrDefault();
-                        if (item == null)
-                        {
-                            MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            lst.Add(new OrderedItem()
-                            {
-                                Order = order,
-                                Item = item,
-                                Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity1"].Value))
-                            });
-                        }
+                        MessageBox.Show("Payment must be higher or equal to total.", "Insufficient Payment", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     }
+                    else
+                    {
+                        var order = new Order()
+                        {
+                            NetPrice = decimal.Parse(lbltotal.Text) / 1.16M,
+                            TotalPrice = decimal.Parse(lbltotal.Text),
+                            Status = "Processing",
+                            DateTimeCreated = Global.ConvToDateTimeString(DateTime.Now),
 
-                    order.OrderedItems = lst;
-                    db.Orders.Add(order);
-                    db.SaveChanges();
+                        };
 
+                        using (var db = new SunwayCafeContext())
+                        {
+                            var lst = new List<OrderedItem>();
+                            //Add all item object from datagrid using id
+                            for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+                            {
+                                var id = Convert.ToInt32((dataGridView1.Rows[i].Cells[0].Value));
+                                var item = db.Items.Where(x => x.Id == id).FirstOrDefault();
+                                if (item == null)
+                                {
+                                    MessageBox.Show("Unable to retrieve item from database", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    lst.Add(new OrderedItem()
+                                    {
+                                        Order = order,
+                                        Item = item,
+                                        Qty = Convert.ToInt32((dataGridView1.Rows[i].Cells["Quantity1"].Value))
+                                    });
+                                }
+                            }
+
+                            order.OrderedItems = lst;
+                            db.Orders.Add(order);
+                            db.SaveChanges();
+
+                        }
+
+                        var receiptItems = new List<ReceiptItem>();
+                        foreach (var item in order.OrderedItems)
+                        {
+                            receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
+                        }
+
+
+                        var reportPage = new ReceiptPage(new Receipt()
+                        {
+                            Subtotal = order.NetPrice,
+                            ReceiptItems = receiptItems,
+                            Date = order.DateTimeCreated,
+                            OrderType = radioButton1.Checked ? radioButton1.Text : radioButton2.Text,
+                            Payment = py
+                        });
+
+                        dataGridView1.Rows.Clear();
+                        lbltotal.Text = "0.00";
+                        payment.Text = "0.00";
+
+                        reportPage.Show();
+                    }
                 }
-
-                var receiptItems = new List<ReceiptItem>();
-                foreach (var item in order.OrderedItems)
+                else
                 {
-                    receiptItems.Add(new ReceiptItem() { Qty = item.Qty, Name = item.Item.Name, UnitPrice = item.Item.SellingPrice });
+                    MessageBox.Show("Please enter number only", "Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                var reportPage = new ReceiptPage(new Receipt() { Subtotal = order.NetPrice, ReceiptItems = receiptItems, Date = order.DateTimeCreated });
-                dataGridView1.Rows.Clear();
                 
-                reportPage.Show();
             }
             
         }
@@ -186,7 +214,7 @@ namespace Sunway_Cafe
             string search = textBox1.Text.Trim();
             // Search items in our Jobs ListView, remove those that do not match search
             if (search != String.Empty)
-            {
+            { 
                 using (var db = new SunwayCafeContext())
                 {
                     //got two ToLower() is because need to allow upper case and lower case both acceptable by the search function
@@ -318,7 +346,6 @@ namespace Sunway_Cafe
             }
         }
 
-      
     }
 }
 

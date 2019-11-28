@@ -13,6 +13,10 @@ namespace Sunway_Cafe
 
         public string Date { get; set; }
 
+        public string OrderType { get; set; }
+
+        public decimal Payment { get; set; }
+
         public string CalculateSST()
         {
             return $"{Subtotal * 0.06M:0.00}";
@@ -26,6 +30,11 @@ namespace Sunway_Cafe
         public string CalculateTotal()
         {
             return $"{Subtotal * 1.16M:0.00}";
+        }
+
+        public string CalculateBalance()
+        {
+            return $"{Payment - decimal.Parse(CalculateTotal()):0.00}";
         }
 
 

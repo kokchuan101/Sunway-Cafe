@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Clear = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +57,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.payment = new System.Windows.Forms.TextBox();
             this.Drinks.SuspendLayout();
             this.Food.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -107,16 +109,18 @@
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(718, 489);
+            this.lbltotal.Location = new System.Drawing.Point(833, 492);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(0, 24);
+            this.lbltotal.Size = new System.Drawing.Size(45, 24);
             this.lbltotal.TabIndex = 8;
+            this.lbltotal.Text = "0.00";
+            this.lbltotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(662, 489);
+            this.label2.Location = new System.Drawing.Point(662, 492);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 9;
@@ -206,9 +210,9 @@
             // 
             // Price1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            this.Price1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.Price1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Price1.HeaderText = "Price";
             this.Price1.Name = "Price1";
             this.Price1.ReadOnly = true;
@@ -247,7 +251,7 @@
             this.Pay.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.Pay.HoverTextColor = System.Drawing.Color.White;
-            this.Pay.Location = new System.Drawing.Point(1000, 505);
+            this.Pay.Location = new System.Drawing.Point(1000, 544);
             this.Pay.Name = "Pay";
             this.Pay.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.Pay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -290,6 +294,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(49, 65);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(59, 17);
@@ -305,14 +310,35 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(79, 17);
             this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Take-Away";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(662, 526);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 24);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Payment:";
+            // 
+            // payment
+            // 
+            this.payment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.payment.Location = new System.Drawing.Point(778, 525);
+            this.payment.Name = "payment";
+            this.payment.Size = new System.Drawing.Size(100, 29);
+            this.payment.TabIndex = 20;
+            this.payment.Text = "0.00";
+            this.payment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.payment);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBox1);
@@ -362,5 +388,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox payment;
     }
 }

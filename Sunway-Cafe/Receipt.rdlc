@@ -309,8 +309,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Receipt</DataSetName>
-            <Top>4.46828cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>5.10328cm</Top>
+            <Left>0.52599cm</Left>
             <Height>1.2cm</Height>
             <Width>6.97146cm</Width>
             <ZIndex>1</ZIndex>
@@ -337,8 +337,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox21</rd:DefaultName>
-            <Top>6.39974cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>7.03474cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.18792cm</Width>
             <ZIndex>2</ZIndex>
@@ -369,8 +369,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>6.96446cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>7.59946cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0.38833cm</Height>
             <Width>3.18792cm</Width>
             <ZIndex>3</ZIndex>
@@ -401,8 +401,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>7.52919cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>8.16419cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0.41479cm</Height>
             <Width>3.18792cm</Width>
             <ZIndex>4</ZIndex>
@@ -433,8 +433,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox24</rd:DefaultName>
-            <Top>8.48995cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>8.80745cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0.6cm</Height>
             <Width>3.18792cm</Width>
             <ZIndex>5</ZIndex>
@@ -466,8 +466,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>6.39974cm</Top>
-            <Left>5.1562cm</Left>
+            <Top>7.03474cm</Top>
+            <Left>5.18266cm</Left>
             <Height>0.38833cm</Height>
             <Width>2.31479cm</Width>
             <ZIndex>6</ZIndex>
@@ -499,8 +499,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>6.96447cm</Top>
-            <Left>5.1562cm</Left>
+            <Top>7.59947cm</Top>
+            <Left>5.18266cm</Left>
             <Height>0.38833cm</Height>
             <Width>2.31479cm</Width>
             <ZIndex>7</ZIndex>
@@ -532,8 +532,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>7.52919cm</Top>
-            <Left>5.1562cm</Left>
+            <Top>8.16419cm</Top>
+            <Left>5.18266cm</Left>
             <Height>0.41479cm</Height>
             <Width>2.31479cm</Width>
             <ZIndex>8</ZIndex>
@@ -565,8 +565,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>8.48995cm</Top>
-            <Left>5.1562cm</Left>
+            <Top>8.80745cm</Top>
+            <Left>5.18266cm</Left>
             <Height>0.6cm</Height>
             <Width>2.31479cm</Width>
             <ZIndex>9</ZIndex>
@@ -581,8 +581,8 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>4.27453cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>4.90953cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0cm</Height>
             <Width>6.97146cm</Width>
             <ZIndex>10</ZIndex>
@@ -593,8 +593,8 @@
             </Style>
           </Line>
           <Line Name="Line3">
-            <Top>5.99433cm</Top>
-            <Left>0.49953cm</Left>
+            <Top>6.62933cm</Top>
+            <Left>0.52599cm</Left>
             <Height>0cm</Height>
             <Width>6.97146cm</Width>
             <ZIndex>11</ZIndex>
@@ -649,6 +649,180 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!OrderType.Value</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>3.92176cm</Top>
+            <Left>0.49953cm</Left>
+            <Height>0.65292cm</Height>
+            <Width>3.21438cm</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox25">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>PAYMENT</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox23</rd:DefaultName>
+            <Top>9.58384cm</Top>
+            <Left>0.52599cm</Left>
+            <Height>0.41479cm</Height>
+            <Width>3.18792cm</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="ServCharge2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Payment.Value</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>9.58384cm</Top>
+            <Left>5.18266cm</Left>
+            <Height>0.41479cm</Height>
+            <Width>2.31479cm</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox26">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>BALANCE</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox23</rd:DefaultName>
+            <Top>10.17502cm</Top>
+            <Left>0.52599cm</Left>
+            <Height>0.41479cm</Height>
+            <Width>3.18792cm</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="ServCharge3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Balance.Value</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>10.17502cm</Top>
+            <Left>5.18266cm</Left>
+            <Height>0.41479cm</Height>
+            <Width>2.31479cm</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>20cm</Height>
         <Style />
@@ -687,6 +861,18 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="OrderType">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Payment">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Balance">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -717,6 +903,21 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>Subtotal</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>OrderType</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Payment</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Balance</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

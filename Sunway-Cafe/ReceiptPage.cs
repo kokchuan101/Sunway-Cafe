@@ -23,7 +23,10 @@ namespace Sunway_Cafe
                     new ReportParameter("Subtotal", $"{rcp.Subtotal:0.00}"),
                     new ReportParameter("SST", rcp.CalculateSST()),
                     new ReportParameter("ServCharge", rcp.CalculateServCharge()),
-                    new ReportParameter("Total", rcp.CalculateTotal())
+                    new ReportParameter("Total", rcp.CalculateTotal()),
+                    new ReportParameter("OrderType", rcp.OrderType),
+                    new ReportParameter("Payment", $"{rcp.Payment:0.00}"),
+                    new ReportParameter("Balance", rcp.CalculateBalance()),
             };
 
             //create a dummy data set
